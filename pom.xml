@@ -8,8 +8,7 @@
     <artifactId>GitWebsite</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>GitWebsite</name>
-    <!-- FIXME change it to the project's website -->
-    <url>https://github.com/BRudow317/BRudow317.github.io</url>
+    <url>https://brudow317.github.io/src/index.html</url>
 
     <properties>
         <maven.compiler.source>23</maven.compiler.source>
