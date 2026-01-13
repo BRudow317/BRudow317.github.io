@@ -1,0 +1,54 @@
+/* ============================================================================
+   SUGGESTIONS DROPDOWN - Presentational styling only
+   ============================================================================ */
+
+.Panel {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  top: calc(100% + 6px);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.90);
+  color: rgba(255, 255, 255, 0.90);
+  border: 1px solid rgba(160, 163, 161, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+}
+
+.Loading {
+  padding: 12px 14px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.Row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.Text {
+  font-size: 13px;
+  line-height: 18px;
+  word-break: break-word;
+}
+
+.RowActive {
+  background: rgba(0, 123, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.Row:hover {
+  background: rgba(27, 27, 27, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.Icon {
+  margin-top: 2px;
+  opacity: 0.75;
+  flex-shrink: 0;
+}

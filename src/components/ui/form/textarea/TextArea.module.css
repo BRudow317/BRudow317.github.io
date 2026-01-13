@@ -1,0 +1,25 @@
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(160, 163, 161, 0.45);
+
+  background: rgba(0, 0, 0, 0.20);
+  color: var(--text-0);
+  font: inherit;
+
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, filter 160ms ease;
+
+  resize: vertical;
+  min-height: 110px;
+}
+
+.textarea:hover {
+  border-color: var(--My-LightGreen);
+}
+
+.textarea:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}

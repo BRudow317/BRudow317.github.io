@@ -1,0 +1,128 @@
+:root {
+  --My-Orange: rgb(226, 96, 24);
+  --My-Navy: #050611;
+  --My-Cyan: rgb(0, 238, 255);
+  --My-LightOrange: rgb(243, 110, 33);
+  --My-Black: rgb(0, 0, 0);
+  --My-Green: rgb(105, 155, 95);
+  --My-Gray: rgb(158, 158, 158);
+  --My-LightGreen: rgb(79, 187, 68);
+  --My-Yellow: rgb(242, 178, 54);
+  --My-White: rgb(255, 255, 255);
+
+  /* Tints and Transparencies */
+  --transparent: rgba(0, 0, 0, 0);
+
+  --tint-0: rgba(0, 0, 0, .1);
+  --tint-25: rgba(0, 0, 0, 0.25);
+  --tint-50: rgba(0, 0, 0, 0.5);
+  --tint-75: rgba(0, 0, 0, 0.75);
+  --tint-100: rgba(0, 0, 0, .9);
+
+  --light-0: rgba(255, 255, 255, 0.1);
+  --light-25: rgba(255, 255, 255, 0.25);
+  --light-50: rgba(255, 255, 255, 0.5);
+  --light-75: rgba(255, 255, 255, 0.75);
+  --light-100: rgba(255, 255, 255, .9);
+
+
+  /* Text Styles */
+  --text-color: var(--My-White);
+  --GlobalTextColor: var(--text-color);
+  --text-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --text-Stroke: 1px rgba(0, 0, 0, 0.9);
+
+  --text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  --text-shadow-depth:
+    -1px -1px 0 rgba(0,0,0,0.95),
+     1px -1px 0 rgba(0,0,0,0.95),
+    -1px  1px 0 rgba(0,0,0,0.95),
+     1px  1px 0 rgba(0,0,0,0.95),
+     0px  3px 10px rgba(0,0,0,0.55); /* depth */
+
+  /* Borders */
+  --border-tint: color-mix(in srgb, var(--GlobalTextColor) 50%, transparent 50%);
+  --surface-border: color-mix(in srgb, var(--GlobalTextColor) 50%, srgb var(--bg), 50%);
+
+  
+
+  
+  /* Elevation */
+  --shadow-1: 0 12px 30px rgba(0, 0, 0, 0.25);
+  --shadow-2: 0 16px 40px rgba(0, 0, 0, 0.35);
+  --shadow-3: 0 20px 50px rgba(0, 0, 0, 0.45);
+  
+  --glow-green: 0 0 6px var(--My-LightGreen),
+    0 0 18px color-mix(in srgb, var(--My-LightGreen) 70%, transparent),
+    0 0 40px color-mix(in srgb, var(--My-LightGreen) 45%, transparent);
+
+  /* Focus ring */
+  --focus-ring: 2px solid var(--text-color);
+  --focus-offset: 2px;
+  
+}
+
+html[data-theme="dark"] {
+  --bg: var(--My-Navy);
+  --GlobalBackground: var(--bg);
+  --text-color: var(--My-White);
+  --GlobalTextColor: var(--text-color);
+  --bg-alt: var(--My-Cyan);
+
+  --bg-lighter: color-mix(in srgb, var(--bg) 50%, in srgb, rgb(255, 255, 255), 50%);
+  --blur: blur(5px);
+  --webkit-back-blur: blur(5px);
+  --border-glassy: 1px solid var(--light-50);
+  --box-shadow-glassy: 25px 25px 50px -12px rgba(3, 54, 14, 0.5);
+
+  --bg-darker: color-mix(in srgb, var(--bg) 50%, in srgb, rgb(0, 0, 0), 50%); 
+  --blur-darker: blur(7px);
+  --webkit-back-blur-darker: blur(7px);
+  --border-glassy-darker: 1px solid var(--My-Gray);
+  --box-shadow-glassy-darker: 25px 25px 50px -12px rgba(3, 54, 14, 0.25);
+
+  /* Make surfaces consistently layered in dark mode */
+  --surface-1: rgba(20, 24, 68, 0.25);
+  --surface-2: rgba(10, 12, 36, 0.55);
+  --surface-border: rgba(160, 163, 161, 0.35);
+
+  --shadow-1: 0 12px 30px rgba(0, 0, 0, 0.45);
+  --shadow-2: 0 16px 44px rgba(0, 0, 0, 0.55);
+}
+
+html[data-theme="light"] {
+  --bg: #000000;
+  --text-color: #000000;
+  --GlobalTextColor: var(--text-color);
+  --GlobalBackground: var(--bg);
+  --bg-alt: var(--My-Cyan);
+
+  --blur: blur(3px);
+  --webkit-back-blur: blur(2px);
+
+  --bg-lighter: rgba(255, 255, 255, 0.5);
+  --border-glassy: 1px solid var(color-mix(in srgb, var(--text-color) 50%, transparent 50%));
+  --box-shadow-glassy: 25px 25px 50px -12px rgba(3, 54, 14, 0.25);
+
+  
+  --bg-darker: color-mix(in srgb, var(--bg) 50%, in srgb, rgb(0, 0, 0), 50%);
+  --WebkitBackBlurDarker: blur(3px);
+  --border-glassy-darker: 1px solid var(--My-Dark);
+  --box-shadow-glassy-darker: 25px 25px 50px -12px rgba(3, 54, 14, 0.25);
+
+  /* Light mode: keep cards/forms slightly more “present” than containers */
+   /* page background */
+  --surface-1: rgba(255, 255, 255, 0.65);
+  --surface-2: rgba(240, 240, 240, 0.85);
+  --surface-border: rgba(0, 11, 0, 0.15);
+
+  --shadow-1: 0 12px 30px rgba(0, 0, 0, 0.12);
+  --shadow-2: 0 16px 44px rgba(0, 0, 0, 0.18);
+
+}
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------*/

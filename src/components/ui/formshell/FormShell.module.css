@@ -1,0 +1,47 @@
+.shell {
+  width: 100%;
+  margin: 3rem auto;
+  padding: 24px;
+  border-radius: 18px;
+
+  background: var(--surface-2);
+  color: var(--text-0);
+  border: 1px solid color-mix(in srgb, var(--My-Orange) 55%, var(--surface-border));
+  box-shadow: var(--shadow-2);
+  box-sizing: border-box;
+}
+
+/* When stacked under another surface and you want to blend seam */
+.mergedTop {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none !important;
+  margin-top: 0;
+  padding-top: 24px;
+  box-shadow: var(--shadow-1);
+}
+
+/* Typical form header spacing (optional helpers) */
+.header {
+  margin-bottom: 32px;
+}
+
+.title {
+  margin: 0 0 8px 0;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  opacity: 0.85;
+}
+
+/* Layout stack for form fields/sections */
+.stack {
+  display: grid;
+  gap: 24px;
+}

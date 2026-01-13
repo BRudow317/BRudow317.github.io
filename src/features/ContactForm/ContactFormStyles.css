@@ -1,0 +1,335 @@
+/* ContactFormStyles.css - All styles in one place */
+
+/* ============================================================================
+   AUTOFILL DETECTION
+   ============================================================================ */
+@keyframes onAutoFillStart {
+  from { opacity: 0.99; }
+  to { opacity: 1; }
+}
+
+input:-webkit-autofill {
+  animation-name: onAutoFillStart;
+  animation-duration: 0.001s;
+}
+
+/* ============================================================================
+   SECTION & LAYOUT
+   ============================================================================ */
+.section-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.contact-form-section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 90%;
+}
+
+.contact-form-section-xsm {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  
+}
+
+.form-header {
+  margin-bottom: 8px;
+  margin-left: 8px;
+  margin-top: 16px;
+  text-shadow: var(--text-shadow-depth);
+}
+
+.form-title {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  background: var(--tint-75);
+  border: var(--border-section);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 32px;
+  box-sizing: border-box;
+}
+
+.form-stack-xsm {
+  border: none; 
+}
+
+/* ============================================================================
+   FORM GRID (Responsive)
+   ============================================================================ */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-grid-mobile {
+  grid-template-columns: 1fr;
+}
+
+/* ============================================================================
+   FIELD LAYOUT
+   ============================================================================ */
+.field {
+  display: grid;
+}
+
+.field-full-width {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: 4px;
+  margin-bottom: 4px;
+}
+
+.error {
+  color: var(--My-Orange);
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+/* ============================================================================
+   INPUT BASE STYLES
+   ============================================================================ */
+.form-input {
+  font: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(160, 163, 161, 0.45);
+  background: var(--tint-75);
+  color: var(--text-color);
+  transition: border-color 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.form-input:focus {
+  outline: none;
+}
+
+/* Prevent browser default focus styles */
+.form-input:focus-visible {
+  outline: none;
+}
+
+/* Mobile: Remove tap highlight */
+.form-input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Autofill styling */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-color);
+  -webkit-box-shadow: 0 0 0 1000px var(--tint-75) inset;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: var(--text-color);
+}
+
+/* ============================================================================
+   VALIDATION STATES (6 states)
+   ============================================================================ */
+
+/* 1. DEFAULT - Untouched field */
+.form-input[data-validation-state="default"] {
+  border-color: rgba(160, 163, 161, 0.45);
+  box-shadow: none;
+}
+
+/* 2. ACTIVE - User typing/interacting (white border) */
+.form-input[data-validation-state="active"] {
+  border-color: var(--text-color);
+  box-shadow: 0 0 0 1px var(--text-color);
+}
+
+/* 3. VALIDATED - Passed validation (green border) */
+.form-input[data-validation-state="validated"] {
+  border-color: var(--My-LightGreen);
+  box-shadow: 0 0 0 1px var(--My-LightGreen);
+}
+
+/* 4. WARNING - Failed validation after debounce (orange border) */
+.form-input[data-validation-state="warning"] {
+  border-color: var(--My-Orange);
+  box-shadow: 0 0 0 1px var(--My-Orange);
+}
+
+/* 5. ERROR - Submit attempted on invalid field (red border) */
+.form-input[data-validation-state="error"] {
+  border-color: var(--My-Red);
+  box-shadow: 0 0 0 1px var(--My-Red);
+}
+
+/* 6. LOCKED - After successful submit (green, disabled, greyed out) */
+.form-input[data-validation-state="locked"] {
+  border-color: var(--My-LightGreen);
+  box-shadow: 0 0 0 1px var(--My-LightGreen);
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--tint-50);
+}
+
+.form-input[data-validation-state="locked"]:disabled {
+  -webkit-text-fill-color: var(--text-color);
+}
+
+/* ============================================================================
+   ADDRESS INPUT
+   ============================================================================ */
+.address-wrap {
+  position: relative;
+}
+
+.form-input-with-icon {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* ============================================================================
+   TEXTAREA
+   ============================================================================ */
+textarea.form-input {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* ============================================================================
+   MAP
+   ============================================================================ */
+.map-shell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: clamp(360px, 50vw, 360px);
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--text-shadow-depth);
+  box-sizing: border-box;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border-radius: 12px;
+  box-shadow: var(--text-shadow-depth);
+  flex-basis: auto;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--tint-25);
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================================================
+   FOOTER & SUBMIT
+   ============================================================================ */
+.footer-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  padding-top: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  border: 1px solid var(--text-color);
+  background: var(--My-LightGreen);
+  color: var(--text-color);
+  text-shadow: var(--text-shadow-depth);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 900;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+  min-width: 200px;
+  min-height: 48px;
+}
+
+.submit-button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.submit-again-button {
+  background: var(--bg);
+  color: var(--text-color);
+}
+
+/* ============================================================================
+   SUCCESS MESSAGE
+   ============================================================================ */
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--My-LightGreen);
+}
+
+.success-icon {
+  font-size: 20px;
+}
+
+/* ============================================================================
+   MOBILE ADJUSTMENTS
+   ============================================================================ */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .submit-button {
+    width: 100%;
+  }
+}

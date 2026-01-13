@@ -1,0 +1,308 @@
+/* InboxPage.css */
+.inboxPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+  background: #f7f7f7;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 7px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn.danger {
+  border-color: #c77;
+}
+
+.layout {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.sidebar {
+  width: 320px;
+  border-right: 1px solid #ddd;
+  background: #fbfbfb;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.sidebarHeader {
+  padding: 10px 12px;
+  font-weight: 700;
+  border-bottom: 1px solid #eee;
+}
+
+.emailItem {
+  text-align: left;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  background: transparent;
+  cursor: pointer;
+}
+
+.emailItem:hover {
+  background: #f2f2f2;
+}
+
+.emailItem.active {
+  background: #e9eefc;
+}
+
+.emailRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.emailSender {
+  font-weight: 700;
+  font-size: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.emailTime {
+  font-size: 12px;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.emailSubject {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emailPreview {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #444;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.emptySidebar {
+  padding: 12px;
+  color: #666;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  background: #fff;
+}
+
+.contentInner {
+  padding: 14px 16px;
+  max-width: 980px;
+}
+
+.contentHeader {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.contentTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.contentMeta {
+  font-size: 13px;
+  color: #444;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.metaLabel {
+  color: #666;
+  font-weight: 700;
+}
+
+.emailBody {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #eee;
+  background: #fafafa;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  font-family: inherit;
+}
+
+.attachments {
+  margin-top: 14px;
+}
+
+.attachmentsTitle {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.attachment {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.attachmentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.attachmentName {
+  font-weight: 700;
+  font-size: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.attachmentLink {
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.attachmentPlaceholder {
+  color: #666;
+  font-size: 13px;
+  padding: 10px;
+  background: #fafafa;
+  border-radius: 4px;
+}
+
+.attachmentImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.attachmentPdf {
+  width: 100%;
+  height: 520px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.emptyContent {
+  height: calc(100vh - 52px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #666;
+}
+
+.emptyTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.emptyText {
+  font-size: 14px;
+}
+
+.composeForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field .label,
+.composeAttachments .label {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.attachmentRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.attachmentRow .select {
+  width: 120px;
+}
+
+.hint {
+  margin-top: 6px;
+  color: #666;
+  font-size: 12px;
+}
+
+.composeActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}

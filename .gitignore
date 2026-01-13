@@ -1,27 +1,40 @@
-# Maven target directory (build output)
+# Java
 target/
-
-# Default ignored files
-/shelf/
-/workspace.xml
-# This .gitignore is appropriate for repositories deployed to GitHub Pages and using
-# a Gemfile as specified at https://github.com/github/pages-gem#conventional
-
-# Basic Jekyll gitignores (synchronize to Jekyll.gitignore)
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# Additional Ruby/bundler ignore for when you run: bundle install
-/vendor
-
-# Specific ignore for GitHub Pages
-# GitHub Pages will always use its own deployed version of pages-gem
-# This means GitHub Pages will NOT use your Gemfile.lock and therefore it is
-# counterproductive to check this file into the repository.
-# Details at https://github.com/github/pages-gem/issues/768
-Gemfile.lock
-
-# Ignore Vs code Workspace files
+*.class
+# VS Code
+.vscode/
 *.code-workspace
+.history/
+# Env
+.env
+.env.*
+*.env.*
+# Docker
+docker-compose.override.yml
+# Documentation
+**/externalResources/
+ProjectDocs/
+# Logs
+**/bin/
+*.log
+**.log
+**/logs/
+logs/
+npm-debug.log
+yarn-error.log
+
+# Frontend
+frontend/dist/
+frontend/build/
+node_modules/
+dist/
+build/
+# Git
+*/.git/*
+.git/
+# Trash
+bin/
+Library/
+db.json
+middleware.cjs
+.devcontainer/

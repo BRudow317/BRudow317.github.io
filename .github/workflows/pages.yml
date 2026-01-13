@@ -1,4 +1,4 @@
-name: Deploy Maven Site to Pages
+name: Deploy Pages
 
 on:
   push:
@@ -20,17 +20,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Java
-        uses: actions/setup-java@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          distribution: 'temurin'
-          java-version: '17'
-      - name: Build Maven site
-        run: mvn -B -ntp site
+          node-version: "20"
+          cache: "npm"
+      - name: Install deps
+        run: npm ci
+      - name: Build site
+        run: npm run build
+        env:
+          NODE_ENV: production
+          VITE_DEVELOPMENT: false
+          VITE_GOOGLE_MAPS_API_KEY: ${{ secrets.VITE_GOOGLE_MAPS_API_KEY }}
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: target/site
+          path: dist
 
   deploy:
     needs: build
@@ -45,4 +51,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

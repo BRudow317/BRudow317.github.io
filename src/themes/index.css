@@ -1,0 +1,18 @@
+/* Global Colors as CSS custom properties */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+/* id="root" === #root */
+#root {
+  isolation: isolate;
+}
+/* :root is a CSS keyword (a pseudo-class). It does NOT select React <div id="root">. */
+

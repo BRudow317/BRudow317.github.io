@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blaine Rudow - Staff Full Stack Engineer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.4;
+      color: #222;
+      background: #f5f5f5;
+    }
+    .resume-container {
+      max-width: 8.5in;
+      margin: 20px auto;
+      padding: 0.5in;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    @media print {
+      body { background: white; }
+      .resume-container { 
+        box-shadow: none; 
+        margin: 0; 
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  
+  <script type="text/babel">
+    const { useState } = React;
+
+    // Styled Components as inline style objects
+    const styles = {
+      name: {
+        fontSize: '24pt',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#000',
+        marginBottom: '5px'
+      },
+      title: {
+        fontSize: '13pt',
+        textAlign: 'center',
+        color: '#444',
+        marginBottom: '8px'
+      },
+      contact: {
+        fontSize: '10pt',
+        textAlign: 'center',
+        color: '#333',
+        marginBottom: '5px'
+      },
+      link: {
+        color: '#0563C1',
+        textDecoration: 'none'
+      },
+      sectionHeader: {
+        fontSize: '12pt',
+        fontWeight: 'bold',
+        color: '#000',
+        textTransform: 'uppercase',
+        borderBottom: '2px solid #000',
+        paddingBottom: '3px',
+        marginTop: '16px',
+        marginBottom: '8px'
+      },
+      jobTitle: {
+        fontSize: '11.5pt',
+        fontWeight: 'bold',
+        color: '#000',
+        marginTop: '12px',
+        marginBottom: '3px'
+      },
+      companyLine: {
+        fontSize: '10.5pt',
+        fontStyle: 'italic',
+        color: '#333',
+        marginBottom: '5px'
+      },
+      summaryText: {
+        fontSize: '11pt',
+        color: '#222',
+        marginBottom: '8px'
+      },
+      jobSummary: {
+        fontSize: '11pt',
+        fontStyle: 'italic',
+        color: '#222',
+        marginBottom: '6px'
+      },
+      skillsRow: {
+        fontSize: '10.5pt',
+        color: '#222',
+        marginBottom: '4px'
+      },
+      bulletList: {
+        listStyleType: 'disc',
+        paddingLeft: '20px',
+        marginBottom: '5px'
+      },
+      bulletItem: {
+        fontSize: '10.5pt',
+        color: '#222',
+        marginBottom: '4px'
+      },
+      education: {
+        fontSize: '10.5pt',
+        color: '#222',
+        marginBottom: '4px'
+      }
+    };
+
+    // Data
+    const resumeData = {
+      name: "BLAINE RUDOW",
+      title: "Staff Full Stack Engineer | Product Engineering",
+      contact: {
+        location: "Indianapolis, IN",
+        phone: "(217) 521-5468",
+        email: "blainerudow@gmail.com",
+        linkedin: { url: "https://linkedin.com/in/blaine-rudow", text: "linkedin.com/in/blaine-rudow" },
+        github: { url: "https://github.com/BRudow317", text: "github.com/BRudow317" }
+      },
+      summary: "Product-focused Full Stack Engineer with 5+ years building and modernizing financial web applications for enterprise systems processing hundreds of millions of dollars annually. Experienced taking ambiguous product ideas from inception to production with full autonomy across the stack. Proven track record in billing systems, API development, cloud infrastructure, and database optimization. Known for balancing engineering best practices with business timelines—delivering scalable, modular solutions without over-engineering.",
+      skills: [
+        { label: "Languages", value: "Python, JavaScript/TypeScript, Java, SQL, Bash, Go (Golang), Node.js" },
+        { label: "Backend & APIs", value: "REST API Development, Spring Boot, FastAPI, GRPC, Microservices Architecture, SOLID Principles" },
+        { label: "Frontend", value: "React (Vite, Tailwind CSS, MUI), HTML5/CSS3, SPA Architecture, UI/UX Design" },
+        { label: "Cloud & Infrastructure", value: "AWS (EC2, S3, Lambda, RDS, CloudWatch), Terraform, Docker, Linux, CI/CD Pipelines" },
+        { label: "Databases", value: "PostgreSQL, Oracle, SQL Server, Database Optimization, Query Performance Tuning" },
+        { label: "Data & Messaging", value: "JMS/Message Queues, Kafka, Airflow, ETL Pipelines, Pub/Sub Patterns, MuleSoft" },
+        { label: "Tools & Practices", value: "Git, Jenkins, Jira, Agile/Scrum, OpenAPI/Swagger, JUnit, Dynatrace, ServiceNow" }
+      ],
+      experience: [
+        {
+          title: "Senior Systems Analyst / Full Stack Engineer",
+          company: "Indiana Public Retirement Systems (INPRS)",
+          dates: "Feb 2024 – Present",
+          summary: "Lead engineer for financial enterprise processing $500M+ weekly for 500k+ members. Own product development from concept to production with high autonomy.",
+          bullets: [
+            { label: "Product Development:", text: " Architected and built internal automation platform (React + Python + Spring Boot + Docker) that reduced manual operations by 50+ hours/week, taking ambiguous requirements to production-ready solutions independently." },
+            { label: "Billing & Financial Systems:", text: " Engineered critical integrations for financial processes handling hundreds of millions of dollars annually, ensuring zero-downtime deployments and fault-tolerant data pipelines." },
+            { label: "API Development:", text: " Built and maintained REST APIs documented via OpenAPI/Swagger, creating a self-service API registry that reduced cross-team dependencies and accelerated feature delivery." },
+            { label: "Database Management:", text: " Optimized PostgreSQL and Oracle databases for high-volume financial transactions; designed efficient schemas and tuned queries for sub-second response times on complex reporting." },
+            { label: "Infrastructure:", text: " Deployed containerized microservices using Docker, managed cloud resources with infrastructure-as-code practices, and maintained systems with near-zero downtime SLAs." },
+            { label: "Message Queues:", text: " Redesigned brittle batch integrations to asynchronous pub/sub architecture using JMS message queues, reducing integration fault-rate from recurring incidents to zero." },
+            { label: "Security & Auth:", text: " Built central authentication service (CAS) with Okta SSO integration managing session/token validation as single source of truth for enterprise applications." }
+          ]
+        },
+        {
+          title: "Application Developer / Full Stack Engineer",
+          company: "Indiana Public Retirement Systems (INPRS)",
+          dates: "Apr 2022 – Feb 2024",
+          summary: "Core contributor delivering customer-focused software solutions for financial enterprise. Promoted to senior role based on technical ownership and delivery excellence.",
+          bullets: [
+            { label: "Lead Generation & CRM:", text: " Owned end-to-end data migration and integration development for Salesforce CRM implementation, migrating hundreds of millions of records while maintaining data integrity across complex dependencies." },
+            { label: "Frontend Development:", text: " Led redesign of member-facing web applications using React (Vite, Tailwind CSS, MUI), increasing customer satisfaction scores by 30%+ through improved UX and performance." },
+            { label: "System Integrations:", text: " Developed enterprise integrations using MuleSoft, REST APIs, and custom Python/Java services connecting disparate financial systems with reliable data orchestration." },
+            { label: "Automation & Scripting:", text: " Built automated workflows and ETL pipelines using Python, Bash, and SQL that eliminated manual processes and ensured consistent data quality across systems." },
+            { label: "Agile Delivery:", text: " Collaborated across cross-functional teams in Agile environment, consistently delivering high-quality features on schedule while maintaining rigorous code review standards." }
+          ]
+        }
+      ],
+      education: [
+        { degree: "B.S., Informatics", detail: " (Minor: HCI/UX) | Indiana University Indianapolis | 2020–2022" },
+        { degree: "A.S., Software Development", detail: " | Ivy Tech Community College | 2018–2020" }
+      ]
+    };
+
+    // Components
+    const SectionHeader = ({ children }) => (
+      <div style={styles.sectionHeader}>{children}</div>
+    );
+
+    const SkillRow = ({ label, value }) => (
+      <div style={styles.skillsRow}>
+        <strong>{label}:</strong> {value}
+      </div>
+    );
+
+    const BulletItem = ({ label, text }) => (
+      <li style={styles.bulletItem}>
+        <strong>{label}</strong>{text}
+      </li>
+    );
+
+    const JobEntry = ({ job }) => (
+      <div>
+        <div style={styles.jobTitle}>{job.title}</div>
+        <div style={styles.companyLine}>{job.company} | {job.dates}</div>
+        <div style={styles.jobSummary}>{job.summary}</div>
+        <ul style={styles.bulletList}>
+          {job.bullets.map((bullet, idx) => (
+            <BulletItem key={idx} label={bullet.label} text={bullet.text} />
+          ))}
+        </ul>
+      </div>
+    );
+
+    const Resume = () => {
+      const data = resumeData;
+      
+      return (
+        <div className="resume-container">
+          {/* Header */}
+          <div style={styles.name}>{data.name}</div>
+          <div style={styles.title}>{data.title}</div>
+          <div style={styles.contact}>
+            {data.contact.location} • {data.contact.phone} • {data.contact.email}
+          </div>
+          <div style={styles.contact}>
+            <a href={data.contact.linkedin.url} style={styles.link}>{data.contact.linkedin.text}</a>
+            {" • "}
+            <a href={data.contact.github.url} style={styles.link}>{data.contact.github.text}</a>
+          </div>
+
+          {/* Professional Summary */}
+          <SectionHeader>Professional Summary</SectionHeader>
+          <div style={styles.summaryText}>{data.summary}</div>
+
+          {/* Core Technical Skills */}
+          <SectionHeader>Core Technical Skills</SectionHeader>
+          {data.skills.map((skill, idx) => (
+            <SkillRow key={idx} label={skill.label} value={skill.value} />
+          ))}
+
+          {/* Professional Experience */}
+          <SectionHeader>Professional Experience</SectionHeader>
+          {data.experience.map((job, idx) => (
+            <JobEntry key={idx} job={job} />
+          ))}
+
+          {/* Education */}
+          <SectionHeader>Education</SectionHeader>
+          {data.education.map((edu, idx) => (
+            <div key={idx} style={styles.education}>
+              <strong>{edu.degree}</strong>{edu.detail}
+            </div>
+          ))}
+        </div>
+      );
+    };
+
+    // Render
+    ReactDOM.render(<Resume />, document.getElementById('root'));
+  </script>
+</body>
+</html>

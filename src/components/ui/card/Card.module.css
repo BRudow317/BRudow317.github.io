@@ -1,0 +1,50 @@
+/* src/components/ui/card/card.module.css */
+
+.card {
+  background: var(--surface-2);
+  color: var(--text-0);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+  box-sizing: border-box;
+
+  transition: transform 140ms ease, filter 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+  will-change: transform;
+}
+
+/* Default hover “pop” */
+.card:hover {
+  transform: translateY(var(--lift-y-1)) scale(var(--scale-1));
+  filter: brightness(1.02);
+  box-shadow: var(--shadow-2);
+  border-color: color-mix(in srgb, var(--My-LightGreen) 35%, var(--surface-border));
+}
+
+/* Optional: disable hover pop (for non-interactive cards) */
+.noHover:hover {
+  transform: none;
+  filter: none;
+  box-shadow: var(--shadow-1);
+  border-color: var(--surface-border);
+}
+
+/* 1:1 square card utility */
+.square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Internal padding helpers */
+.padMd {
+  padding: 16px;
+}
+
+.padLg {
+  padding: 24px;
+}
+
+/* Focus (if card is clickable via button/link wrapper) */
+.card:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}

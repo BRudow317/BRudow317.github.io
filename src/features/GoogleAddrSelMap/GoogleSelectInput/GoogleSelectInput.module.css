@@ -1,0 +1,58 @@
+/* ============================================================================
+   GOOGLE SELECT INPUT - Structural styling only
+
+   IMPORTANT: This module CSS only handles positioning and structure.
+   Validation state styling (borders, colors) comes from parent form CSS
+   via className and data-validation-state props.
+   ============================================================================ */
+
+/* ============================================================================
+   WRAPPER - Provides positioning context for icons and dropdown
+   ============================================================================ */
+.Wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* ============================================================================
+   ICON POSITIONING - Structural only, no border/color styling
+   ============================================================================ */
+.SearchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================================================
+   CLEAR BUTTON - Structural only
+   ============================================================================ */
+.ClearButton {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.75;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  transition: opacity 160ms ease;
+  z-index: 1;
+}
+
+.ClearButton:hover {
+  opacity: 1;
+}
+
+.ClearButton:focus {
+  outline: none;
+}

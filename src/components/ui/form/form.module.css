@@ -1,0 +1,40 @@
+
+.field, .grid {
+  display: grid;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.required {
+  color: var(--mlmOrange, rgb(226, 96, 24));
+}
+
+/* Footer row */
+.footerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 16px;
+  border-bottom: 1px solid rgba(160, 163, 161, 0.25);
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 720px) {
+  .footerRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,392 @@
+/* ============================================
+   Design System: Spacing & Breakpoints
+   Base-8 Scale with Mobile-First Responsive
+   ============================================ */
+:root {
+  /* ----------------------------------------
+     Base-8 Spacing Scale
+     ---------------------------------------- */
+  --scale8-0: 2px;
+  --scale8-1: 4px;
+  --scale8-2: 8px;
+  --scale8-3: 12px;
+  --scale8-4: 16px;
+  --scale8-5: 24px;
+  --scale8-6: 32px;
+  --scale8-7: 48px;
+  --scale8-8: 64px;
+  --scale8-9: 96px;
+  --scale8-10: 128px;
+  --scale8-11: 160px;
+  --scale8-12: 242px;
+  --scale8-13: 448px;
+  /* ----------------------------------------
+     Blaine's Spacing Scale
+   ---------------------------------------- */
+  --scaleb-0: 1.25px;
+  --scaleb-1: 2.5px;
+  --scaleb-2: 7.5px;
+  --scaleb-3: 10px;
+  --scaleb-4: 15px;
+  --scaleb-5: 25px;
+  --scaleb-6: 37.5px;
+  --scaleb-7: 50px;
+  --scaleb-8: 75px;
+  --scaleb-9: 100px;
+  --scaleb-10: 125px;
+  --scaleb-11: 175px;
+  --scaleb-12: 250px;
+  --scaleb-13: 450px;
+  /* ----------------------------------------
+     Default Spacing Scale
+   ---------------------------------------- */
+  --SpaceScale-0: var(--scaleb-0, 2px);
+  --SpaceScale-1: var(--scaleb-1, 4px);
+  --SpaceScale-2: var(--scaleb-2, 8px);
+  --SpaceScale-3: var(--scaleb-3, 12px);
+  --SpaceScale-4: var(--scaleb-4, 16px);
+  --SpaceScale-5: var(--scaleb-5, 24px);
+  --SpaceScale-6: var(--scaleb-6, 32px);
+  --SpaceScale-7: var(--scaleb-7, 48px);
+  --SpaceScale-8: var(--scaleb-8, 64px);
+  --SpaceScale-9: var(--scaleb-9, 96px);
+  --SpaceScale-10: var(--scaleb-10, 128px);
+  --SpaceScale-11: var(--scaleb-11, 160px);
+  --SpaceScale-12: var(--scaleb-12, 242px);
+  --SpaceScale-13: var(--scaleb-13, 448px);
+  /* ---------------------------------------- 
+     Breakpoint Reference (for documentation)
+   ---------------------------------------- */
+  --breakpoint-xsm: 280px;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 720px;
+  --breakpoint-lg: 960px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1600px;
+  /* ----------------------------------------
+     Default Spacing (Extra Small Screens)
+     These are the base styles for 0-480px
+     ---------------------------------------- */  
+  --shell: var(--breakpoint-xsm);
+  --global-border-sm: var(--SpaceScale-0);
+  --global-border-lg: var(--SpaceScale-1);
+  --global-border-radius: var(--SpaceScale-2); 
+  --global-gutter-xsm: var(--SpaceScale-0);
+  --global-gutter-sm: var(--SpaceScale-1);
+  --global-gutter-md:var(--SpaceScale-3);
+  --global-gutter-lg: var(--SpaceScale-4);
+  --global-gutter-xl: var(--SpaceScale-5);
+  
+  --text-base: 1rem;
+  --line-height: calc( 1.5 * var(--text-base));
+
+  --clickable-height: calc( var(--text-base) * 3 );
+  --clickable-min-width: calc( var(--clickable-height) * 2 );
+  --clickable-sm-height: calc(var(--text-base) * var(--line-height) + var(--SpaceScale-3)); 
+  --clickable-sm-min-width: var(--clickable-sm-height);
+
+  --global-shell-max-width: calc(var(--shell) - var(--global-border-sm) );
+  --global-container-max-width: 100%;
+  --global-textarea-min-height: calc(var(--text-base) * 4.5);
+  --global-nav-height: calc(var(--clickable-height) + var(--global-gutter-sm) * 2 + var(--global-border-sm) * 2);
+
+}
+/* ============================================
+   SM Screens (241px - 480px)
+   Phones
+   ============================================ */
+@media ( min-width: 280px  ) {
+  :root {
+    --global-border-sm: var(--SpaceScale-0);
+    --global-border-lg: var(--SpaceScale-1);
+
+    --shell: var(--breakpoint-sm);
+    --global-container-max-width: 95%;
+    --global-border-radius: var(--SpaceScale-3);
+    --global-gutter-xsm: var(--SpaceScale-2);
+    --global-gutter-sm: var(--SpaceScale-3);
+    --global-gutter-md:var(--SpaceScale-5);
+    --global-gutter-lg: var(--SpaceScale-7);
+    --global-gutter-xl: var(--SpaceScale-9);
+  }
+}
+/* ============================================
+   MD Screens (481px - 720px)
+   Wide Mode Phones
+   ============================================ */
+@media (min-width: 480px) {
+  :root {
+    --global-border-sm: var(--SpaceScale-0);
+    --global-border-lg: var(--SpaceScale-1);
+
+    --shell: var(--breakpoint-md);
+    --global-container-max-width: 90%;
+    --global-border-radius: var(--SpaceScale-4);
+
+    --global-gutter-xsm: var(--SpaceScale-2);
+    --global-gutter-sm: var(--SpaceScale-4);
+    --global-gutter-md:var(--SpaceScale-6);
+    --global-gutter-lg: var(--SpaceScale-8);
+    --global-gutter-xl: var(--SpaceScale-10);
+  }
+}
+
+/* ============================================
+   LG Screens (721px - 960px)
+   Tablets
+   ============================================ */
+@media (min-width: 720px ) {
+  :root {
+    --global-border-sm: var(--SpaceScale-0);
+    --global-border-lg: var(--SpaceScale-1);
+    --global-border-radius: var(--SpaceScale-4);
+    --global-container-max-width: 85%;
+    --shell: var(--breakpoint-lg);
+    --global-gutter-xsm: var(--SpaceScale-2);
+    --global-gutter-sm: var(--SpaceScale-4);
+    --global-gutter-md:var(--SpaceScale-6);
+    --global-gutter-lg: var(--SpaceScale-8);
+    --global-gutter-xl: var(--SpaceScale-11);
+  }
+}
+
+/* ============================================
+   XL Screens (961px - 1200px)
+   Laptops
+   ============================================ */
+@media (min-width: 960px) {
+  :root {
+    --global-border-sm: var(--SpaceScale-0);
+    --global-border-lg: var(--SpaceScale-1);
+    --global-border-radius: var(--SpaceScale-4);
+    
+    --shell: var(--breakpoint-xl);
+    --global-container-max-width: 80%;
+
+    --global-gutter-xsm: var(--SpaceScale-2);
+    --global-gutter-sm: var(--SpaceScale-4);
+    --global-gutter-md:var(--SpaceScale-6);
+    --global-gutter-lg: var(--SpaceScale-9);
+    --global-gutter-xl: var(--SpaceScale-12);
+  }
+}
+
+/* ============================================
+   2XL Screens (1201px - 1600px)
+   Desktops
+   ============================================ */
+@media (min-width: 1200px) {
+  :root {
+    --global-border-sm: var(--SpaceScale-1);
+    --global-border-lg: var(--SpaceScale-2);
+    --global-border-radius: var(--SpaceScale-5);
+    
+    --shell: var(--breakpoint-2xl);
+    --global-gutter-xsm: var(--SpaceScale-3);
+    --global-gutter-sm: var(--SpaceScale-5);
+    --global-gutter-md:var(--SpaceScale-7);
+    --global-gutter-lg: var(--SpaceScale-10);
+    --global-gutter-xl: var(--SpaceScale-13);
+    --global-container-max-width: 75%;
+  }
+}
+
+/* ============================================
+   3XL Screens (1601px+)
+   Wide Screen HD
+   ============================================ */
+@media (min-width: 1600px) {
+  :root {
+    --global-border-sm: var(--SpaceScale-1);
+    --global-border-lg: var(--SpaceScale-2);
+    --global-border-radius: var(--SpaceScale-5);
+    
+    --shell: none;
+    --global-container-max-width: 70%;
+    --global-gutter-xsm: var(--SpaceScale-3);
+    --global-gutter-sm: var(--SpaceScale-5);
+    --global-gutter-md:var(--SpaceScale-8);
+    --global-gutter-lg: var(--SpaceScale-12);
+    --global-gutter-xl: var(--SpaceScale-13);
+  }
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+input, button, select {
+  height: var(--clickable-height);
+  min-width: var(--clickable-min-width);
+  padding: var(--global-gutter-sm);
+  min-height: var(--global-clickable-min-height);
+  border-width: var(--global-border-sm);
+  max-width: var(--shell);
+}
+.navshell {
+  height: var(--global-nav-height);
+  width: 100%;
+  border-width: var(--global-border-sm);
+  padding: var(--global-gutter-sm);
+  gap: var(--global-gutter-sm);
+}
+.shell, .container {
+  /* max-width: var(--shell); */
+  max-width: var(--global-container-max-width);
+  margin: 0 auto;
+  padding: var(--global-gutter-md);
+  box-sizing: border-box;
+  border-width: var(--global-border-lg);
+}
+textarea {
+  min-height: var(--global-textarea-min-height);
+}
+
+/* Stack (vertical spacing) */
+/* lobotomized owl lol */
+.stack > * + * {
+  margin-top: var(--global-stack-gap);
+}
+
+/* ----------------------------------------
+   Static Spacing Utilities
+   Using the base-8 scale
+   ---------------------------------------- */
+
+/* Margin */
+.m-1 { margin: var(--space-1); }
+.m-2 { margin: var(--space-2); }
+.m-3 { margin: var(--space-3); }
+.m-4 { margin: var(--space-4); }
+.m-5 { margin: var(--space-5); }
+.m-6 { margin: var(--space-6); }
+.m-7 { margin: var(--space-7); }
+.m-8 { margin: var(--space-8); }
+
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-5 { margin-top: var(--space-5); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-7 { margin-top: var(--space-7); }
+.mt-8 { margin-top: var(--space-8); }
+
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-5 { margin-bottom: var(--space-5); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-7 { margin-bottom: var(--space-7); }
+.mb-8 { margin-bottom: var(--space-8); }
+
+.ml-1 { margin-left: var(--space-1); }
+.ml-2 { margin-left: var(--space-2); }
+.ml-3 { margin-left: var(--space-3); }
+.ml-4 { margin-left: var(--space-4); }
+.ml-5 { margin-left: var(--space-5); }
+.ml-6 { margin-left: var(--space-6); }
+.ml-7 { margin-left: var(--space-7); }
+.ml-8 { margin-left: var(--space-8); }
+
+.mr-1 { margin-right: var(--space-1); }
+.mr-2 { margin-right: var(--space-2); }
+.mr-3 { margin-right: var(--space-3); }
+.mr-4 { margin-right: var(--space-4); }
+.mr-5 { margin-right: var(--space-5); }
+.mr-6 { margin-right: var(--space-6); }
+.mr-7 { margin-right: var(--space-7); }
+.mr-8 { margin-right: var(--space-8); }
+
+.mx-1 { margin-left: var(--space-1); margin-right: var(--space-1); }
+.mx-2 { margin-left: var(--space-2); margin-right: var(--space-2); }
+.mx-3 { margin-left: var(--space-3); margin-right: var(--space-3); }
+.mx-4 { margin-left: var(--space-4); margin-right: var(--space-4); }
+.mx-5 { margin-left: var(--space-5); margin-right: var(--space-5); }
+.mx-6 { margin-left: var(--space-6); margin-right: var(--space-6); }
+.mx-7 { margin-left: var(--space-7); margin-right: var(--space-7); }
+.mx-8 { margin-left: var(--space-8); margin-right: var(--space-8); }
+
+.my-1 { margin-top: var(--space-1); margin-bottom: var(--space-1); }
+.my-2 { margin-top: var(--space-2); margin-bottom: var(--space-2); }
+.my-3 { margin-top: var(--space-3); margin-bottom: var(--space-3); }
+.my-4 { margin-top: var(--space-4); margin-bottom: var(--space-4); }
+.my-5 { margin-top: var(--space-5); margin-bottom: var(--space-5); }
+.my-6 { margin-top: var(--space-6); margin-bottom: var(--space-6); }
+.my-7 { margin-top: var(--space-7); margin-bottom: var(--space-7); }
+.my-8 { margin-top: var(--space-8); margin-bottom: var(--space-8); }
+
+/* Padding */
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-5 { padding: var(--space-5); }
+.p-6 { padding: var(--space-6); }
+.p-7 { padding: var(--space-7); }
+.p-8 { padding: var(--space-8); }
+
+.pt-1 { padding-top: var(--space-1); }
+.pt-2 { padding-top: var(--space-2); }
+.pt-3 { padding-top: var(--space-3); }
+.pt-4 { padding-top: var(--space-4); }
+.pt-5 { padding-top: var(--space-5); }
+.pt-6 { padding-top: var(--space-6); }
+.pt-7 { padding-top: var(--space-7); }
+.pt-8 { padding-top: var(--space-8); }
+
+.pb-1 { padding-bottom: var(--space-1); }
+.pb-2 { padding-bottom: var(--space-2); }
+.pb-3 { padding-bottom: var(--space-3); }
+.pb-4 { padding-bottom: var(--space-4); }
+.pb-5 { padding-bottom: var(--space-5); }
+.pb-6 { padding-bottom: var(--space-6); }
+.pb-7 { padding-bottom: var(--space-7); }
+.pb-8 { padding-bottom: var(--space-8); }
+
+.pl-1 { padding-left: var(--space-1); }
+.pl-2 { padding-left: var(--space-2); }
+.pl-3 { padding-left: var(--space-3); }
+.pl-4 { padding-left: var(--space-4); }
+.pl-5 { padding-left: var(--space-5); }
+.pl-6 { padding-left: var(--space-6); }
+.pl-7 { padding-left: var(--space-7); }
+.pl-8 { padding-left: var(--space-8); }
+
+.pr-1 { padding-right: var(--space-1); }
+.pr-2 { padding-right: var(--space-2); }
+.pr-3 { padding-right: var(--space-3); }
+.pr-4 { padding-right: var(--space-4); }
+.pr-5 { padding-right: var(--space-5); }
+.pr-6 { padding-right: var(--space-6); }
+.pr-7 { padding-right: var(--space-7); }
+.pr-8 { padding-right: var(--space-8); }
+
+.px-1 { padding-left: var(--space-1); padding-right: var(--space-1); }
+.px-2 { padding-left: var(--space-2); padding-right: var(--space-2); }
+.px-3 { padding-left: var(--space-3); padding-right: var(--space-3); }
+.px-4 { padding-left: var(--space-4); padding-right: var(--space-4); }
+.px-5 { padding-left: var(--space-5); padding-right: var(--space-5); }
+.px-6 { padding-left: var(--space-6); padding-right: var(--space-6); }
+.px-7 { padding-left: var(--space-7); padding-right: var(--space-7); }
+.px-8 { padding-left: var(--space-8); padding-right: var(--space-8); }
+
+.py-1 { padding-top: var(--space-1); padding-bottom: var(--space-1); }
+.py-2 { padding-top: var(--space-2); padding-bottom: var(--space-2); }
+.py-3 { padding-top: var(--space-3); padding-bottom: var(--space-3); }
+.py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+.py-5 { padding-top: var(--space-5); padding-bottom: var(--space-5); }
+.py-6 { padding-top: var(--space-6); padding-bottom: var(--space-6); }
+.py-7 { padding-top: var(--space-7); padding-bottom: var(--space-7); }
+.py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+
+/* Gap (for flexbox/grid) */
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-5 { gap: var(--space-5); }
+.gap-6 { gap: var(--space-6); }
+.gap-7 { gap: var(--space-7); }
+.gap-8 { gap: var(--space-8); }

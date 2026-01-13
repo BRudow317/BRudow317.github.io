@@ -1,0 +1,51 @@
+.root {
+  display: grid;
+  gap: 12px;
+}
+
+.setControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.setButton {
+  border: 1px solid var(--text-color);
+  background: var(--tint-75);
+  color: var(--text-color);
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.setButtonActive {
+  border-color: var(--My-LightGreen);
+  box-shadow: 0 0 8px rgba(73, 255, 24, 0.35);
+}
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--text-color);
+  background: var(--tint-75);
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+.emptyState {
+  padding: 24px;
+  color: var(--text-color);
+  opacity: 0.7;
+}

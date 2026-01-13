@@ -1,0 +1,90 @@
+/* src/components/compounds/carousel/Carousel.module.css */
+
+.stack {
+  display: grid;
+  gap: 16px;
+}
+
+/* Optional header */
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.headerText {
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 6px 0;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  opacity: 0.85;
+}
+
+/* Controls */
+.controls,
+.controlsOnly {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+
+  border: 1px solid var(--surface-border);
+  background: var(--surface-2);
+  color: var(--text-0);
+  box-shadow: var(--shadow-1);
+
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+.arrow:hover {
+  transform: translateY(var(--lift-y-1));
+  filter: brightness(1.03);
+  box-shadow: var(--shadow-2);
+  border-color: color-mix(in srgb, var(--My-LightGreen) 25%, var(--surface-border));
+}
+
+.arrow:active {
+  transform: translateY(1px);
+}
+
+.arrow:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* Track */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  /* smooth scroll + better feel */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /* keep the scrollbar from dominating layout */
+  scrollbar-width: thin;
+}
+
+.item {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+}
