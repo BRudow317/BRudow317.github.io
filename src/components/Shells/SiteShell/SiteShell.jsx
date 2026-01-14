@@ -1,31 +1,25 @@
-// import { min } from "@floating-ui/utils";
+import React from "react";
+import SideNav from "./components/SideNav";
+import { Outlet } from "react-router-dom";
 
-export function SiteShell({children}) {
-  const styles = {
-    background: {
-        isolation: "isolate",
-        position: "fixed",
-        top: "0",
-        left: "0",
-        width: "100vw",
-        height: "100vh",
-        padding: "0",
-        margin: "0",
-        boxSizing: "border-box",
-        zIndex: "-10",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
-        background: "radial-gradient(circle at center, #a2ff9aff, #f0eefcff)",
-    },
-  };
-// {children}
-    return (
-        <div style={styles.background}
-          name="MainBackground"
-            aria-hidden="true"
-        >
-          {children}
+export function SiteShell() {
+  return (
+    <div className="app">
+      <SideNav items={navItems} />
+
+      <main className="main" role="main">
+        <div className="topbar">
+          <div className="topbar_crumb">
+            <span className="muted">/</span> <span>{activeLabel}</span>
+          </div>
         </div>
-    );
-  };
+
+        <div className="content">
+          <div className="fadein" key={location.pathname}>
+            <Outlet />
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}

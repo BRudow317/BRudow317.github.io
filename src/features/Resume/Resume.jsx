@@ -22,7 +22,7 @@ export { Resume };
 
 const resumeData = {
   name: "BLAINE RUDOW",
-  title: "Staff Full Stack Engineer | Product Engineering",
+  title: "Full Stack Engineer | Web Design",
   contact: {
     location: "Indianapolis, IN",
     phone: "(217) 521-5468",
@@ -32,20 +32,19 @@ const resumeData = {
   },
   summary: "Product-focused Full Stack Engineer with 5+ years building and modernizing financial web applications for enterprise systems processing hundreds of millions of dollars annually. Experienced taking ambiguous product ideas from inception to production with full autonomy across the stack. Proven track record in billing systems, API development, cloud infrastructure, and database optimization. Known for balancing engineering best practices with business timelines—delivering scalable, modular solutions without over-engineering.",
   skills: [
-    { label: "Languages", value: "Python, JavaScript/TypeScript, Java, SQL, Bash, Go (Golang), Node.js" },
-    { label: "Backend & APIs", value: "REST API Development, Spring Boot, FastAPI, GRPC, Microservices Architecture, SOLID Principles" },
-    { label: "Frontend", value: "React (Vite, MUI), HTML5/CSS3, SPA Architecture, UI/UX Design" },
-    { label: "Cloud & Infrastructure", value: "AWS (EC2, S3, Lambda, RDS, CloudWatch), Terraform, Docker, Linux, CI/CD Pipelines" },
-    { label: "Databases", value: "PostgreSQL, Oracle, SQL Server, Database Optimization, Query Performance Tuning" },
-    { label: "Data & Messaging", value: "JMS/Message Queues, Kafka, Airflow, ETL Pipelines, Pub/Sub Patterns, MuleSoft" },
+    { label: "Languages", value: "Python, JavaScript/TypeScript, Java, SQL, Bash, Node.js" },
+    { label: "Backend & APIs", value: "RESTful APIs, Spring Boot, FastAPI, Microservice Architecture, Distributed Systems, Flask" },
+    { label: "Frontend", value: "React, HTML5/CSS3, SPA Architecture, UI/UX Design" },
+    { label: "Cloud & Infrastructure", value: "AWS (EC2, S3, Lambda, RDS, CloudFront, CloudFormation), Terraform, Docker, Linux" },
+    { label: "Databases", value: "AWS DynamoDB, PostgreSQL (SQL Alchemy, Supabase), Oracle (Hibernate), NoSQL, Query Performance Tuning" },
+    { label: "Data & Messaging", value: "JMS/Message Queues, Kafka, Pandas, ETL Pipelines, Pub/Sub Patterns, MuleSoft" },
     { label: "Tools & Practices", value: "Git, Jenkins, Jira, Agile/Scrum, OpenAPI/Swagger, JUnit, Dynatrace, ServiceNow" }
   ],
   experience: [
     {
-      title: "Senior Systems Analyst / Full Stack Engineer",
+      title: "Senior Systems Analyst (Full Stack Engineer)",
       company: "Indiana Public Retirement Systems (INPRS)",
       dates: "Feb 2024 – Present",
-      summary: "Lead engineer for financial enterprise processing $500M+ weekly for 500k+ members. Own product development from concept to production with high autonomy.",
       bullets: [
         { label: "Product Development:", text: " Architected and built internal automation platform (React + Python + Spring Boot + Docker) that reduced manual operations by 50+ hours/week, taking ambiguous requirements to production-ready solutions independently." },
         { label: "Billing & Financial Systems:", text: " Engineered critical integrations for financial processes handling hundreds of millions of dollars annually, ensuring zero-downtime deployments and fault-tolerant data pipelines." },
@@ -63,8 +62,8 @@ const resumeData = {
       summary: "Core contributor delivering customer-focused software solutions for financial enterprise. Promoted to senior role based on technical ownership and delivery excellence.",
       bullets: [
         { label: "Lead Generation & CRM:", text: " Owned end-to-end data migration and integration development for Salesforce CRM implementation, migrating hundreds of millions of records while maintaining data integrity across complex dependencies." },
-        { label: "Frontend Development:", text: " Led redesign of member-facing web applications using React (Vite, MUI), increasing customer satisfaction scores by 30%+ through improved UX and performance." },
-        { label: "System Integrations:", text: " Developed enterprise integrations using MuleSoft, REST APIs, and custom Python/Java services connecting disparate financial systems with reliable data orchestration." },
+        { label: "Frontend Development:", text: " Design and build of member-facing web applications, increasing customer satisfaction scores by 30%+ through improved UX and performance." },
+        { label: "System Integrations:", text: " Developed enterprise integrations using MuleSoft, REST APIs, and Java services connecting disparate financial systems with reliable data orchestration." },
         { label: "Automation & Scripting:", text: " Built automated workflows and ETL pipelines using Python, Bash, and SQL that eliminated manual processes and ensured consistent data quality across systems." },
         { label: "Agile Delivery:", text: " Collaborated across cross-functional teams in Agile environment, consistently delivering high-quality features on schedule while maintaining rigorous code review standards." }
       ]
