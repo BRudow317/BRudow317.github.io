@@ -1,31 +1,28 @@
-import {useContext} from 'react';
+// import {useContext} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/HomePage/HomePage';
 import { ResumePage } from './pages/ResumePage/ResumePage';
 import { DemoPage } from './pages/DemoPage/DemoPage';
 import { GoogleAddressPage } from './pages/GoogleAddressPage/GoogleAddressPage';
 import { MessageCenterPage } from './pages/MessageCenterPage/MessageCenterPage';
-import { MainLayout } from './layouts/MainLayout.jsx';
-import { ROUTES } from './utils/Constants/routes.js';
+import { Layout } from './layouts/Layout.jsx';
+import { ROUTES } from './constants/routes.js';
 
 // Themes 
-import { BreakpointProvider} from './context/BreakpointContext/BreakpointContext';
-import './themes/GlobalStyles.css';
-// import './themes/MediaTokens.css';
-// import './themes/MediaFlexLayouts.css';
-import './themes/ColorTokens.css';
+import { BreakpointProvider} from './context/BreakpointContext';
+import { ThemeProvider } from './context/ThemeContext';
+import './styles/ColorTokens.css';
 
 export  { App };
 
-
-
 function App() {
   return (
+    <ThemeProvider>
     <BreakpointProvider>
     <BrowserRouter>  
       <Routes>
         {/* Parent Route controls the Site Layout */}
-        <Route path="/" element={<MainLayout />}>
+        <Route path="/" element={<Layout />}>
           {/* Index element controls the default page */}
           <Route index element={<HomePage />} />
           <Route path={ROUTES.RESUME} element={<ResumePage />} />
@@ -36,5 +33,6 @@ function App() {
       </Routes>
     </BrowserRouter>
     </BreakpointProvider>
+    </ThemeProvider>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GoogleAddrSelMap } from "../../features/GoogleAddrSelMap/GoogleAddrSelMap.jsx";
+import { GoogleAddrSelMap } from "./GoogleAddrSelMap.jsx";
 
 export { GoogleAddressPage };
 
@@ -9,7 +9,7 @@ function GoogleAddressPage() {
 
   return (
     <>
-      <h2>Google Input From Hook</h2>
+      <h2>Google Input with Select</h2>
       <GoogleSelectInput
         style={{ width: "300px" , lineHeight: "2rem"}}
         value={address}
@@ -18,8 +18,8 @@ function GoogleAddressPage() {
           console.log("Selected:", location);
         }}
       />
-      <h2>Google Map From Hook</h2>
-      <GoogleMapBox style={{ height: "300px", aspectRatio: "1/1" }} />
+      <h2>Google Map</h2>
+      <GoogleMapBox style={{ width: "300px", aspectRatio: "1/1" }} />
     </>
   );
 }

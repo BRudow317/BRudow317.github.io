@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 
 export default defineConfig({
+  base: "/", 
+  //process.env.VITE_BASE_PATH || "/",
   plugins: [react()],
   server: {
     allowedHosts: [
@@ -14,6 +16,7 @@ export default defineConfig({
       "www.millerlandman.com",
       "miller-land-management.com",
       "www.miller-land-management.com",
+      "brudow317.github.io"
     ],
     // port: 6050,
     watch: {

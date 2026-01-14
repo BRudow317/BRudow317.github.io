@@ -39,8 +39,7 @@ function HomePage() {
         ><button role="button"
         style={{  height: "100%", width: "100%", 
         backgroundColor: "var(--My-Cyan)",
-        color: mixer("var(--Text-Color)", 50), 
-        // borderColor: mixer("var(--My-Cyan)", 50, "in srgb", "var(--My-Navy)", 50, "in srgb"), 
+        color: mixer("var(--Text-Color)", 50),
         borderRadius: "8px",
         borderWidth: "4px",
         borderStyle: "solid",

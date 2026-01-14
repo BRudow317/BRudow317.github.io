@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 export { ThemeProvider, useTheme };
 
 const ThemeContext = createContext(undefined);
+const THEMES = ["my-theme", "dark", "light", "git"];
 
 function ThemeDomSync({ theme }) {
   useEffect(() => {
@@ -16,7 +17,11 @@ function ThemeProvider({ children }) {
   const [theme, setTheme] = useState("dark");
 
   const toggleTheme = () => {
-    setTheme((curr) => (curr === "dark" ? "light" : "dark"));
+    setTheme((curr) => {
+      const index = THEMES.indexOf(curr);
+      const nextIndex = index === -1 ? 0 : (index + 1) % THEMES.length;
+      return THEMES[nextIndex];
+    });
   };
 // Memoize the context value to optimize performance
   const value = useMemo(() => ({ theme, toggleTheme }), [theme]);

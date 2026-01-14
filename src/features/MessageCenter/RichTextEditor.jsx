@@ -174,28 +174,6 @@ function RichTextEditor({
   };
 
   /**
-   * Handle keyboard shortcuts.
-   * Standard text editor shortcuts that users expect.
-   */
-  const handleKeyDown = useCallback((e) => {
-    // Ctrl/Cmd + B = Bold
-    if ((e.ctrlKey || e.metaKey) && e.key === 'b') {
-      e.preventDefault();
-      execCommand('bold');
-    }
-    // Ctrl/Cmd + I = Italic
-    if ((e.ctrlKey || e.metaKey) && e.key === 'i') {
-      e.preventDefault();
-      execCommand('italic');
-    }
-    // Ctrl/Cmd + K = Insert link
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-      e.preventDefault();
-      handleInsertLink();
-    }
-  }, [execCommand]);
-
-  /**
    * Insert a link by prompting for URL.
    * In a real app, you might use a modal or inline UI instead of window.prompt.
    */
@@ -217,6 +195,28 @@ function RichTextEditor({
       }
     }
   }, [execCommand]);
+ 
+  /**
+   * Handle keyboard shortcuts.
+   * Standard text editor shortcuts that users expect.
+   */
+  const handleKeyDown = useCallback((e) => {
+    // Ctrl/Cmd + B = Bold
+    if ((e.ctrlKey || e.metaKey) && e.key === 'b') {
+      e.preventDefault();
+      execCommand('bold');
+    }
+    // Ctrl/Cmd + I = Italic
+    if ((e.ctrlKey || e.metaKey) && e.key === 'i') {
+      e.preventDefault();
+      execCommand('italic');
+    }
+    // Ctrl/Cmd + K = Insert link
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      handleInsertLink();
+    }
+  }, [execCommand, handleInsertLink]);
 
   /**
    * TOOLBAR BUTTON DATA:

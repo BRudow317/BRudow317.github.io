@@ -347,7 +347,7 @@ ${textContent}`;
 
       {/* Messages list */}
       <div style={messagesContainerStyle} className={styles.scrollable}>
-        {sanitizedMessages.map((message, index) => (
+        {sanitizedMessages.map((message) => (
           <MessageBubble
             key={message.id}
             message={message}

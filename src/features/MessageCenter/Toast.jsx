@@ -20,20 +20,15 @@ import React, { useEffect } from 'react';
 import { CheckCircle, XCircle, Info, X } from 'lucide-react';
 import styles from '../MessageCenterPage.module.css';
 
-/**
- * Get the appropriate icon for a toast type.
- * @param {string} type - The toast type (success, error, info)
- * @returns {React.Component} The icon component
- */
-function getIcon(type) {
+function getIconElement(type) {
   switch (type) {
     case 'success':
-      return CheckCircle;
+      return <CheckCircle size={20} />;
     case 'error':
-      return XCircle;
+      return <XCircle size={20} />;
     case 'info':
     default:
-      return Info;
+      return <Info size={20} />;
   }
 }
 
@@ -88,8 +83,8 @@ function Toast({
     }
   }, [duration, onClose]);
 
-  const Icon = getIcon(type);
   const typeClass = getTypeClass(type);
+  const iconElement = getIconElement(type);
 
   /**
    * INLINE STYLES:
@@ -116,7 +111,7 @@ function Toast({
   return (
     <div className={`${styles.toast} ${typeClass}`} role="alert">
       <div style={contentStyle}>
-        <Icon size={20} />
+        {iconElement}
         <span>{message}</span>
         {onClose && (
           <button

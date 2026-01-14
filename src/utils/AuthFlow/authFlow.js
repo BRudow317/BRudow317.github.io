@@ -10,10 +10,10 @@
  * });
  * 
  */
-export default authFlow;
+import * as AuthFlow from ".";
+
 export { authFlow };
 
-import  * as AuthFlow from ".";
 var authFlow = {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
@@ -38,7 +38,7 @@ var authFlow = {
       const password = String(body.password || "");
 
       // Never log passwords
-      const expected = USERS[username];
+      const expected = AuthFlow.USERS[username];
       const ok = expected && password === expected;
       console.log("login_attempt", { username, ok });
 
@@ -50,7 +50,7 @@ var authFlow = {
         ttlSeconds: 60 * 15, // 15 minutes
       });
 
-      return json({ accessToken: token, expiresAt: payload.exp }, { origin: allowOrigin });
+      return AuthFlow.jsonResponse({ accessToken: token, expiresAt: payload.exp }, { origin: allowOrigin });
     }
 
     // GET /auth/me (requires Authorization: Bearer ...)
@@ -62,7 +62,7 @@ var authFlow = {
 
         const payload = await AuthFlow.verifyJwtHS256({ secret: env.JWT_SECRET, token });
         return AuthFlow.jsonResponse({ user: { username: payload.sub, role: payload.role }, exp: payload.exp }, { origin: allowOrigin });
-      } catch (e) {
+      } catch {
         return AuthFlow.jsonResponse({ error: "Unauthorized" }, { status: 401, origin: allowOrigin });
       }
     }

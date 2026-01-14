@@ -1,16 +1,17 @@
-import { NavLink, useLocation } from "react-router-dom";
-import { ROUTES, NAV_NAMES } from "../../utils/Constants/routes.js";
-// import toProperCase from "../../utils/toProperCase.js";
-// import { max } from "@floating-ui/utils";
-// import "../../themes/MediaFlexLayouts.css";
-// import "./NavBar.module.css";
-
-// import * as MediaQuery from "./MediaQuery.module.css";
-// CSS to className
-
-
+import { NavLink } from "react-router-dom";
+import { ROUTES, NAV_NAMES } from "../../constants/routes.js";
+import { useTheme } from "../../context/ThemeContext";
 
 const styles = {
+    NavBar: {
+        width: "100%",
+        height: "56px",
+        overflow: "hidden",
+        // border: "var(--border-1)",
+        backgroundColor: "var(--glass-4)",
+        // position: "sticky",
+        // top: 0,
+    },
     NavList: {
         zIndex: 10,
         display: "flex",
@@ -21,32 +22,32 @@ const styles = {
         padding: 0,
         margin: 0,
         width: "100%",
-        height: "56px",
+        height: "100%",
         gap: "4px",
-        overflow: "hidden",
-        border: "1px solid var(--Text-Color)",
-        backgroundColor: "var(--GlobalBackground)",
-
     },
     NavListItem: {
-        height: "100%",
+        height: "80%",
         width: "100%",
         maxWidth: "100px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "var(--My-GlobalBackground)",
-        borderRadius: "12px",
-        marginTop: "4px",
-        marginBottom: "4px",
     },
     NavLink: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%",
+        height: "100%",
         textAlign: "center",
-        // textStyle: "",
         textDecoration: "none",
         transition: "all 200ms ease",
-        color: "var(--My-GlobalTextColor)",
-        // backgroundColor: "var(--My-Navy)",        
+        color: "var(--text-color)",
+        backgroundColor: "var(--glass-3)",
+        borderRadius: "12px",
+        border: "var(--border-1)",
+        cursor: "pointer",
+
     },
     isActive: {
         // transform: "translateY(var(--lift-y-1, 1px))",
@@ -57,12 +58,12 @@ const styles = {
 //                 ? { ...styles.NavLink, ...active } : styles.NavLink}
 
 export const NavBar = () => {
-    const location = useLocation(); //{location}
+    const { toggleTheme } = useTheme();
   return (
-    // <div role="navigation" 
-    //     name="NavShell"
-    //     style={styles.NavShell}
-    // >
+    <nav style={styles.NavBar}
+        name="NavBar"
+        role="navigation"
+    >
     <ul style={styles.NavList}
         name="NavList"
     >
@@ -75,18 +76,26 @@ export const NavBar = () => {
         >
             <NavLink
                 name="NavLink"
-                // role="button" 
+                role="button" 
                 id={`Nav:${key}`}
                 style={ styles.NavLink }
-                className ={ ({ isActive }) => isActive ? "green-style" : "green-style:active" }
                 to={value}
                 end={value === "/"}
             >
                 {NAV_NAMES[value]}
             </NavLink>
-        </li>
-      ))}
+        </li>))
+      }
+      <li 
+        key="ThemeToggle"
+        name="NavListItem"
+        style={styles.NavListItem}
+        role="button"
+      ><button
+        style={{ ...styles.NavLink }}
+        onClick={toggleTheme}
+      >Theme</button></li>
     </ul>
-    // </div>
+    </nav>
   );
 }

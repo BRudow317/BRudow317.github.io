@@ -1,5 +1,5 @@
 /**
- * Demo user store (DO NOT do this in production).
+ * Demo user store
  * @returns {Object} - Demo user map.
  */
 export default USERS;

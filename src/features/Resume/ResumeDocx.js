@@ -1,6 +1,6 @@
 // import Packer from "docx/build/file/packer.js";
-const { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel, LevelFormat, BorderStyle, ExternalHyperlink } = require('docx');
-const fs = require('fs');
+import { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel, LevelFormat, BorderStyle, ExternalHyperlink } from 'docx';
+import fs from 'node:fs';
 
 const doc = new Document({
   styles: {

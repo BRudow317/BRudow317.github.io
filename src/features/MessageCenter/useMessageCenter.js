@@ -365,6 +365,7 @@ export function useMessageCenter() {
       await messageService.toggleStarred(idToToggle);
     } catch (error) {
       // ROLLBACK
+      console.error('Failed to update star:', error);
       setConversations(prev => prev.map(c =>
         c.id === idToToggle ? { ...c, isStarred: conv.isStarred } : c
       ));
@@ -393,6 +394,7 @@ export function useMessageCenter() {
       await messageService.markAsRead(selectedId, newRead);
     } catch (error) {
       // ROLLBACK
+      console.error('Failed to update read status:', error);
       setConversations(prev => prev.map(c =>
         c.id === selectedId ? { ...c, isRead: !newRead } : c
       ));

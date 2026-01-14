@@ -23,27 +23,17 @@ import { Paperclip, FileText, Image, File, Download } from 'lucide-react';
 import { formatMessageDateTime } from '../utils/dateUtils';
 import styles from '../MessageCenterPage.module.css';
 
-/**
- * Get the appropriate icon for an attachment based on its type.
- * @param {string} kind - The attachment kind (pdf, image, file, etc.)
- * @returns {React.Component} The Lucide icon component
- */
-function getAttachmentIcon(kind) {
-  switch (kind) {
-    case 'pdf':
-      return FileText;
-    case 'image':
-      return Image;
-    default:
-      return File;
-  }
-}
+const ATTACHMENT_ICON_BY_KIND = {
+  pdf: FileText,
+  image: Image,
+  default: File,
+};
 
 /**
  * AttachmentChip - Displays a single attachment with download link.
  */
 function AttachmentChip({ attachment }) {
-  const Icon = getAttachmentIcon(attachment.kind);
+  const Icon = ATTACHMENT_ICON_BY_KIND[attachment.kind] ?? ATTACHMENT_ICON_BY_KIND.default;
   
   return (
     <a
