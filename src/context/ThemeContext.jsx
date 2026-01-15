@@ -14,7 +14,7 @@ function ThemeDomSync({ theme }) {
 }
 
 function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("git");
 
   const toggleTheme = () => {
     setTheme((curr) => {

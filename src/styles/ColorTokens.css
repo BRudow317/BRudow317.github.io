@@ -16,7 +16,8 @@
   /* GitHub Theme Colors */
   --git-dark: rgb(3, 4, 9);
   --git-green: rgb(66, 134, 60);
-  --git-navy: rgb(14, 17, 24);
+  --git-navy: rgb(13, 17, 23);
+  --git-blue: rgb(14, 17, 24);
   --git-grey: rgb(159, 159, 159);
   --git-white: rgb(255, 255, 255);
 
@@ -32,6 +33,20 @@
   --my-white: rgb(255, 255, 255);
   --my-grey: #e0e0e0;
   --my-gray: var(--my-grey);
+
+  --panel: #f6f8fa;
+  --border: #d0d7de;
+  --hover: #eef1f4;
+  --active: #eaeef2;
+  --shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+
+  --radius: 10px;
+  --radius-sm: 8px;
+
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
 
   /* Tints and Transparencies */
   --transparent: rgba(0, 0, 0, 0);
@@ -161,13 +176,27 @@ html[data-theme="git"] {
   --text-color: var(--my-white);
   --text-1: var(--text-color);
   --text-2: var(--git-grey);
+  --text-3: #24292f;
   --bg: var(--git-navy);
   --bg-1: var(--bg);
   --bg-2: var(--git-dark);
+  --bg-3: #161b22;
   --accent-1: var(--git-grey); 
-  --accent-2: var(--light-50);
+  --accent-2: rgb(87, 96, 106);
+  --accent-3: #30363d;
+  --accent-4: #1f2630;;
   --item-1: var(--git-green);
   --item-2: var(--blue);
+  
+  --border-1: var(--accent-3);
+  
+  --hover-1: var(--accent-4);
+  
+  --panel: var(--bg-3);
+    
+  --active-1: #222a35;
+
+  --box-shadow-1: 0 1px 0 rgba(1, 4, 9, 0.6);
 
   --blur: blur(3px);
   --webkit-back-blur: blur(2px);

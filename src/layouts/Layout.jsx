@@ -1,60 +1,48 @@
-import { NavBar } from "../features/NavBar/NavBar.jsx";
-import { Outlet } from "react-router-dom";
-import {default as image} from "../assets/images/rudow_fam.jpg";
-import {useBreakpoint} from "../context/BreakpointContext";
+import { SideNav } from "../features/Nav/SideNav.jsx";
+import { Outlet, useLocation } from "react-router-dom";
+import { TopBar } from "../features/Nav/TopBar.jsx";
 
-export { Layout };
-
-function Layout() {
-  const screenSize = useBreakpoint();
-  // const isMobile = screenSize === "xsm" || screenSize === "sm";
+export function Layout() {
+  const location = useLocation();
 
   const styles = {
-    SiteContainer: {
+    App: {
+      display: "flex",
+      flexDirection: "row",
+      minHeight: "100dvh",
+      minWidth: "100dvw",
       width: "100%",
-      height: "100svh",
-      padding: 0,
-      margin: 0,
-      boxSizing: "border-box",
+      height: "100%",
     },
-
-    AppContainer: {
+    Main: {
+      display: "flex",
+      flexDirection: "column",
       width: "100%",
-      height: "100svh",
-      padding: 0,
-      margin: 0,
-      boxSizing: "border-box",
-      color: "var(--text-color)",
-      // backgroundColor: "var(--bg)",
+      height: "100%",
     },
-
-    BackgroundImage: {
-      isolation: "isolate",
-      zIndex: -5,
-      position: "fixed",
-      inset: 0,
-      padding: 0,
-      margin: 0,
-      backgroundImage: `url(${image})`,
-      backgroundAttachment: "scroll",
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "50% 20%",
-      backgroundColor: "var(--bg)",
-
+    Content: {
+      padding: "18px",
+      width: "100%",
+      height: "100%",
+      borderTop: "2px solid var(--border-1)",
+      borderLeft: "2px solid var(--border-1)",
     },
   };
 
   return (
-    <>
-      <div style={styles.BackgroundImage} role="Background-Image" />
-      <div style={styles.SiteContainer} role="Site-Container">
-        <NavBar screenSize={screenSize} />
-        <div style={styles.AppContainer} role="App-Container">
+    <div id="App" style={styles.App}>
+      <SideNav />
+      <main id="Main" style={styles.Main} role="main">
+        <TopBar />
+        <div
+          id="Content"
+          style={styles.Content}
+          className="fadein"
+          key={location.pathname}
+        >
           <Outlet />
-      </div>
-      </div>
-    </>
+        </div>
+      </main>
+    </div>
   );
 }
-

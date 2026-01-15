@@ -145,7 +145,7 @@ const doc = new Document({
       }),
       new Paragraph({
         style: "SummaryText",
-        children: [new TextRun("Product-focused Full Stack Engineer with 5+ years building and modernizing financial web applications for enterprise systems processing hundreds of millions of dollars annually. Experienced taking ambiguous product ideas from inception to production with full autonomy across the stack. Proven track record in billing systems, API development, cloud infrastructure, and database optimization. Known for balancing engineering best practices with business timelines—delivering scalable, modular solutions without over-engineering.")]
+        children: [new TextRun("Product-focused Full Stack Engineer with 5+ years building and modernizing financial web applications for enterprise systems processing hundreds of millions of dollars annually. Experienced taking ambiguous product ideas from inception to production with full autonomy across the stack. Proven track record in billing systems, API development, cloud infrastructure, and database optimization. Known for balancing engineering best practices with business timelines-delivering scalable, modular solutions without over-engineering.")]
       }),
 
       // Core Technical Skills
@@ -216,7 +216,7 @@ const doc = new Document({
       }),
       new Paragraph({
         style: "CompanyLine",
-        children: [new TextRun("Indiana Public Retirement Systems (INPRS) | Feb 2024 – Present")]
+        children: [new TextRun("Indiana Public Retirement Systems (INPRS) | Feb 2024 - Present")]
       }),
       new Paragraph({
         style: "SummaryText",
@@ -260,7 +260,7 @@ const doc = new Document({
       }),
       new Paragraph({
         style: "CompanyLine",
-        children: [new TextRun("Indiana Public Retirement Systems (INPRS) | Apr 2022 – Feb 2024")]
+        children: [new TextRun("Indiana Public Retirement Systems (INPRS) | Apr 2022 - Feb 2024")]
       }),
       new Paragraph({
         style: "SummaryText",
@@ -298,14 +298,14 @@ const doc = new Document({
         style: "Education",
         children: [
           new TextRun({ text: "B.S., Informatics", bold: true }),
-          new TextRun(" (Minor: HCI/UX) | Indiana University Indianapolis | 2020–2022")
+          new TextRun(" (Minor: HCI/UX) | Indiana University Indianapolis | 2020-2022")
         ]
       }),
       new Paragraph({
         style: "Education",
         children: [
           new TextRun({ text: "A.S., Software Development", bold: true }),
-          new TextRun(" | Ivy Tech Community College | 2018–2020")
+          new TextRun(" | Ivy Tech Community College | 2018-2020")
         ]
       })
     ]
