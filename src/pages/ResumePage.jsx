@@ -5,6 +5,7 @@
 
 // export { Resume };
 import { RESUME_DATA } from '../constants/RESUME_DATA';
+// eslint-disable-next-line react-refresh/only-export-components
 export {
   ResumePage,
   styles,
