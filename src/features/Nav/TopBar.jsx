@@ -1,5 +1,15 @@
 
-export const TopBar = () => {
+import { PERSONAL_DATA } from '../../constants/PERSONAL_DATA';
+export const TopBar = (
+  {
+    name = PERSONAL_DATA.name,
+    title = PERSONAL_DATA.title,
+    email = PERSONAL_DATA.email,
+    sites = PERSONAL_DATA.sites,
+    infoSites = PERSONAL_DATA.infoSites,
+  } = {}
+
+) => {
   
   const styles = {
     TopBar: {
@@ -16,7 +26,7 @@ export const TopBar = () => {
       padding: "0",
       boxShadow: "var(--box-shadow-1)",
       justifyContent: "space-between",
-      // borderBottom: "1px solid var(--border-1)",
+      borderBottom: "2px solid var(--border-1)",
     },
 
     TopBarRow: {
@@ -40,20 +50,19 @@ export const TopBar = () => {
   };
 
   return (
-    <div style={styles.TopBar}>
+    <section style={styles.TopBar}>
       <div id="TopBarRow1" style={styles.TopBarRow}>
-      <h3 style={styles.BrandName}><a href="https://www.linkedin.com/in/blaine-rudow/"
-      >Blaine Rudow</a></h3>
-      <h3 style={styles.BrandMeta}><a href="https://aws.amazon.com/what-is/full-stack-development"
-      >Full Stack Engineer</a></h3>
-      <h3 style={styles.BrandMeta}><a href="https://github.com/BRudow317" target="_blank" rel="noreferrer"
+      <h3 style={styles.BrandName}><a href={sites.find(site => site.id === "linkedin").url} target="_blank" rel="noreferrer"
+      >{name}</a></h3>
+      <h3 style={styles.BrandMeta}><a href={infoSites.find(site => site.id === "softwareengineer").url} target="_blank" rel="noreferrer"
+      >{title}</a></h3>
+      <h3 style={styles.BrandMeta}><a href={sites.find(site => site.id === "github").url} target="_blank" rel="noreferrer"
       >GitHub</a></h3>
-      <h3 style={styles.BrandMeta}><a href="https://www.linkedin.com/in/blaine-rudow/" target="_blank"
-          rel="noreferrer"
+      <h3 style={styles.BrandMeta}><a href={sites.find(site => site.id === "linkedin").url} target="_blank" rel="noreferrer"
         >Linkedin</a>
       </h3>
-      <h3 style={styles.BrandMeta}><a href="mailto:blainerudow@gmail.com">blainerudow@gmail.com</a></h3>
+      <h3 style={styles.BrandMeta}><a href={`mailto:${email}`}>{email}</a></h3>
       </div>
-    </div>
+    </section>
   );
 };

@@ -8,15 +8,36 @@ export const RESUME_DATA = {
     linkedin: { url: "https://linkedin.com/in/blaine-rudow", text: "linkedin.com/in/blaine-rudow" },
     github: { url: "https://github.com/BRudow317", text: "github.com/BRudow317" }
   },
-  summary: "Product-focused Full Stack Engineer with 5+ years building and modernizing financial web applications for enterprise systems processing hundreds of millions of dollars annually. Experienced taking ambiguous product ideas from inception to production with full autonomy across the stack. Proven track record in billing systems, API development, cloud infrastructure, and database optimization. Known for balancing engineering best practices with business timelines-delivering scalable, modular solutions without over-engineering.",
+  summary: "Software Engineer with 4+ years of experience building and deploying distributed systems processing $1B+ annually. Saved $1M+ in vendor contracts by architecting and implementing a cloud migration and integration that eliminated our legacy CRM dependency. Expert at delivering full-stack solutions and applications autonomously with primary experience in: AWS, JavaScript & TypeScript, Python, Java, and SQL.",
   skills: [
-    { label: "Languages", value: "Python, JavaScript/TypeScript, Java, SQL, Bash, Node.js" },
-    { label: "Backend & APIs", value: "RESTful APIs, Spring Boot, FastAPI, Microservice Architecture, Distributed Systems, Flask" },
-    { label: "Frontend", value: "React, HTML5/CSS3, SPA Architecture, UI/UX Design" },
-    { label: "Cloud & Infrastructure", value: "AWS (EC2, S3, Lambda, RDS, CloudFront, CloudFormation), Terraform, Docker, Linux" },
-    { label: "Databases", value: "AWS DynamoDB, PostgreSQL (SQL Alchemy, Supabase), Oracle (Hibernate), NoSQL" },
-    { label: "Data & Messaging", value: "JMS/Message Queues, Kafka, Pandas, ETL Pipelines, Pub/Sub Patterns, MuleSoft" },
-    { label: "Tools & Practices", value: "Git, Jenkins, Jira, Agile/Scrum, OpenAPI/Swagger, JUnit, Dynatrace, ServiceNow" }
+    { 
+    label: "Languages",
+    value: "Java, Python, SQL, JavaScript, TypeScript, Bash, PL/SQL" 
+  },
+  { 
+    label: "Backend",
+    value: "Spring Boot, FastAPI, Flask, AWS Lambda, SQL Alchemy, JUnit, Mockito, Hibernate (JPA)" 
+  },
+  { 
+    label: "Frontend & APIs",
+    value: "React, AWS API Gateway, AWS CloudFront, Responsive Design, RESTful APIs, OpenAPI/Swagger" 
+  },
+  { 
+    label: "Data & Persistence",
+    value: "PostgreSQL, Oracle, AWS DynamoDB, AWS S3,  AWS RDS, Data Model Design" 
+  },
+  { 
+    label: "Integrations",
+    value: "JMS, Event-Driven Architecture, Scripting, Batch Processing, ETL Pipelines"
+  },
+    { 
+        label: "Security", 
+        value: "AWS Cognito, AWS VPC, AWS IAM, OAuth2.0, OIDC, JWT"
+    },
+  { 
+    label: "Tools & DevOps",
+    value: "Git (GitHub, GitLab, Bitbucket), Linux, Docker (Compose), Vite, Maven, Gradle, Jenkins CI/CD, Dynatrace, Rundeck, Agile" 
+  }
   ],
   experience: [
     {

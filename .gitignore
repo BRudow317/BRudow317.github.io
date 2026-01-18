@@ -14,8 +14,8 @@ docker-compose.override.yml
 # Documentation
 **/externalResources/
 ProjectDocs/
-# Logs
 **/bin/
+**/.bin/
 *.log
 **.log
 **/logs/

@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import { NavItems } from "./NavItems";
 import image from "../../assets/images/LinuxPenguin.jpg";
@@ -6,14 +5,27 @@ import image from "../../assets/images/LinuxPenguin.jpg";
 
 
 export function SideNav() {
+  const topBarHeight = "62px";
+
   const styles = {
     SideNav: {
-      // borderRight: "1px solid var(--border-1)",
-      backgroundColor: "var(--bg-2)",
-      padding: "18px",
+      position: "relative",
       display: "flex",
       flexDirection: "column",
       gap: "14px",
+      backgroundColor: "var(--bg-2)",
+      padding: "18px",
+      paddingTop: "12px",
+    },
+
+    SideNavBorderOverlay: {
+      position: "absolute",
+      top: topBarHeight,
+      right: 0,
+      bottom: 0,
+      width: "2px",
+      backgroundColor: "var(--border-1)",
+      pointerEvents: "none",
     },
 
     NavGroup: { display: "flex", flexDirection: "column", gap: "6px" },
@@ -25,31 +37,28 @@ export function SideNav() {
       padding: "6px 10px",
     },
 
-    Brand: {
-      display: "flex",
-      gap: "12px",
-      // alignItems: "center",
-      padding: "10px",
-      border: "1px solid var(--border-1)",
-      borderRadius: "var(--radius)",
-      backgroundColor: "var(--bg-2)",
-      boxShadow: "var(--box-shadow-1)",
-    },
-
     AvatarShell: {
-      width: "40px",
-      height: "40px",
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "100%",
+      minHeight: "110px",
       borderRadius: "999px",
-      border: "1px solid var(--border-1)",
-      background:
-        "linear-gradient(180deg, rgba(125, 133, 144, 0.25), rgba(125, 133, 144, 0.05))",
+      
+
     },
 
     Avatar: {
-      width: "100%",
-      height: "100%",
+      // display: "flex",
+      // justifyContent: "center",
+      // alignItems: "center",
+      width: "100px",
+      height: "100px",
       borderRadius: "999px",
       objectFit: "contain",
+      aspectRatio: "1 / 1",
+      border: "1px solid var(--border-1)",
       
     },
 
@@ -68,16 +77,13 @@ export function SideNav() {
 
   return (
     <nav style={styles.SideNav} aria-label="Primary">
-      <div style={styles.Brand}>
-        <div style={styles.AvatarShell} >
-          {/* Avatar */}
-          <img 
-            src={image}
-            alt="Penguin Avatar"
-            style={styles.Avatar}  
-          />
-        </div>
-        
+      <div style={styles.SideNavBorderOverlay} />
+      <div style={styles.AvatarShell}>
+        <img
+          src={image}
+          alt="Penguin Avatar"
+          style={styles.Avatar}
+        />
       </div>
 
       <div style={styles.NavGroup}>

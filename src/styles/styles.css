@@ -13,17 +13,11 @@ html, body {
 a { color: inherit; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-
-
-
-
 .divider {
   height: 1px;
   background-color: var(--border-1);
   margin: 2px 0;
 }
-
-
 
 .navitem {
   appearance: none;
@@ -44,17 +38,13 @@ a:hover { text-decoration: underline; }
   border-color: var(--border-1);
 }
 
-
-
 .dot { opacity: 0.8; }
-
 
 .fadein { animation: fade 160ms ease-out; }
 @keyframes fade {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 
 
 .muted { color: var(--accent-2); font-size: 13px; }

@@ -24,8 +24,8 @@ export function Layout() {
       padding: "18px",
       width: "100%",
       height: "100%",
-      borderTop: "2px solid var(--border-1)",
-      borderLeft: "2px solid var(--border-1)",
+      // borderTop: "2px solid var(--border-1)",
+      // borderLeft: "2px solid var(--border-1)",
     },
   };
 

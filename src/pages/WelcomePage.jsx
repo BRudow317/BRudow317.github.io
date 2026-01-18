@@ -1,8 +1,12 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { PERSONAL_DATA } from '../constants/PERSONAL_DATA';
+import { SKILLS_DATA } from '../constants/SKILLS_DATA';
+import { PROFESSIONAL_SUMMARY } from '../constants/PROFESSIONAL_SUMMARY';
+
+const skills = SKILLS_DATA;
 
 export function WelcomePage() {
-  var styles={
+  const styles={
     Screen: {
       display: 'flex',
       flexDirection: 'column',
@@ -53,30 +57,45 @@ export function WelcomePage() {
       flexWrap: 'wrap',
       marginTop: '14px',
     },
+    skillText: {
+      color: 'var(--text-2)',
+    },
   }
 
 
+  const SkillRow = ({ label, value }) => (
+    <li style={styles.skillRow}>
+      <p className="body" style={styles.skillText}>
+        <label id={label}>{label}: </label>
+        {value}
+      </p>
+    </li>
+  );
+
+  const SkillsSection = ({ skills }) => (
+    <section id="SkillsSection" className="card">
+      <h3 className="card_title">Core Technical Skills</h3>
+      <ul className="list">
+      {skills.map((skill, idx) => (
+        <SkillRow key={idx} label={skill.label} value={skill.value} />
+      ))}
+      </ul>
+    </section>
+  );
+
   return (
-    <section style={styles.Screen} aria-label="Welcome">
-      <div style={styles.Hero}>
-        <h1 style={styles.HeroTitle}>Blaine Rudow</h1>
-        <p style={styles.HeroSubtitle}>Full Stack Engineer • Web Designer</p>
+    <main style={styles.Screen} aria-label="Welcome">
+      <section style={styles.Hero}>
+        <h1 style={styles.HeroTitle}>{PERSONAL_DATA.name}</h1>
+        <p style={styles.HeroSubtitle}>{PERSONAL_DATA.title}</p>
 
         <p style={styles.HeroSummary}>
-          Product-focused Full Stack Engineer with 5+ years building and 
-          modernizing financial web applications for enterprise 
-          systems processing hundreds of millions of dollars annually. 
-          Experienced taking ambiguous product ideas from inception to 
-          production with full autonomy across the stack. Proven track 
-          record in billing systems, API development, cloud infrastructure, 
-          and database optimization. Known for balancing engineering best 
-          practices with business timelines-delivering scalable, 
-          modular solutions without over-engineering.
+          {PROFESSIONAL_SUMMARY.find(obj => obj.id === 'primary').text}
         </p>
 
         <div style={styles.HeroActions}>
           <Link className="btn btn-primary" to="/resume">View resume</Link>
-          <Link className="btn" to="/projects/quickbitlabs">View projects</Link>
+          <Link className="btn" to="/projects">View projects</Link>
         </div>
 
         <div style={styles.HeroMeta}>
@@ -88,20 +107,9 @@ export function WelcomePage() {
           <span className="pill">Integrations: REST | GraphQL | Messaging | Queues</span>
           
         </div>
-      </div>
+      </section>
 
-      <div className="card">
-        <div className="card_title">Core Technical Skills</div>
-        <ul className="list">
-          <li>Languages: Python, JavaScript/TypeScript, Java, SQL, Bash, Node.js</li>
-          <li>Backend & APIs: RESTful APIs, Spring Boot, FastAPI, Microservice Architecture, Distributed Systems, Flask</li>
-          <li>Frontend: React, HTML5/CSS3, SPA Architecture, UI/UX Design</li>
-          <li>Cloud & Infrastructure: AWS (EC2, S3, Lambda, RDS, CloudFront, CloudFormation), Terraform, Docker, Linux</li>
-          <li>Databases: AWS DynamoDB, PostgreSQL (SQL Alchemy, Supabase), Oracle (Hibernate), NoSQL, Query Performance Tuning</li>
-          <li>Data & Messaging: JMS/Message Queues, Kafka, Pandas, ETL Pipelines, Pub/Sub Patterns, MuleSoft</li>
-          <li>Tools & Practices: Git, Jenkins, Jira, Agile/Scrum, OpenAPI/Swagger, JUnit, Dynatrace, ServiceNow</li>
-        </ul>
-      </div>
-    </section>
+      <SkillsSection skills={skills} />
+    </main> 
   );
 }

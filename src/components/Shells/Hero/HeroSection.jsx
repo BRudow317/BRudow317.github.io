@@ -3,6 +3,7 @@
 // import {useContext} from "react";
 import {useBreakpoint} from "../../../../context/BreakpointContext";
 import {useSmoothScroll} from "../../../../hooks/useSmoothScroll";
+
 export { HeroSection };
 
 function HeroSection() {
