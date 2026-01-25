@@ -1,13 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { NavItems } from "./NavItems";
-import image from "../../assets/images/LinuxPenguin.jpg";
+import image from "../../assets/images/Headshot.jpg";
 
 
 
-export function SideNav() {
-  const topBarHeight = "62px";
-
-  const styles = {
+export function SideNav({
+  topBarHeight = "62px",
+  styles = {
     SideNav: {
       position: "relative",
       display: "flex",
@@ -73,7 +72,8 @@ export function SideNav() {
       textShadow: "var(--text-shadow)",
       marginTop: "2px",
     },
-  };
+  }
+} = {}) {  
 
   return (
     <nav style={styles.SideNav} aria-label="Primary">
@@ -81,7 +81,7 @@ export function SideNav() {
       <div style={styles.AvatarShell}>
         <img
           src={image}
-          alt="Penguin Avatar"
+          alt="Headshot"
           style={styles.Avatar}
         />
       </div>
