@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { NavItems } from "./NavItems";
-import image from "../../assets/images/Headshot.jpg";
+import image from "../../assets/images/Headshot.png";
 
 
 
