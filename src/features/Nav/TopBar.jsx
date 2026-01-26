@@ -7,11 +7,8 @@ export const TopBar = (
     email = PERSONAL_DATA.email,
     sites = PERSONAL_DATA.sites,
     infoSites = PERSONAL_DATA.infoSites,
-  } = {}
-
-) => {
-  
-  const styles = {
+    topBarHeight = 60,
+    styles = {
     TopBar: {
       /* position: sticky;
   top: 0; */
@@ -22,11 +19,12 @@ export const TopBar = (
       zIndex: 5,
       backgroundColor: "var(--bg-2)",
       backdropFilter: "blur(10px)",
-      minHeight: "60px",
+      height: `${topBarHeight}px`,
       padding: "0",
       boxShadow: "var(--box-shadow-1)",
       justifyContent: "space-between",
       borderBottom: "2px solid var(--border-1)",
+      boxSizing: "border-box",
     },
 
     TopBarRow: {
@@ -47,7 +45,12 @@ export const TopBar = (
       alignItems: "center",
       fontSize: "18px",
     },
-  };
+  }
+  } = {}
+
+) => {
+  
+  
 
   return (
     <section style={styles.TopBar}>

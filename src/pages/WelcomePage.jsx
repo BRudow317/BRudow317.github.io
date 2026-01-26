@@ -5,8 +5,7 @@ import { PROFESSIONAL_SUMMARY } from '../constants/PROFESSIONAL_SUMMARY';
 
 const skills = SKILLS_DATA;
 
-export function WelcomePage() {
-  const styles={
+const styles={
     Screen: {
       display: 'flex',
       flexDirection: 'column',
@@ -83,6 +82,8 @@ export function WelcomePage() {
     </section>
   );
 
+export function WelcomePage() {
+  
   return (
     <main style={styles.Screen} aria-label="Welcome">
       <section style={styles.Hero}>

@@ -47,6 +47,7 @@ export function ProjectsViewPage() {
       flexDirection: "column",
       // justifyContent: "center",
       alignContent: "center",
+      minWidth: 0,
     },
     HighlightList: {
       display: "flex",

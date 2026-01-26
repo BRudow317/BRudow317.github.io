@@ -16,7 +16,6 @@ export const PERSONAL_DATA = {
         {id: "linkedin", website: "Linkedin", url: "https://www.linkedin.com/in/blaine-rudow/"},
         {id: "github", website: "GitHub", url: "https://github.com/brudow317"},
         {id: "gitpages", website: "GitHub Portfolio", url: "https://brudow317.github.io/"},
-        {id: "quickbitlabs", website: "QuickBitLabs", url: "https://quickbitlabs.com/"},
         {id: "cloudvoyages", website: "Cloud Voyages", url: "https://cloudvoyages.com/"},
     ],
     education: [
@@ -28,19 +27,9 @@ export const PERSONAL_DATA = {
       {id: "cloudcomputing", website: "What is Cloud Computing?", url: "https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/"},
       {id: "devops", website: "What is DevOps?", url: "https://aws.amazon.com/devops/what-is-devops/"},
       {id: "softwareengineer", website: "What is a Software Engineer?", url: "https://www.computerscience.org/careers/software-engineer/"}
-
+    ],
+    certifications: [
+      {id: "csd", name: "Certified Scrum Developer", issuer: "Scrum Alliance", date: "June 2024"},
+      {id: "hci", name: "Certificate in HCI/UX", issuer: "Indiana University Indianapolis", date: "May 2022"},
     ],
 };
-
-  // { 
-  //   id: "company",
-  //   company: [
-  //           {id: "inprs", companyName: "Indiana Public Retirement Systems", companyUrl: "https://www.in.gov/inprs/",
-  //            role: "Senior Systems Analyst", attendance: {start: "February 2022", end: "Present"} },
-  //           {id: "cloudvoyages", companyName: "Cloud Voyages LLC", companyUrl: "https://cloudvoyages.com/", 
-  //           role: "Founder & Full Stack Engineer", attendance: {start: "October 2025", end: "Present"} },
-  //           {id: "appdev", companyName: "Indiana Public Retirement Systems", companyUrl: "https://www.in.gov/inprs/", 
-  //           role: "Application Developer", attendance: {start: "April 2020", end: "February 2022"} },
-  //       ],
-  // },
-;

@@ -12,9 +12,6 @@ const languagesSkill =
   <SkillRow key={skill.id} label={skill.label} value={skill.value} />
 ))}
  */
-
-// export { Resume };
-// import { resumeData } from '../../constants/RESUME_DATA';
 import { PERSONAL_DATA } from '../../constants/PERSONAL_DATA';
 import { SKILLS_DATA } from '../../constants/SKILLS_DATA';
 import { PROFESSIONAL_SUMMARY } from '../../constants/PROFESSIONAL_SUMMARY';
@@ -36,7 +33,8 @@ export const Resume = (
         maxWidth: '8.5in',
         margin: '0 auto',
         padding: '0.5in',
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        overflowWrap: 'anywhere'
       },
 
       // Header styles
@@ -57,7 +55,8 @@ export const Resume = (
         fontSize: '10pt',
         textAlign: 'center',
         color: '#333',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        overflowWrap: 'anywhere'
       },
       link: {
         color: '#0563C1',

@@ -7,38 +7,6 @@
 
 export const PROJECT_DATA = [
   {
-    id: "quickbitlabs",
-    name: "QuickBitLabs",
-    tagline: "Home lab + automation playground for modern infra experiments.",
-    description:
-      "Structured site for testing and documenting various home lab and automation experiments.",
-    highlights: [
-      "Container Services",
-      "CI/CD",
-      "Full Stack Development",
-      "Test Automation",
-      "Ubuntu Server Management",
-    ],
-    stack: ["Python", "FastAPI", "React", "Docker", "Linux", "PostgreSQL"],
-    links: {
-      repo: "https://github.com/BRudow317/quickbitlabs",
-      live: "https://quickbitlabs.com",
-    },
-  },
-  {
-    id: "millerlandman",
-    name: "Miller Land Management",
-    tagline: "Website for Miller Land Management LLC.",
-    description:
-      "Business site for Miller Land Management LLC in central Indiana.",
-    highlights: ["Google API", "AWS Automated Deployments", "SEO Optimization"],
-    stack: ["AWS S3", "AWS CloudFront", "Supabase", "React", "JavaScript"],
-    links: {
-      repo: "https://github.com/BRudow317/millerlandman",
-      live: "https://millerlandman.com",
-    },
-  },
-  {
     id: "CentralAuthService",
     name: "Central Auth Service",
     tagline: "Centralized authentication service for internal applications.",
@@ -83,6 +51,38 @@ export const PROJECT_DATA = [
     links: {
       repo: "https://github.com/BRudow317/Scripts",
       live: "https://resume-api.com",
+    },
+  },
+  {
+    id: "quickbitlabs",
+    name: "QuickBitLabs",
+    tagline: "Home lab + automation playground for modern infra experiments.",
+    description:
+      "Structured site for testing and documenting various home lab and automation experiments.",
+    highlights: [
+      "Container Services",
+      "CI/CD",
+      "Full Stack Development",
+      "Test Automation",
+      "Ubuntu Server Management",
+    ],
+    stack: ["Python", "FastAPI", "React", "Docker", "Linux", "PostgreSQL"],
+    links: {
+      repo: "https://github.com/BRudow317/quickbitlabs",
+      live: "https://quickbitlabs.com",
+    },
+  },
+  {
+    id: "millerlandman",
+    name: "Miller Land Management",
+    tagline: "Website for Miller Land Management LLC.",
+    description:
+      "Business site for Miller Land Management LLC in central Indiana.",
+    highlights: ["Google API", "AWS Automated Deployments", "SEO Optimization"],
+    stack: ["AWS S3", "AWS CloudFront", "Supabase", "React", "JavaScript"],
+    links: {
+      repo: "https://github.com/BRudow317/millerlandman",
+      live: "https://millerlandman.com",
     },
   },
 ];

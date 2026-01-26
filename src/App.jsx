@@ -5,7 +5,7 @@ import {
   Route,
   Navigate,
   useParams,
-} from "react-router-dom";
+} from "react-router";
 
 import { WelcomePage } from "./pages/WelcomePage";
 import { ResumePage } from "./pages/ResumePage";
