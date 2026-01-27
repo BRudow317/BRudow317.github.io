@@ -6,7 +6,8 @@ let topBarHeight = 60;
 
 export const Layout = () => {
   const screenSize = useBreakpoint();
-  const isMobile = screenSize === "xs" || screenSize === "sm";
+  console.log("Screen Size in Layout:", screenSize);
+  const isMobile = screenSize === "xsm" || screenSize === "sm";
 
-  return isMobile ? <MobileLayout topBarHeight={topBarHeight} /> : <DesktopLayout topBarHeight={topBarHeight} />;
+  return isMobile ? <MobileLayout screenSize={screenSize} topBarHeight={topBarHeight} /> : <DesktopLayout screenSize={screenSize} topBarHeight={topBarHeight} />;
 };

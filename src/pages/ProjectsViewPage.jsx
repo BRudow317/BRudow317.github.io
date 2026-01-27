@@ -17,7 +17,10 @@ const ProjectItems = [
 
 export function ProjectsViewPage() {
   const styles = {
-    Screen: { display: "flex", flexDirection: "column", gap: "14px" },
+    Screen: { display: "flex", 
+    flexDirection: "column", 
+    gap: "14px" 
+    },
 
     ScreenHeader: {
       margin: 0,
@@ -41,18 +44,19 @@ export function ProjectsViewPage() {
       borderBottom: "1px solid var(--border-1)",
       margin: "8px 0",
       paddingBottom: "8px",
+      width: "auto",
     },
     field: {
       display: "flex",
       flexDirection: "column",
-      // justifyContent: "center",
+      //justifyContent: "center",
       alignContent: "center",
       minWidth: 0,
     },
     HighlightList: {
       display: "flex",
       flexDirection: "column",
-      alignContent: "top",
+      alignContent: "flex-start",
       justifyContent: "center",
       gap: "4px",
       listStyleType: "none",
@@ -62,6 +66,10 @@ export function ProjectsViewPage() {
     highlights: {
       margin: "0",
     },
+    desc: {
+      margin: "0",
+      // textAlign: "center",
+    }
   };
 
   return (
@@ -84,13 +92,13 @@ export function ProjectsViewPage() {
               >
 
                 {/* Name */}
-                <div style={{ ...styles.field, flex: 1 }}>
+                <div style={{ ...styles.field, flex: 2 }}>
                   <NavLink to={project.to}>{project.label}</NavLink>
                 </div>
 
                 {/* Description */}
                 <div style={{ ...styles.field, flex: 3 }}>
-                  <p className="body">{project.tagline}</p>
+                  <p style={styles.desc}>{project.tagline}</p>
                 </div>
 
                 {/* Highlights */}

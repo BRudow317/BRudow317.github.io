@@ -1,14 +1,13 @@
 import { SideNav } from "../features/Nav/SideNav.jsx";
 import { Outlet, useLocation } from "react-router-dom";
 import { TopBar } from "../features/Nav/TopBar.jsx";
-import { useBreakpoint } from "../context/BreakpointContext";
 
-export function MobileLayout(
-  topBarHeight = 60
-) {
+export function MobileLayout({
+  topBarHeight = 60,
+  screenSize = 'sm'
+} = {}) {
   const location = useLocation();
-  const screenSize = useBreakpoint();
-
+  console.log("Screen Size in MobileLayout:", screenSize);
   const styles = {
     App: {
       display: "flex",
@@ -34,7 +33,7 @@ export function MobileLayout(
     <div id="App" style={styles.App}>
       <SideNav screenSize={screenSize} topBarHeight={topBarHeight} />
       <main id="Main" style={styles.Main} role="main">
-        <TopBar topBarHeight={topBarHeight} />
+        <TopBar screenSize={screenSize} topBarHeight={topBarHeight} />
         <div
           id="Content"
           style={styles.Content}

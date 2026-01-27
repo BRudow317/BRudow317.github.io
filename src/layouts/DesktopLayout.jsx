@@ -2,9 +2,10 @@ import { SideNav } from "../features/Nav/SideNav.jsx";
 import { Outlet, useLocation } from "react-router-dom";
 import { TopBar } from "../features/Nav/TopBar.jsx";
 
-export function DesktopLayout(
-  topBarHeight = 60
-) {
+export function DesktopLayout({
+  topBarHeight = 60,
+  screenSize = 'lg'
+} = {}) {
   const location = useLocation();
 
   const styles = {
@@ -33,9 +34,9 @@ export function DesktopLayout(
 
   return (
       <div id="App" style={styles.App}>
-        <SideNav topBarHeight={topBarHeight} />
+        <SideNav screenSize={screenSize} topBarHeight={topBarHeight} />
         <main id="Main" style={styles.Main} role="main">
-          <TopBar topBarHeight={topBarHeight} />
+          <TopBar screenSize={screenSize} topBarHeight={topBarHeight} />
           <div
             id="Content"
             style={styles.Content}
