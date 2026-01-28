@@ -173,7 +173,7 @@ return (
       <Text style={PdfStyle.sectionHeader}>Core Technical Skills</Text>
       {skills.map((skill, i) => (
         <View key={i} >
-          <Text><Text style={PdfStyle.labelText}>{skill.label}: </Text><Text style={PdfStyle.defaultText}>{skill.value}</Text></Text>
+          <Text><Text style={PdfStyle.labelText}>{skill.label}: </Text><Text style={PdfStyle.defaultText}>{skill.text}</Text></Text>
         </View>
       ))}
 

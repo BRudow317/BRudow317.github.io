@@ -1,7 +1,7 @@
 /**
  * @description List of personal data for the portfolio site.
  * 
- * @exports PERSONAL_DATA as an array of personal objects.
+ * @exports PERSONAL_DATA as an object containing personal information.
  * 
  */
 
