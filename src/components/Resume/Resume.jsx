@@ -16,14 +16,25 @@ import { PERSONAL_DATA } from '../../constants/PERSONAL_DATA';
 import { SKILLS_DATA } from '../../constants/SKILLS_DATA';
 import { PROFESSIONAL_SUMMARY } from '../../constants/PROFESSIONAL_SUMMARY';
 import { PROFESSIONAL_HISTORY } from '../../constants/PROFESSIONAL_HISTORY';
+// import { SITE_CONTEXT } from '../../constants/SITE_CONTEXT';
+import { useData } from '../../context/DataContext';
+
+// Helper to filter data arrays by context type with fallback to "default"
+const filterByContext = (dataArray, contextId) => {
+  const contextItems = dataArray.filter((item) => item.type === contextId);
+  return contextItems.length > 0
+    ? contextItems
+    : dataArray.filter((item) => item.type === "default");
+};
 
 export const Resume = (
   {
-    persData = PERSONAL_DATA, //.find(person => person.id === "person"),
-    profSum = PROFESSIONAL_SUMMARY.find(summary => summary.id === "primary").text,
-    skillsData = SKILLS_DATA,
-    profHistory = PROFESSIONAL_HISTORY,
-    eduData = PERSONAL_DATA.education,//.find(item => item.id === "education").education
+    persData = PERSONAL_DATA,
+    // profSum = PROFESSIONAL_SUMMARY.find(summary => summary.id === "primary").text,
+    // skillsData = SKILLS_DATA,
+    // profHistory = PROFESSIONAL_HISTORY,
+    eduData = PERSONAL_DATA.education,
+    certData = PERSONAL_DATA.certifications,
     styles = {
       page: {
         fontFamily: 'Arial, sans-serif',
@@ -131,8 +142,21 @@ export const Resume = (
         marginBottom: '4px'
       }
     }
-  } = {}) => 
+  } = {}) =>
 {
+  // Get the current data context
+  const { dataContext } = useData();
+
+  // Filter data based on context (falls back to "default" if no match)
+  const skillsData = filterByContext(SKILLS_DATA, dataContext);
+  const profHistory = filterByContext(PROFESSIONAL_HISTORY, dataContext);
+  const profSumObj = PROFESSIONAL_SUMMARY.find((s) => s.id === dataContext)
+    || PROFESSIONAL_SUMMARY.find((s) => s.id === "default")
+    || PROFESSIONAL_SUMMARY[0];
+  const profSum = profSumObj.text;
+
+  // Get title from professional summary, fallback to PERSONAL_DATA.title
+  const title = profSumObj.title || PERSONAL_DATA.title;
 
   const SectionHeader = (
     { children = {}, 
@@ -223,11 +247,26 @@ export const Resume = (
       ))}
     </section>
   );
+
+  const CertificationEntry = ({ name, issuer, date }) => (
+    <p style={styles.educationItem}>
+      {name} | {issuer} | {date}
+    </p>
+  );
+
+  const CertificationsSection = ({ certifications }) => (
+    <section id="CertificationsSection">
+      <SectionHeader>Certifications</SectionHeader>
+      {certifications.map((cert, idx) => (
+        <CertificationEntry key={idx} name={cert.name} issuer={cert.issuer} date={cert.date} />
+      ))}
+    </section>
+  );
   return (
     <article style={styles.page}>
       {/* Header */}
       <h1 style={styles.name}>{persData.name}</h1>
-      <h2 style={styles.title}>{persData.title}</h2>
+      <h2 style={styles.title}>{title}</h2>
       <ContactInfo contact={persData} />
 
       {/* Professional Summary */}
@@ -244,6 +283,9 @@ export const Resume = (
 
       {/* Education */}
       <EducationSection education={eduData} />
+
+      {/* Certifications */}
+      <CertificationsSection certifications={certData} />
     </article>
   );
 };

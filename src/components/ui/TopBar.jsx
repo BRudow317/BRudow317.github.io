@@ -1,9 +1,13 @@
 
 import { PERSONAL_DATA } from '../../constants/PERSONAL_DATA';
+import { PROFESSIONAL_SUMMARY } from '../../constants/PROFESSIONAL_SUMMARY';
+// import { SITE_CONTEXT } from '../../constants/SITE_CONTEXT';
+import { useData } from '../../context/DataContext';
+
 export const TopBar = (
   {
     name = PERSONAL_DATA.name,
-    title = PERSONAL_DATA.title,
+    // title = PERSONAL_DATA.title,
     email = PERSONAL_DATA.email,
     sites = PERSONAL_DATA.sites,
     infoSites = PERSONAL_DATA.infoSites,
@@ -11,6 +15,20 @@ export const TopBar = (
     topBarHeight = 60,
   } = {}
 )  => {
+  // Get the current data context
+  const { dataContext } = useData();
+
+  // Get title from professional summary, fallback to PERSONAL_DATA.title
+  const profSumObj = PROFESSIONAL_SUMMARY.find((s) => s.id === dataContext)
+    || PROFESSIONAL_SUMMARY.find((s) => s.id === "default")
+    || PROFESSIONAL_SUMMARY[0];
+  const title = profSumObj.title || PERSONAL_DATA.title;
+
+  // Get info site link based on context, fallback to default
+  const infoSite = infoSites.find((site) => site.type === dataContext)
+    || infoSites.find((site) => site.type === "default")
+    || infoSites[0];
+
   let isSmallScreen = screenSize === "xsm" || screenSize === "sm" || screenSize === "md";
   let styles = {
     TopBar: {
@@ -62,7 +80,7 @@ export const TopBar = (
       
       <h3 style={{...styles.BrandMeta}}><a href={sites.find(site => site.id === "linkedin").url} target="_blank" rel="noreferrer"
       >{name}</a></h3>
-      <h3 style={{...styles.BrandMeta}}><a href={infoSites.find(site => site.id === "softwareengineer").url} target="_blank" rel="noreferrer"
+      <h3 style={{...styles.BrandMeta}}><a href={infoSite.url} target="_blank" rel="noreferrer"
       >{title}</a></h3>
       <h3 style={{...styles.BrandMeta}}><a href={sites.find(site => site.id === "github").url} target="_blank" rel="noreferrer"
       >GitHub</a></h3>

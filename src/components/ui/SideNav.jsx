@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { NavItems } from "../../constants/NavItems";
 import image from "../../assets/images/Headshot.png";
 import { getComponentHeight } from "../../utils/getComponentHeight";
+import { DataContextSelector } from "./DataContextSelector";
 
 export function SideNav({
   topOffset = 60,
@@ -100,6 +101,9 @@ export function SideNav({
       textShadow: "var(--text-shadow)",
       marginTop: "2px",
     },
+    Selector: {
+      marginTop: "auto",
+    },
   };
 
   let SideNavComponent = (
@@ -140,6 +144,9 @@ export function SideNav({
           </NavLink>
         ))}
       </div>
+
+      <div className="divider" />
+      <DataContextSelector style={styles.Selector} />
     </nav>
   );
 
@@ -182,6 +189,8 @@ export function SideNav({
             </NavLink>
           ))}
         </div>
+        <div className="divider" />
+        <DataContextSelector style={styles.Selector} />
       </nav>
     );
   }

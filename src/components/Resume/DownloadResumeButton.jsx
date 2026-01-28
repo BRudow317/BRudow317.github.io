@@ -1,10 +1,11 @@
 /**
  * DOWNLOAD RESUME BUTTON
- * 
+ *
  * Accepts a ref to the resume container and generates a PDF on click
  */
 import { pdf } from '@react-pdf/renderer';
 import { ResumePDF } from './ResumePDF';
+import { useData } from '../../context/DataContext';
 
 export const DownloadResumeButton = (
   {
@@ -15,8 +16,10 @@ export const DownloadResumeButton = (
     buttonText = 'Download Resume as PDF',
   } = {}
 ) => {
+  const { dataContext } = useData();
+
   const handleDownload = async () => {
-    const pdfBlob = await pdf(<ResumePDF />).toBlob();
+    const pdfBlob = await pdf(<ResumePDF dataContext={dataContext} />).toBlob();
     const url = URL.createObjectURL(pdfBlob);
     const link = document.createElement('a');
     link.href = url;

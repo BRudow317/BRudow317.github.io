@@ -2,8 +2,18 @@ import { Link } from "react-router-dom";
 import { PERSONAL_DATA } from '../constants/PERSONAL_DATA';
 import { SKILLS_DATA } from '../constants/SKILLS_DATA';
 import { PROFESSIONAL_SUMMARY } from '../constants/PROFESSIONAL_SUMMARY';
+// import { SITE_CONTEXT } from '../constants/SITE_CONTEXT';
+import { useData } from '../context/DataContext';
 
-const skills = SKILLS_DATA;
+// Helper to filter data arrays by context type with fallback to "default"
+const filterByContext = (dataArray, contextId) => {
+  const contextItems = dataArray.filter((item) => item.type === contextId);
+  return contextItems.length > 0
+    ? contextItems
+    : dataArray.filter((item) => item.type === "default");
+};
+
+// const skills = SKILLS_DATA;
 
 const styles={
     Screen: {
@@ -83,15 +93,27 @@ const styles={
   );
 
 export function WelcomePage() {
-  
+  // Get the current data context
+  const { dataContext } = useData();
+
+  // Filter data based on context (falls back to "default" if no match)
+  const skills = filterByContext(SKILLS_DATA, dataContext);
+  const profSumObj = PROFESSIONAL_SUMMARY.find((s) => s.id === dataContext)
+    || PROFESSIONAL_SUMMARY.find((s) => s.id === "default")
+    || PROFESSIONAL_SUMMARY[0];
+
+  // Get title from professional summary, fallback to PERSONAL_DATA.title
+  const title = profSumObj.title || PERSONAL_DATA.title;
+
   return (
     <main style={styles.Screen} aria-label="Welcome">
       <section style={styles.Hero}>
         <h1 style={styles.HeroTitle}>{PERSONAL_DATA.name}</h1>
-        <p style={styles.HeroSubtitle}>{PERSONAL_DATA.title}</p>
+        <p style={styles.HeroSubtitle}>{title}</p>
 
         <p style={styles.HeroSummary}>
-          {PROFESSIONAL_SUMMARY.find(obj => obj.id === 'primary').text}
+          {/* {PROFESSIONAL_SUMMARY.find(obj => obj.id === 'primary').text} */}
+          {profSumObj.text}
         </p>
 
         <div style={styles.HeroActions}>

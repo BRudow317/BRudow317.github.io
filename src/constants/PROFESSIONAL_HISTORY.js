@@ -48,38 +48,6 @@ export const PROFESSIONAL_HISTORY = [
         text: "Acted as enterprise SME for mission-critical financial systems and strict regulatory compliance, guiding architecture decisions and untangling cross-system dependencies to reduce technical debt and enable a loosely coupled modernization path.",
       },
     ],
-
-    /* bullets: [
-        { label: "Migration Impact", 
-          text: "Architected and delivered Phase 1 of a Salesforce Service Cloud migration, mapping dependencies across 12+ non-normalized systems and migrating 100M+ records under a fixed production cutover window with zero downtime." 
-        },
-        { label: "Data Parsing", 
-          text: "Achieved 99.9%+ data integrity validated by 3 departments day 1 through data engineering with custom data parsers for 8 non-standard source formats. Built HTML parser from scratch (restrictive plugin environment), implemented image extraction with attachment handling, and regex-heavy normalization logic for inconsistent customer data." 
-        },
-        { label: "example",
-          text: "example"
-        },
-        { label: "Autonomous Delivery", 
-          text: "Served as sole data migration engineer while simultaneously contributing to api and integrations team, coordinating with 15-person CRM implementation team. Bridged departmental silos by meeting with organization leaders to define requirements, directed CRM team on data model design, dependencies, edge cases and managed vendor deliverables." 
-        },
-        { label: "Migration Platform:", 
-          text: "Architected intelligent orchestration system with JMS-based retry logic: exponential backoff (30s->60s->120s), adaptive batch sizing (200->single digits), dependency-aware queuing (parent records before children), and concurrency checks to prevent race conditions. System now handles 50+ operations/week saving 50+ hours in ticket orchestration and user friction from manual processes." 
-        },
-        { label: "Frontend Feature", 
-          text: "Transformed rescue tool into \"Enterprise Resource Dashboard\" (ERDB). Built in Oracle ADF with Spring Boot backend, enabling case workers to execute real-time data operations, which is now a core operational tool saving 50+ hours/week in manual orchestration and sprint overhead." 
-        },
-        { label: "Python Automation",
-          text: "Engineered automated knowledge management platform using Python (BeautifulSoup, pandas, CSV parsing) after identifying critical knowledge fragmentation across 5+ sources. Built pipeline converting Markdown/Word/Excel documentation into centralized SharePoint wiki with self-updating ServiceNow integration. Platform maintains 200+ pages covering architecture, configs, SME mapping, and release history-reducing onboarding time 50%+ and enabling rapid feature archeology. Automated regeneration via Python scripts ensures documentation stays current without manual maintenance."
-        },
-        {
-          label: "Soft Skill",
-          text: "Led as a force multiplier by taking on the most complex and high-impact tasks, enabling teams to meet aggressive deadlines. Recognized by leadership for proactive problem-solving, cross-team collaboration, and ability to deliver under pressure, contributing to overall project success and team efficiency."
-        },
-        {
-          label: "Architecture",
-          text: "Prioritized as a subject matter expert on the most important financial and mission critical systems, contributing critical knowledge that accelerates system implementation, correction, and development. Led architecture discussions and provided guidance on architecture, acted as the go-to enterprise SME for mission-critical financial platforms, untangling legacy dependencies across systems and aligning teams on a modernization path toward loosely coupled, scalable architecture. Development, and system analysis, and how to bridge architectural legacy complexities, dependencies, and technical debt with modern solutions and best practices."
-        }
-      ] */
   },
   {
     id: "Cloud Voyages",
@@ -131,25 +99,88 @@ export const PROFESSIONAL_HISTORY = [
         text: "Partnered with enterprise engineering to implement proactive data validation and monitoring using advanced SQL (CTEs, window functions, cross-database joins), preventing downstream production issues.",
       },
     ],
+  },
 
-    /* bullets: [
+  // Frontend Engineer
+  {
+    id: "SSA",
+    type: "frontend_engineer",
+    title: "Software Engineer (Senior Systems Analyst)",
+    company: "Indiana Public Retirement Systems (INPRS)",
+    dates: "Feb 2024 - Present",
+    summary: "",
+    bullets: [
       {
-        label: "Automation",
-        text: "Automated repetitive data workflows by building Python tools for SQL generation, file loading, and report processing-reducing manual Excel-to-database operations from hours to minutes. Proactively identified team pain points and built self-service dashboards (Looker/LookML) enabling cross-functional teams to access member data without submitting tickets. Automation efforts freed 10+ hours/week for higher-value analysis work.",
+        label: "Enterprise Dashboard",
+        text: "Built the Enterprise Resource Dashboard (React, Spring Boot), a real-time operations platform used daily by case workers; replaced manual workflows, reduced ticket times, and saved 50+ hours/week in operational overhead.",
       },
       {
-        label: "Promotion Achievement",
-        text: "Built production ETL pipelines integrating 3rd-party vendor sources into enterprise warehouse, becoming source of truth for member data. Independently implemented complex business logic (eligibility calculations, projections) in Python-delivering in weeks what took senior engineers months in PL/SQL. Work led to promotion to Senior Systems Analyst on enterprise engineering team after reverse-engineering and rebuilding core backend logic solo.",
+        label: "UX-Driven Development",
+        text: "Leveraged Dynatrace session replay and user behavior analytics (rage clicks, backtracking, time-between-actions) to prioritize UI/UX improvements and inform component design decisions across internal tooling.",
       },
       {
-        label: "React Flask:",
-        text: "Built personal automation platform (Flask backend, React frontend) to eliminate repetitive BI tasks-drag-and-drop Excel file processing, automated SQL generation, and one-click data loading. Containerized application (Docker) reduced report turnaround from hours to minutes, enabling focus on complex analysis over manual data manipulation. Platform became prototype for Enterprise Resource Dashboard after promotion to senior engineer.",
+        label: "Migration UI",
+        text: "Led Phase 1 of a CRM Cloud modernization, building administrative interfaces for dependency mapping across 12+ legacy systems and orchestrating migration of 100M+ records with zero downtime.",
       },
       {
-        label: "Automation & Scripting:",
-        text: "Developed self-service data access interfaces reducing ticket-driven workflows and 2-week wait times for routine business operations. Collaborated with enterprise engineering team to build proactive data monitoring using complex SQL validation (CTEs, window functions, cross-database joins), preventing production incidents. Automation work and cross-functional contributions led to promotion to Senior Systems Analyst after 2 years.",
+        label: "Data Integrity",
+        text: "Achieved 99.9%+ day-one data integrity (validated by 3 departments) by building custom parsing and normalization pipelines, enabling retirement of the legacy CRM and avoiding $1M+ in vendor costs.",
+      },
+      {
+        label: "API Integration",
+        text: "Partnered with the integrations/API team to design and consume RESTful endpoints; drove requirements, documented contracts via OpenAPI/Swagger, and managed vendor deliverables to hit launch timelines.",
+      },
+      {
+        label: "Orchestration Platform",
+        text: "Built a dependency-aware migration orchestration engine with retry logic, batching, and concurrency controls; automated 50+ weekly operations previously requiring manual coordination.",
       },
     ],
-    */
+  },
+  {
+    id: "Cloud Voyages",
+    type: "frontend_engineer",
+    title: "Cloud Architect & Founder",
+    company: "Cloud Voyages",
+    dates: "July 2025 - Present",
+    bullets: [
+      {
+        label: "Full-Stack Web Apps",
+        text: "Architect and build serverless web applications for small business clients using React frontends hosted on S3/CloudFront with Lambda/API Gateway backends and DynamoDB persistence, orchestrated via SAM IaC.",
+      },
+      {
+        label: "End-to-End Delivery",
+        text: "Own full development lifecycle: requirements gathering, UI/UX design, component architecture, AWS infrastructure provisioning, CI/CD pipeline setup (GitHub Actions), and performance optimization.",
+      },
+    ],
+  },
+  {
+    id: "AppDev",
+    type: "frontend_engineer",
+    title: "Application Developer",
+    company: "Indiana Public Retirement Systems (INPRS)",
+    dates: "Apr 2022 - Feb 2024",
+    summary: "",
+    bullets: [
+      {
+        label: "Internal Tooling Platform",
+        text: "Built a containerized internal automation app (React, Flask, Docker) with drag-and-drop Excel processing, automated SQL generation, and one-click data loads; reduced report turnaround from hours to minutes.",
+      },
+      {
+        label: "Self-Service Dashboards",
+        text: "Built self-service member data dashboards (Looker/LookML) with interactive filtering and visualization, reducing ticket volume and enabling cross-functional teams to access data without engineering support.",
+      },
+      {
+        label: "API & Data Integration",
+        text: "Built production ETL pipelines and REST API consumers ingesting 3rd-party vendor sources; implemented complex eligibility logic in Python to accelerate delivery versus legacy PL/SQL.",
+      },
+      {
+        label: "Rapid Promotion",
+        text: "Earned promotion to Senior Systems Analyst after independently reverse-engineering and rebuilding core backend logic and delivering critical pipeline work on an accelerated timeline.",
+      },
+      {
+        label: "Data Quality",
+        text: "Partnered with enterprise engineering to implement proactive data validation using advanced SQL (CTEs, window functions), preventing downstream production issues in user-facing systems.",
+      },
+    ],
   },
 ];

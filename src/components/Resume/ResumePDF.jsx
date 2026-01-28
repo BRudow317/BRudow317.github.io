@@ -17,7 +17,16 @@ import { Document, Page, Text, View, StyleSheet, Link, Font } from '@react-pdf/r
 import { PERSONAL_DATA } from '../../constants/PERSONAL_DATA';
 import { SKILLS_DATA } from '../../constants/SKILLS_DATA';
 import { PROFESSIONAL_SUMMARY } from '../../constants/PROFESSIONAL_SUMMARY';
-import { PROFESSIONAL_HISTORY } from '../../constants/PROFESSIONAL_HISTORY'; 
+import { PROFESSIONAL_HISTORY } from '../../constants/PROFESSIONAL_HISTORY';
+// import { SITE_CONTEXT } from '../../constants/SITE_CONTEXT';
+
+// Helper to filter data arrays by context type with fallback to "default"
+const filterByContext = (dataArray, contextId) => {
+  const contextItems = dataArray.filter((item) => item.type === contextId);
+  return contextItems.length > 0
+    ? contextItems
+    : dataArray.filter((item) => item.type === "default");
+}; 
 
 // Register local Roboto font files from public/Roboto/static
 Font.register({
@@ -35,11 +44,13 @@ Font.registerHyphenationCallback(word => [word]);
 
 
 export const ResumePDF = ({
+    dataContext = "software_engineer",
     personalData = PERSONAL_DATA,
-    professionalSummary = PROFESSIONAL_SUMMARY.find(obj => obj.id === 'primary'),
-    skills = SKILLS_DATA,
-    experience = PROFESSIONAL_HISTORY,
+    // professionalSummary = PROFESSIONAL_SUMMARY.find(obj => obj.id === 'primary'),
+    // skills = SKILLS_DATA,
+    // experience = PROFESSIONAL_HISTORY,
     education = PERSONAL_DATA.education,
+    certifications = PERSONAL_DATA.certifications,
     textSize = 11,
     defaultFont = 'Roboto',
     defaultBold = 'Roboto',
@@ -140,6 +151,16 @@ export const ResumePDF = ({
     }
 }={}) => {
 
+// Filter data based on context (falls back to "default" if no match)
+const skills = filterByContext(SKILLS_DATA, dataContext);
+const experience = filterByContext(PROFESSIONAL_HISTORY, dataContext);
+const professionalSummary = PROFESSIONAL_SUMMARY.find((s) => s.id === dataContext)
+  || PROFESSIONAL_SUMMARY.find((s) => s.id === "default")
+  || PROFESSIONAL_SUMMARY[0];
+
+// Get title from professional summary, fallback to personalData.title
+const title = professionalSummary.title || personalData.title;
+
 const PdfStyle = StyleSheet.create(styles);
 
 return (
@@ -147,7 +168,7 @@ return (
     <Page style={PdfStyle.page}>
       {/* Header */}
       <Text style={PdfStyle.name}>{personalData.name}</Text>
-      <Text style={PdfStyle.title}>{personalData.title}</Text>
+      <Text style={PdfStyle.title}>{title}</Text>
       
       {/* Contact */}
       <Text style={{...PdfStyle.defaultText, ...PdfStyle.contactLine}}>
@@ -200,6 +221,14 @@ return (
       {education.map((edu, i) => (
         <Text key={i} style={PdfStyle.defaultText}>
           {edu.degree}{edu.detail}
+        </Text>
+      ))}
+
+      {/* Certifications */}
+      <Text style={PdfStyle.sectionHeader}>Certifications</Text>
+      {certifications.map((cert, i) => (
+        <Text key={i} style={PdfStyle.defaultText}>
+          {cert.name} | {cert.issuer} | {cert.date}
         </Text>
       ))}
     </Page>

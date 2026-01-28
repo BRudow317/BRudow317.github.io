@@ -19,4 +19,8 @@ export const SITE_CONTEXT = [
         id: "cloud_engineer",
         type: "Cloud Engineer",
     },
+    {
+        id: "default",
+        type: "Software Engineer",
+    }
 ];

@@ -16,6 +16,7 @@ Build a dynamic profile site that adapts to different job targets. The ResumeSel
 
 ```js
 // id = value for DataContext, type = display label
+{ id: "default", type: "Software Engineer" }
 { id: "software_engineer", type: "Software Engineer" }
 { id: "backend_engineer", type: "Backend Engineer" }
 { id: "data_engineer", type: "Data Engineer" }
@@ -73,15 +74,15 @@ Following [ThemeContext.jsx](src/context/ThemeContext.jsx) pattern:
 - `DataProvider` - wraps app, manages state
 - `useData()` hook - consumer access
 - `DataDomSync` - sets `data-site-context` attribute on document
-- State stores `contextId` (e.g., `"software_engineer"`)
+- State stores `contextId` (e.g., `"frontend_engineer"`)
 - `filteredSkills` computed from SKILLS_DATA where `skill.type` matches current context
-- **Default: `"software_engineer"`**
+- **Default: `"default"`**
 - **Persistence: localStorage** - remembers user's choice across sessions
 
 ```jsx
 // Context value shape
 {
-  contextId: "software_engineer",        // current selection id
+  contextId: "frontend_engineer",        // current selection id
   setContextId: (id) => void,            // setter
   currentContext: { id, type },          // full context object from SITE_CONTEXT
 

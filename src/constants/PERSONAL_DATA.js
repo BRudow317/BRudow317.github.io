@@ -30,7 +30,6 @@ export const PERSONAL_DATA = {
     ],
     certifications: [
       {id: "csd", name: "Certified Scrum Developer", issuer: "Scrum Alliance", date: "June 2024"},
-      {id: "advsql", name: "Advanced SQL for Data Scientists", issuer: "Linkedin Learning", date: "Oct 2022"},
       {id: "hci", name: "Certificate in HCI/UX", issuer: "Indiana University Indianapolis", date: "May 2022"},
     ],
 }; 
