@@ -3,8 +3,8 @@
  * @dependency @react-pdf/renderer@4.3.2
  */
 // import { useRef } from 'react';
-import { Resume } from '../features/Resume/Resume';
-import { DownloadResumeButton } from '../features/Resume/DownloadResumeButton';
+import { Resume } from '../components/Resume/Resume';
+import { DownloadResumeButton } from '../components/Resume/DownloadResumeButton';
 
 
 export const ResumePage = () => {

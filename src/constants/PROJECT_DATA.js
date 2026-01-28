@@ -54,11 +54,11 @@ export const PROJECT_DATA = [
     },
   },
   {
-    id: "quickbitlabs",
-    name: "QuickBitLabs",
-    tagline: "Home lab + automation playground for modern infra experiments.",
+    id: "portfolio",
+    name: "GitHub Portfolio",
+    tagline: "This site, which is a GitHub hosted site for my portfolio of projects.",
     description:
-      "Structured site for testing and documenting various home lab and automation experiments.",
+      "You can see various code .",
     highlights: [
       "Container Services",
       "CI/CD",
@@ -81,7 +81,7 @@ export const PROJECT_DATA = [
     highlights: ["Google API", "AWS Automated Deployments", "SEO Optimization"],
     stack: ["AWS S3", "AWS CloudFront", "Supabase", "React", "JavaScript"],
     links: {
-      repo: "https://github.com/BRudow317/millerlandman",
+      repo: "https://github.com/BRudow317/mlm",
       live: "https://millerlandman.com",
     },
   },

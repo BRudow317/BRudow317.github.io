@@ -66,7 +66,7 @@ const styles={
     <li style={styles.skillRow}>
       <p className="body" style={styles.skillText}>
         <label id={label}>{label}: </label>
-        {value}
+        <span className="pill">{value}</span>
       </p>
     </li>
   );
@@ -76,7 +76,7 @@ const styles={
       <h3 className="card_title">Core Technical Skills</h3>
       <ul className="list">
       {skills.map((skill, idx) => (
-        <SkillRow key={idx} label={skill.label} value={skill.value} />
+        <SkillRow key={idx} label={skill.label} value={skill.text} />
       ))}
       </ul>
     </section>

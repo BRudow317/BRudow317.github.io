@@ -13,7 +13,8 @@
 export const PROFESSIONAL_HISTORY = [
   {
     id: "SSA",
-    title: "Senior Systems Analyst (Software Engineer)",
+    type: "default",
+    title: "Software Engineer (Senior Systems Analyst)",
     company: "Indiana Public Retirement Systems (INPRS)",
     dates: "Feb 2024 - Present",
     summary: "",
@@ -82,6 +83,7 @@ export const PROFESSIONAL_HISTORY = [
   },
   {
     id: "Cloud Voyages",
+    type: "default",
     title: "Cloud Architect & Founder",
     company: "Cloud Voyages",
     dates: "July 2025 - Present",
@@ -98,6 +100,7 @@ export const PROFESSIONAL_HISTORY = [
   },
   {
     id: "AppDev",
+    type: "default",
     title: "Application Developer",
     company: "Indiana Public Retirement Systems (INPRS)",
     dates: "Apr 2022 - Feb 2024",

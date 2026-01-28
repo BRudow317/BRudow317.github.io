@@ -1,6 +1,7 @@
-import { SideNav } from "../features/Nav/SideNav.jsx";
+import { SideNav } from "../components/ui/SideNav.jsx";
 import { Outlet, useLocation } from "react-router-dom";
-import { TopBar } from "../features/Nav/TopBar.jsx";
+import { TopBar } from "../components/ui/TopBar.jsx";
+import { Footer } from "../components/ui/Footer.jsx";
 
 export function DesktopLayout({
   topBarHeight = 60,
@@ -21,12 +22,13 @@ export function DesktopLayout({
       display: "flex",
       flexDirection: "column",
       width: "100%",
-      height: "100%",
+      flex: 1,
+      minHeight: "100dvh",
     },
     Content: {
       padding: "18px",
       width: "100%",
-      height: "100%",
+      flex: 1,
       // borderTop: "2px solid var(--border-1)",
       // borderLeft: "2px solid var(--border-1)",
     },
@@ -45,6 +47,7 @@ export function DesktopLayout({
           >
             <Outlet />
           </div>
+          <Footer />
         </main>
       </div>
     );

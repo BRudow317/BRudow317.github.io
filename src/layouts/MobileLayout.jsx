@@ -1,6 +1,7 @@
-import { SideNav } from "../features/Nav/SideNav.jsx";
+import { SideNav } from "../components/ui/SideNav.jsx";
 import { Outlet, useLocation } from "react-router-dom";
-import { TopBar } from "../features/Nav/TopBar.jsx";
+import { TopBar } from "../components/ui/TopBar.jsx";
+import { Footer } from "../components/ui/Footer.jsx";
 
 export function MobileLayout({
   topBarHeight = 60,
@@ -43,6 +44,7 @@ export function MobileLayout({
           <Outlet />
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

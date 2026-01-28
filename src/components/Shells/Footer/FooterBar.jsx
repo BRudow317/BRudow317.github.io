@@ -1,6 +1,6 @@
 
 import { PERSONAL_DATA } from "../../../constants/PERSONAL_DATA";
-import { useLocation, useMemo } from "react-router-dom";
+import { useLocation, useMemo } from "react-router";
 import { NavItems } from "../../Nav/NavItems";
 import { PROJECT_DATA } from "../../constants/PROJECT_DATA.js";
 
