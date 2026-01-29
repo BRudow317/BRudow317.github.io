@@ -14,8 +14,7 @@ export const SKILLS_DATA = [
   { id: "backend",
     type: "default",
     label: "Backend",
-    text:
-      "Spring Boot, FastAPI, Flask, AWS Lambda, SQL Alchemy, Pandas, NumPy, Hibernate (JPA)",
+    text: "Spring Boot, FastAPI, Flask, AWS Lambda, SQL Alchemy, Pandas, NumPy, Hibernate (JPA)",
   },
   { id: "frontend",
     type: "default",
@@ -26,14 +25,12 @@ export const SKILLS_DATA = [
   { id: "data_persistence",
     type: "default",
     label: "Data & Persistence",
-    text:
-      "PostgreSQL, Oracle, AWS DynamoDB, AWS S3,  AWS RDS, Data Model Design, Data Normalization",
+    text: "PostgreSQL, Oracle, AWS DynamoDB, AWS S3,  AWS RDS, Data Model Design, Data Normalization",
   },
   { id: "integrations",
     type: "default",
     label: "Integrations",
-    text:
-      "JMS, Event-Driven Architecture, Scripting, Batch Processing, ETL Pipelines",
+    text: "JMS, Event-Driven Architecture, Scripting, Batch Processing, ETL Pipelines",
   },
   { id: "security",
     type: "default",
@@ -97,7 +94,7 @@ export const SKILLS_DATA = [
   { id: "cloud_fe",
     type: "frontend_engineer",
     label: "Cloud & Infrastructure",
-    text: "AWS (CloudFront, S3, API Gateway, Lambda, Cognito), Linux, Docker, Vite, ",
+    text: "AWS (CloudFront, S3, API Gateway, Lambda, Cognito), Linux, Docker, Vite",
   },
   { id: "backend_fe",
     type: "frontend_engineer",
@@ -124,5 +121,4 @@ export const SKILLS_DATA = [
     label: "Tools & DevOps",
     text: "Git (GitHub, GitLab), CI/CD (Jenkins, GitHub Actions, Webhooks), Figma, Storybook, Agile",
   },
-  
 ];

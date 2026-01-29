@@ -22,12 +22,12 @@ export const TopBar = (
   const profSumObj = PROFESSIONAL_SUMMARY.find((s) => s.id === dataContext)
     || PROFESSIONAL_SUMMARY.find((s) => s.id === "default")
     || PROFESSIONAL_SUMMARY[0];
-  const title = profSumObj.title || PERSONAL_DATA.title;
+  // const title = profSumObj.title || PERSONAL_DATA.title;
 
   // Get info site link based on context, fallback to default
-  const infoSite = infoSites.find((site) => site.type === dataContext)
-    || infoSites.find((site) => site.type === "default")
-    || infoSites[0];
+  // const infoSite = infoSites.find((site) => site.type === dataContext)
+  //   || infoSites.find((site) => site.type === "default")
+  //   || infoSites[0];
 
   let isSmallScreen = screenSize === "xsm" || screenSize === "sm" || screenSize === "md";
   let styles = {
@@ -80,8 +80,8 @@ export const TopBar = (
       
       <h3 style={{...styles.BrandMeta}}><a href={sites.find(site => site.id === "linkedin").url} target="_blank" rel="noreferrer"
       >{name}</a></h3>
-      <h3 style={{...styles.BrandMeta}}><a href={infoSite.url} target="_blank" rel="noreferrer"
-      >{title}</a></h3>
+      {/* <h3 style={{...styles.BrandMeta}}><a href={infoSite.url} target="_blank" rel="noreferrer"
+      >{title}</a></h3> */}
       <h3 style={{...styles.BrandMeta}}><a href={sites.find(site => site.id === "github").url} target="_blank" rel="noreferrer"
       >GitHub</a></h3>
       <h3 style={{...styles.BrandMeta}}><a href={sites.find(site => site.id === "linkedin").url} target="_blank" rel="noreferrer"

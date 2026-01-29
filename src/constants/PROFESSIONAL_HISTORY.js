@@ -58,11 +58,15 @@ export const PROFESSIONAL_HISTORY = [
     bullets: [
       {
         label: "Cloud Architect",
-        text: "Architect of serverless high speed, low cost, web applications on AWS for small business clients, architecting cloud-native solutions with S3 (static hosting), CloudFront (CDN), MariaDB, Lambda, API Gateway, DynamoDB orchestrated with SAM IaC (infrastructure as code).",
+        text: "Architect of serverless high speed, low cost, web applications on AWS for small business clients, architecting cloud-native solutions with S3 (static hosting), CloudFront (CDN), MariaDB, Lambda, API Gateway, SQS, SNS, and DynamoDB.",
       },
       {
-        label: "model",
-        text: "Implement full development lifecycle: requirements gathering, architecture design, AWS infrastructure provisioning via SAM, CI/CD pipeline setup and integration with GitHub, and ongoing optimization. Focus on serverless-first architecture to minimize operational overhead and maximize cost efficiency for small business budgets.",
+        label: "Frontend Design",
+        text: "Design and build responsive React(Next.js, Tanstack, Component Libraries, etc..) frontends with modern UI/UX principles, focusing on performance optimization, accessibility, and seamless user experiences across devices to enhance customer engagement and satisfaction. Currently hosting multiple front end applications for small business clients.",
+      },
+      {
+        label: "Full Development Lifecycle",
+        text: "Implement full development lifecycle: requirements gathering, architecture, design, AWS infrastructure provisioning via SAM, CI/CD pipeline setup and integration with GitHub, and ongoing optimization. Focus on serverless-first architecture to minimize operational overhead and maximize cost efficiency for small business budgets.",
       },
     ],
   },
