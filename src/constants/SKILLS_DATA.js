@@ -1,7 +1,7 @@
 /**
  * This file contains the skills section of the resume.
- * 
- * 
+ * @dependency None
+ * @exports SKILLS_DATA - Array of skill objects for resume
  */
 
 export const SKILLS_DATA = [
@@ -9,75 +9,63 @@ export const SKILLS_DATA = [
   { id: "languages",
     type: "default",
     label: "Languages",
-    text: "Java, Python, SQL, JavaScript, TypeScript, Bash, PL/SQL",
+    text: "Python, SQL, JavaScript & TypeScript, Java, Bash, PL/SQL, AWS CLI",
   },
   { id: "backend",
     type: "default",
     label: "Backend",
-    text: "Spring Boot, FastAPI, Flask, AWS Lambda, SQL Alchemy, Pandas, NumPy, Hibernate (JPA)",
+    text: "Spring Boot, FastAPI, Flask, AWS Lambda, Threading & Parallelism",
   },
   { id: "frontend",
     type: "default",
-    label: "Frontend & APIs",
-    text:
-      "React, AWS API Gateway, AWS CloudFront, Responsive Design, RESTful APIs, OpenAPI/Swagger",
+    label: "Web & Security",
+    text: "React, AWS API Gateway, REST, OpenAPI, OAuth2.0, OIDC, JWT, Selenium, Vitest, Mockito",
+  },
+  { id: "cloud_infrastructure",
+    type: "default",
+    label: "Infrastructure",
+    text: "Linux, Docker, AWS (SAM (IaC), CloudFront, S3, IAM, VPC, RDS), Rundeck Automation",
   },
   { id: "data_persistence",
     type: "default",
-    label: "Data & Persistence",
-    text: "PostgreSQL, Oracle, AWS DynamoDB, AWS S3,  AWS RDS, Data Model Design, Data Normalization",
-  },
-  { id: "integrations",
-    type: "default",
-    label: "Integrations",
-    text: "JMS, Event-Driven Architecture, Scripting, Batch Processing, ETL Pipelines",
-  },
-  { id: "security",
-    type: "default",
-    label: "Security",
-    text: "AWS Cognito, AWS VPC, AWS IAM, OAuth2.0, OIDC, JWT",
-  },
-  { id: "testing",
-    type: "default",
-    label: "Testing",
-    text: "JUnit, Mockito, PyTest, Vitest, Selenium",
+    label: "Data",
+    text: "PostgreSQL, Oracle, AWS (DynamoDB, MariaDB, SQS, SNS), JMS, Pandas, ORM (Hibernate, SQLAlchemy)",
   },
   { id: "tools_devops",
     type: "default",
     label: "Tools & DevOps",
-    text:
-      "Git (GitHub, GitLab), Linux, Docker (Compose), Vite, Maven, Gradle, Jenkins CI/CD, Dynatrace, Rundeck, Agile",
+    text: "Git (GitHub, GitLab), Vite, Maven, Gradle, CI/CD (Jenkins, Actions, Webhooks), Dynatrace, Agile",
   },
   // Data Engineer
   {
     id: "data_engineer_languages",
     type: "data_engineer",
     label: "Languages",
-    text: "Python, SQL, Java, TypeScript, Javascript, Bash",
+    text: "Python, SQL, Java, Bash, TypeScript, JavaScript",
   },
   {
     id: "data_engineering_etl",
     type: "data_engineer",
     label: "AWS Cloud",
-    text: "Lambda, API Gateway, DynamoDB, MariaDB, S3, SAM (IaC), IAM, CloudFront",
+    text: "Lambda, API Gateway, DynamoDB, MariaDB, CLI, S3, SAM (IaC), IAM, CloudFront",
   },
   {
     id: "cloud_infrastructure_aws",
     type: "data_engineer",
     label: "Data Engineering",
-    text: "Pandas, NumPy, PL/SQL, ETL Pipelines, Event-Driven Architecture",
+    text: "Thread Management & Parallelism (threading/concurrent), Pandas, NumPy, PL/SQL",
   },
   {
     id: "backend_development",
     type: "data_engineer",
     label: "Backend",
-    text: "Spring Boot, FastAPI, Flask, REST APIs, OAuth2, PostgreSQL, Oracle",
+    text: "Flask, Spring Boot, FastAPI, REST, PostgreSQL, Oracle, Message and Queue APIs (SQS, SNS, JMS)",
   },
   {
     id: "devops_tools",
     type: "data_engineer",
     label: "DevOps",
-    text: "Docker, CI/CD (Jenkins/GitHub), Git, Linux, Unit Testing (PyTest/JUnit)",
+    text: "Docker, Linux, CI/CD (Jenkins, GitHub, GitLab), Test-Driven Development (PyTest/JUnit)",
   },
 
   // Frontend Engineer
@@ -94,7 +82,7 @@ export const SKILLS_DATA = [
   { id: "cloud_fe",
     type: "frontend_engineer",
     label: "Cloud & Infrastructure",
-    text: "AWS (CloudFront, S3, API Gateway, Lambda, Cognito), Linux, Docker, Vite",
+    text: "AWS (CloudFront, S3, API Gateway, Lambda, SQS, SNS), Linux, Docker, Vite",
   },
   { id: "backend_fe",
     type: "frontend_engineer",
@@ -109,16 +97,16 @@ export const SKILLS_DATA = [
   { id: "apis_fe",
     type: "frontend_engineer",
     label: "APIs & Data",
-    text: "REST APIs, OpenAPI/Swagger, GraphQL, Axios, Fetch, WebSockets, OAuth2.0, JWT, OpenID Connect"
+    text: "REST APIs, OpenAPI, Async Design, Axios, Fetch, Message APIs, OAuth2.0, JWT, OpenID"
   },
   { id: "testing_fe",
     type: "frontend_engineer",
     label: "UX & Testing",
-    text: "Dynatrace Session Replay, User Behavior Analytics, Vitest, React Testing Library, Selenium, Mocks, Stubs",
+    text: "Dynatrace, User Behavior Analytics, Vitest, React Testing Library, Selenium, Mocks, Stubs",
   },
   { id: "tools_fe",
     type: "frontend_engineer",
     label: "Tools & DevOps",
-    text: "Git (GitHub, GitLab), CI/CD (Jenkins, GitHub Actions, Webhooks), Figma, Storybook, Agile",
+    text: "Git (GitHub, GitLab), CI/CD (Jenkins, Actions, Webhooks), Figma, Storybook, Agile",
   },
 ];

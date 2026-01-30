@@ -1,8 +1,8 @@
 
 import { PERSONAL_DATA } from '../../constants/PERSONAL_DATA';
-import { PROFESSIONAL_SUMMARY } from '../../constants/PROFESSIONAL_SUMMARY';
+// import { PROFESSIONAL_SUMMARY } from '../../constants/PROFESSIONAL_SUMMARY';
 // import { SITE_CONTEXT } from '../../constants/SITE_CONTEXT';
-import { useData } from '../../context/DataContext';
+// import { useData } from '../../context/DataContext';
 
 export const TopBar = (
   {
@@ -10,18 +10,18 @@ export const TopBar = (
     // title = PERSONAL_DATA.title,
     email = PERSONAL_DATA.email,
     sites = PERSONAL_DATA.sites,
-    infoSites = PERSONAL_DATA.infoSites,
+    // infoSites = PERSONAL_DATA.infoSites,
     screenSize = 'lg',
     topBarHeight = 60,
   } = {}
 )  => {
   // Get the current data context
-  const { dataContext } = useData();
+  // const { dataContext } = useData();
 
   // Get title from professional summary, fallback to PERSONAL_DATA.title
-  const profSumObj = PROFESSIONAL_SUMMARY.find((s) => s.id === dataContext)
-    || PROFESSIONAL_SUMMARY.find((s) => s.id === "default")
-    || PROFESSIONAL_SUMMARY[0];
+  // const profSumObj = PROFESSIONAL_SUMMARY.find((s) => s.id === dataContext)
+  //   || PROFESSIONAL_SUMMARY.find((s) => s.id === "default")
+  //   || PROFESSIONAL_SUMMARY[0];
   // const title = profSumObj.title || PERSONAL_DATA.title;
 
   // Get info site link based on context, fallback to default

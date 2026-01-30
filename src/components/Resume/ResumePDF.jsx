@@ -8,9 +8,21 @@
  * @fonts
  * Open Sans - clean, modern
 Roboto - Google's standard, professional
-Lato - friendly but professional
-Source Sans Pro - Adobe's open source, great readability
-Inter - designed for screens, very readable
+ansi my favorite
+
+@Document Props:
+------------------
+@title	Sets title info on the document's metadata	String	undefined
+@author	Sets author info on the document's metadata	String	undefined
+@subject	Sets subject info on the document's metadata	String	undefined
+@keywords	Sets keywords associated info on the document's metadata	String	undefined
+@creator	Sets creator info on the document's metadata	String	"react-pdf"
+@producer	Sets producer info on the document's metadata	String	"react-pdf"
+@pdfVersion	Sets PDF version for generated document	String	"1.3"
+@language	Sets PDF default language	String	undefined
+@pageMode	Specifying how the document should be displayed when opened	PageMode	useNone
+@pageLayout	This controls how (some) PDF viewers choose to show pages	PageLayout	singlePage
+@onRender	Callback after document renders. Receives document blob argument in web	Function	undefined
  * 
  */
 import { Document, Page, Text, View, StyleSheet, Link, Font } from '@react-pdf/renderer';
@@ -194,7 +206,11 @@ return (
       <Text style={PdfStyle.sectionHeader}>Core Technical Skills</Text>
       {skills.map((skill, i) => (
         <View key={i} >
-          <Text><Text style={PdfStyle.labelText}>{skill.label}: </Text><Text style={PdfStyle.defaultText}>{skill.text}</Text></Text>
+          {/* <Text> */}
+            <View style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+              <Text style={PdfStyle.labelText}>{skill.label}: </Text>
+              <Text style={PdfStyle.defaultText}>{skill.text}</Text>
+            </View>{/* </Text> */}
         </View>
       ))}
 

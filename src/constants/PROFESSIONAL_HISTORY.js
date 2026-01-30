@@ -21,7 +21,7 @@ export const PROFESSIONAL_HISTORY = [
     bullets: [
       {
         label: "Migration Impact",
-        text: "Led Phase 1 of a CRM Cloud modernization, mapping dependencies across 12+ legacy systems and migrating 100M+ records during a fixed production cutover with zero downtime.",
+        text: "Led a CRM Cloud modernization, consolidating 3 department CRMs, and 2 external CRMs with dependencies across 12+ legacy systems by architecting the enterprise data model, migrating 100M+ records during a fixed production cutover with zero downtime.",
       },
       {
         label: "Data Engineering",
@@ -33,7 +33,7 @@ export const PROFESSIONAL_HISTORY = [
       },
       {
         label: "Orchestration Platform",
-        text: "Built a dependency-aware migration orchestration engine with retries, batching, and concurrency controls; automated 50+ weekly operations and saved 50+ hours/week previously spent on manual ticket orchestration.",
+        text: "Built a dependency-aware migration orchestration engine with retries, batching, and concurrency controls; currently automating 25+ weekly operations and saved 50+ hours/week previously spent on manual ticket orchestration alone.",
       },
       {
         label: "Operational Tooling",
@@ -148,12 +148,16 @@ export const PROFESSIONAL_HISTORY = [
     dates: "July 2025 - Present",
     bullets: [
       {
-        label: "Full-Stack Web Apps",
-        text: "Architect and build serverless web applications for small business clients using React frontends hosted on S3/CloudFront with Lambda/API Gateway backends and DynamoDB persistence, orchestrated via SAM IaC.",
+        label: "Cloud Architect",
+        text: "Architect of serverless high speed, low cost, web applications on AWS for small business clients, architecting cloud-native solutions with S3 (static hosting), CloudFront (CDN), MariaDB, Lambda, API Gateway, SQS, SNS, and DynamoDB.",
       },
       {
-        label: "End-to-End Delivery",
-        text: "Own full development lifecycle: requirements gathering, UI/UX design, component architecture, AWS infrastructure provisioning, CI/CD pipeline setup (GitHub Actions), and performance optimization.",
+        label: "Frontend Design",
+        text: "Design and build responsive React(Next.js, Tanstack, Component Libraries, etc..) frontends with modern UI/UX principles, focusing on performance optimization, accessibility, and seamless user experiences across devices to enhance customer engagement and satisfaction. Currently hosting multiple front end applications for small business clients.",
+      },
+      {
+        label: "Full Development Lifecycle",
+        text: "Implement full development lifecycle: requirements gathering, architecture, design, AWS infrastructure provisioning via SAM, CI/CD pipeline setup and integration with GitHub, and ongoing optimization. Focus on serverless-first architecture to minimize operational overhead and maximize cost efficiency for small business budgets.",
       },
     ],
   },

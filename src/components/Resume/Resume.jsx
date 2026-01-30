@@ -190,7 +190,7 @@ export const Resume = (
   const SkillRow = ({ label, text }) => (
     <span style={styles.skillRow}>
       <p style={styles.skillText}>
-        <label id={label}>{label}: </label>
+        <label id={label} style={{fontWeight: 'bold'}}>{label}: </label>
         {text}
       </p>
     </span>
