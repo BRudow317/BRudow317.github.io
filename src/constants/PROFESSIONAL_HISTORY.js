@@ -45,7 +45,7 @@ export const PROFESSIONAL_HISTORY = [
       },
       {
         label: "Architecture SME",
-        text: "Acted as enterprise SME for mission-critical financial systems and strict regulatory compliance, guiding architecture decisions and untangling cross-system dependencies to reduce technical debt and enable a loosely coupled modernization path.",
+        text: "Acted as enterprise SME for mission-critical financial systems and strict regulatory compliance, guiding architecture decisions and untangling cross-system dependencies to reduce technical debt and enable a loosely coupled modernization path. This boosts agility, cuts maintenance costs, and passes audits.",
       },
     ],
   },
@@ -62,7 +62,7 @@ export const PROFESSIONAL_HISTORY = [
       },
       {
         label: "Frontend Design",
-        text: "Design and build responsive React(Next.js, Tanstack, Component Libraries, etc..) frontends with modern UI/UX principles, focusing on performance optimization, accessibility, and seamless user experiences across devices to enhance customer engagement and satisfaction. Currently hosting multiple front end applications for small business clients.",
+        text: "Design and build responsive React(Next.js, Tanstack) frontends with modern UI/UX principles, focusing on performance optimization, accessibility, and seamless user experiences across devices to enhance customer engagement, market visibility, and generate leads for small business clients.",
       },
       {
         label: "Full Development Lifecycle",
