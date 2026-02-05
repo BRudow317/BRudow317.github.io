@@ -11,6 +11,7 @@ import { WelcomePage } from "./pages/WelcomePage";
 import { ResumePage } from "./pages/ResumePage";
 import { ProjectPage } from "./pages/ProjectPages";
 import { ProjectsViewPage } from "./pages/ProjectsViewPage";
+import { YourMoneyLine } from "./pages/YourMoneyLine";
 import { Layout } from "./layouts/Layout.jsx";
 import { PROJECT_DATA } from "./constants/PROJECT_DATA";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
@@ -66,6 +67,7 @@ export function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<WelcomePage />} />
             <Route path="/resume" element={<ResumePage />} />
+            <Route path="/yourmoneyline" element={<YourMoneyLine />} />
             <Route path="/projects" element={<ProjectsViewPage />} />
             <Route path="/projects/:id" element={<ProjectRoute />} />
             <Route path="*" element={<Navigate to="/" replace />} />
