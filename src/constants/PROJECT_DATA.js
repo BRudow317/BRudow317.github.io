@@ -38,7 +38,7 @@ export const PROJECT_DATA = [
       "The business website for Cloud Voyages LLC, a cloud consulting company.",
     highlights: ["Marketing", "Distributed System", "Service Catalog", "AWS", "React"],
     stack: ["AWS", "RadixUI", "TypeScript","React","TailwindCSS", "DynamoDB", "Python", "FastAPI", "Docker"],
-    links: { repo: "https://github.com/BRudow317/cloudvoyages" },
+    links: { repo: "https://github.com/BRudow317/cloudvoyages", live: "https://cloudvoyages.com" },
   },
   {
     id: "Scripts",
