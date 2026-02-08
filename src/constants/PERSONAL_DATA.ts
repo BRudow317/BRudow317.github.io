@@ -1,11 +1,50 @@
 /**
  * @description List of personal data for the portfolio site.
- * 
+ *
  * @exports PERSONAL_DATA as an object containing personal information.
- * 
+ *
  */
 
-export const PERSONAL_DATA = {
+export type PersonalSiteLink = {
+  type: string;
+  id: string;
+  website: string;
+  url: string;
+};
+
+export type EducationItem = {
+  degree: string;
+  detail: string;
+};
+
+export type InfoSiteLink = {
+  type: string;
+  id: string;
+  website: string;
+  url: string;
+};
+
+export type CertificationItem = {
+  id: string;
+  name: string;
+  issuer: string;
+  date: string;
+};
+
+export type PersonalData = {
+  id: string;
+  name: string;
+  location: string;
+  phone: string;
+  email: string;
+  title: string;
+  sites: PersonalSiteLink[];
+  education: EducationItem[];
+  infoSites: InfoSiteLink[];
+  certifications: CertificationItem[];
+};
+
+export const PERSONAL_DATA: PersonalData = {
     id: "person",
     name: "Blaine Rudow",
     location: "Indianapolis, IN",
@@ -32,4 +71,4 @@ export const PERSONAL_DATA = {
       {id: "csd", name: "Certified Scrum Developer", issuer: "Scrum Alliance", date: "June 2024"},
       {id: "hci", name: "Certificate in HCI/UX", issuer: "Indiana University Indianapolis", date: "May 2022"},
     ],
-}; 
+};

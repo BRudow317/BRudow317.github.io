@@ -1,4 +1,9 @@
-export const SITE_CONTEXT = [
+export type SiteContextItem = {
+    id: string;
+    type: string;
+};
+
+export const SITE_CONTEXT: SiteContextItem[] = [
     {
         id: "software_engineer",
         type: "Software Engineer",

@@ -1,11 +1,26 @@
 /**
  * @description List of project data for the portfolio site.
- * 
+ *
  * @exports PROJECT_DATA as an array of project objects.
- * 
+ *
  */
 
-export const PROJECT_DATA = [
+export type ProjectLinks = {
+  repo: string;
+  live?: string;
+};
+
+export type ProjectItem = {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  highlights: string[];
+  stack: string[];
+  links: ProjectLinks;
+};
+
+export const PROJECT_DATA: ProjectItem[] = [
   {
     id: "CentralAuthService",
     name: "Central Auth Service",

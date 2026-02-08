@@ -1,11 +1,21 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import type { ReactNode } from "react";
 export { ThemeProvider, useTheme };
 
-const ThemeContext = createContext(undefined);
-const THEMES = ["my-theme", "dark", "light", "git"];
+export type ThemeValue = {
+  theme: string;
+  toggleTheme: () => void;
+};
 
-function ThemeDomSync({ theme }) {
+const ThemeContext = createContext<ThemeValue | undefined>(undefined);
+const THEMES = ["my-theme", "dark", "light", "git"] as const;
+
+type ThemeDomSyncProps = {
+  theme: string;
+};
+
+function ThemeDomSync({ theme }: ThemeDomSyncProps) {
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
@@ -13,8 +23,12 @@ function ThemeDomSync({ theme }) {
   return null;
 }
 
-function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("git");
+type ThemeProviderProps = {
+  children: ReactNode;
+};
+
+function ThemeProvider({ children }: ThemeProviderProps) {
+  const [theme, setTheme] = useState<string>("git");
 
   const toggleTheme = () => {
     setTheme((curr) => {
@@ -34,7 +48,7 @@ function ThemeProvider({ children }) {
   );
 }
 
-function useTheme() {
+function useTheme(): ThemeValue {
   const context = useContext(ThemeContext);
   if (!context) {
     throw new Error("useTheme must be used within a ThemeProvider");

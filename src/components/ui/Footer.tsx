@@ -6,11 +6,13 @@
  */
 import { useLocation } from "react-router";
 import { useMemo } from "react";
-import { NavItems } from "../../constants/NavItems.js";
-import { PROJECT_DATA } from "../../constants/PROJECT_DATA.js";
-import { PERSONAL_DATA } from "../../constants/PERSONAL_DATA.js";
+import { NavItems } from "../../constants/NavItems";
+import { PROJECT_DATA } from "../../constants/PROJECT_DATA";
+import { PERSONAL_DATA, type PersonalSiteLink } from "../../constants/PERSONAL_DATA";
 
-export function Footer() {
+type FooterProps = {};
+
+export function Footer({}: FooterProps) {
   const styles = {
     /* Footer */
     footer: {
@@ -84,15 +86,13 @@ export function Footer() {
     return "Intro";
   }, [location.pathname]);
 
-  const personalSite = PERSONAL_DATA.sites.find(
-    (site) => site.type === "personal",
-  ).url;
-  const profileSite = PERSONAL_DATA.sites.find(
-    (site) => site.type === "profile",
-  ).url;
-  const linkedInSite = PERSONAL_DATA.sites.find(
-    (site) => site.id === "linkedin",
-  ).url;
+  const sites = PERSONAL_DATA.sites as PersonalSiteLink[];
+  const personalSite =
+    sites.find((site) => site.type === "personal")?.url ?? "#";
+  const profileSite =
+    sites.find((site) => site.type === "profile")?.url ?? "#";
+  const linkedInSite =
+    sites.find((site) => site.id === "linkedin")?.url ?? "#";
 
   return (
     <footer id="footer" type="footer" style={styles.footer}>

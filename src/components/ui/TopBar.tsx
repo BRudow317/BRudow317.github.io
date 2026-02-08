@@ -1,8 +1,17 @@
 
-import { PERSONAL_DATA } from '../../constants/PERSONAL_DATA';
+import { PERSONAL_DATA, type PersonalSiteLink } from '../../constants/PERSONAL_DATA';
+import type { ScreenSize } from "../../context/BreakpointContext";
 // import { PROFESSIONAL_SUMMARY } from '../../constants/PROFESSIONAL_SUMMARY';
 // import { SITE_CONTEXT } from '../../constants/SITE_CONTEXT';
 // import { useData } from '../../context/DataContext';
+
+type TopBarProps = {
+  name?: string;
+  email?: string;
+  sites?: PersonalSiteLink[];
+  screenSize?: ScreenSize;
+  topBarHeight?: number;
+};
 
 export const TopBar = (
   {
@@ -13,7 +22,7 @@ export const TopBar = (
     // infoSites = PERSONAL_DATA.infoSites,
     screenSize = 'lg',
     topBarHeight = 60,
-  } = {}
+  }: TopBarProps = {}
 )  => {
   // Get the current data context
   // const { dataContext } = useData();
@@ -29,8 +38,8 @@ export const TopBar = (
   //   || infoSites.find((site) => site.type === "default")
   //   || infoSites[0];
 
-  let isSmallScreen = screenSize === "xsm" || screenSize === "sm" || screenSize === "md";
-  let styles = {
+  const isSmallScreen = screenSize === "xsm" || screenSize === "sm" || screenSize === "md";
+  const styles = {
     TopBar: {
       /* position: sticky;
       top: 0; */
@@ -74,17 +83,20 @@ export const TopBar = (
       },
   }
 
+  const getSiteUrl = (siteId: string) =>
+    sites.find((site) => site.id === siteId)?.url ?? "#";
+
   const largeRender = 
     <section id="topbar" style={styles.TopBar} name="topbar">
       <div id="topbarrow" style={styles.TopBarRow} name="TopBarRow">
       
-      <h3 style={{...styles.BrandMeta}}><a href={sites.find(site => site.id === "linkedin").url} target="_blank" rel="noreferrer"
+      <h3 style={{...styles.BrandMeta}}><a href={getSiteUrl("linkedin")} target="_blank" rel="noreferrer"
       >{name}</a></h3>
       {/* <h3 style={{...styles.BrandMeta}}><a href={infoSite.url} target="_blank" rel="noreferrer"
       >{title}</a></h3> */}
-      <h3 style={{...styles.BrandMeta}}><a href={sites.find(site => site.id === "github").url} target="_blank" rel="noreferrer"
+      <h3 style={{...styles.BrandMeta}}><a href={getSiteUrl("github")} target="_blank" rel="noreferrer"
       >GitHub</a></h3>
-      <h3 style={{...styles.BrandMeta}}><a href={sites.find(site => site.id === "linkedin").url} target="_blank" rel="noreferrer"
+      <h3 style={{...styles.BrandMeta}}><a href={getSiteUrl("linkedin")} target="_blank" rel="noreferrer"
         >Linkedin</a>
       </h3>
       <h3 style={{...styles.BrandMeta}}><a href={`mailto:${email}`}>{email}</a></h3>
@@ -95,11 +107,11 @@ export const TopBar = (
   const smallRender = 
     <section id="topbar" style={styles.TopBar} name="topbar">
       <div id="topbarrow" style={styles.TopBarRow} name="TopBarRow">
-      <h3 style={{...styles.BrandMeta, flex: 2}}><a href={sites.find(site => site.id === "linkedin").url} target="_blank" rel="noreferrer"
+      <h3 style={{...styles.BrandMeta, flex: 2}}><a href={getSiteUrl("linkedin")} target="_blank" rel="noreferrer"
       >{name}</a></h3>
-      <h3 style={{...styles.BrandMeta, flex: 1}}><a href={sites.find(site => site.id === "github").url} target="_blank" rel="noreferrer"
+      <h3 style={{...styles.BrandMeta, flex: 1}}><a href={getSiteUrl("github")} target="_blank" rel="noreferrer"
       >GitHub</a></h3>
-      <h3 style={{...styles.BrandMeta, flex: 1}}><a href={sites.find(site => site.id === "linkedin").url} target="_blank" rel="noreferrer"
+      <h3 style={{...styles.BrandMeta, flex: 1}}><a href={getSiteUrl("linkedin")} target="_blank" rel="noreferrer"
         >Linkedin</a>
       </h3>
       <h3 style={{...styles.BrandMeta, flex: 3}}><a href={`mailto:${email}`}>{email}</a></h3>

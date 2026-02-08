@@ -4,7 +4,14 @@
  * @exports SKILLS_DATA - Array of skill objects for resume
  */
 
-export const SKILLS_DATA = [
+export type SkillItem = {
+  id: string;
+  type: string;
+  label: string;
+  text: string;
+};
+
+export const SKILLS_DATA: SkillItem[] = [
   // Software Engineer
   { id: "languages",
     type: "default",

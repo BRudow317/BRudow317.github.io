@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": false
+  },
+  "include": ["vite.config.js"],
+  "exclude": [
+    "dist",
+    "bin",
+    "lib",
+    "logs",
+    ".bin",
+    "node_modules",
+    ".git",
+    "build",
+    "coverage",
+    "public",
+    "Library"
+  ]
+}

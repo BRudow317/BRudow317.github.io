@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { ROUTES, NAV_NAMES } from "../../constants/routes.js";
-import { useTheme } from "../../context/ThemeContext.jsx";
+import { useTheme } from "../../context/ThemeContext";
+
+type NavBarProps = {};
 
 const styles = {
     NavBar: {
@@ -57,7 +59,7 @@ const styles = {
 // {({ isActive }) => isActive 
 //                 ? { ...styles.NavLink, ...active } : styles.NavLink}
 
-export const NavBar = () => {
+export const NavBar = ({}: NavBarProps) => {
     const { toggleTheme } = useTheme();
   return (
     <nav style={styles.NavBar}

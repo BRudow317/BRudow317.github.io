@@ -13,11 +13,11 @@ import { ProjectPage } from "./pages/ProjectPages";
 import { ProjectsViewPage } from "./pages/ProjectsViewPage";
 import { YourMoneyLine } from "./pages/YourMoneyLine";
 import { InterestCalc } from "./pages/InterestCalc.jsx";
-import { Layout } from "./layouts/Layout.jsx";
+import { Layout } from "./layouts/Layout";
 import { PROJECT_DATA } from "./constants/PROJECT_DATA";
-import { ThemeProvider } from "./context/ThemeContext.jsx";
-import { BreakpointProvider } from "./context/BreakpointContext.jsx";
-import { DataProvider } from "./context/DataContext.jsx";
+import { ThemeProvider } from "./context/ThemeContext";
+import { BreakpointProvider } from "./context/BreakpointContext";
+import { DataProvider } from "./context/DataContext";
 import "./styles/ColorTokens.css";
 import "./styles/styles.css";
 

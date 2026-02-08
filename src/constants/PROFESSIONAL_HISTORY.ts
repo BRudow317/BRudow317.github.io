@@ -1,16 +1,31 @@
 /**
  * title: "Application Developer / Full Stack Engineer",
-      company: "Indiana Public Retirement Systems (INPRS)",
-      dates: "Apr 2022 - Feb 2024",
-      summary: "",
-      bullets: [
-        { label: "example",
-          text: "example"
-        },
-      ]
+ *   company: "Indiana Public Retirement Systems (INPRS)",
+ *   dates: "Apr 2022 - Feb 2024",
+ *   summary: "",
+ *   bullets: [
+ *     { label: "example",
+ *       text: "example"
+ *     },
+ *   ]
  */
 
-export const PROFESSIONAL_HISTORY = [
+export type HistoryBullet = {
+  label: string;
+  text: string;
+};
+
+export type ProfessionalHistoryItem = {
+  id: string;
+  type: string;
+  title: string;
+  company: string;
+  dates: string;
+  summary?: string;
+  bullets: HistoryBullet[];
+};
+
+export const PROFESSIONAL_HISTORY: ProfessionalHistoryItem[] = [
   {
     id: "SSA",
     type: "default",
@@ -36,8 +51,8 @@ export const PROFESSIONAL_HISTORY = [
         text: "Built a dependency-aware migration orchestration engine with retries, batching, and concurrency controls; currently automating 25+ weekly operations and saved 50+ hours/week previously spent on manual ticket orchestration alone.",
       },
       {
-        label: "Operational Tooling",
-        text: "Reduced manual orchestrations and lengthy ticket times, saving 50+ hours/week through a processing dashboard used by case workers for real-time operations, replacing manual workflows and reducing operational handoffs.",
+        label: "High Speed Processing",
+        text: "Designed and built event driven architecture for high speed, low latency of thousands of records/hour. Turning batch over night processes into real-time pipelines, bringing data to consumers in finance and investments. Enabling faster operations, audits, insights, and interventions.",
       },
       {
         label: "Python Automation",

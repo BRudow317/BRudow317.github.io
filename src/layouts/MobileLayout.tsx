@@ -1,12 +1,18 @@
-import { SideNav } from "../components/ui/SideNav.jsx";
+import { SideNav } from "../components/ui/SideNav";
 import { Outlet, useLocation } from "react-router-dom";
-import { TopBar } from "../components/ui/TopBar.jsx";
-import { Footer } from "../components/ui/Footer.jsx";
+import { TopBar } from "../components/ui/TopBar";
+import { Footer } from "../components/ui/Footer";
+import type { ScreenSize } from "../context/BreakpointContext";
+
+type MobileLayoutProps = {
+  topBarHeight?: number;
+  screenSize?: ScreenSize;
+};
 
 export function MobileLayout({
   topBarHeight = 60,
-  screenSize = 'sm'
-} = {}) {
+  screenSize = "sm",
+}: MobileLayoutProps = {}): JSX.Element {
   const location = useLocation();
   console.log("Screen Size in MobileLayout:", screenSize);
   const styles = {

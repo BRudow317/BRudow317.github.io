@@ -3,7 +3,14 @@
  *
  *  */
 
-export const PROFESSIONAL_SUMMARY = [
+export type ProfessionalSummaryItem = {
+  id: string;
+  type: string;
+  title: string;
+  text: string;
+};
+
+export const PROFESSIONAL_SUMMARY: ProfessionalSummaryItem[] = [
   {
     id: "default",
     type: "primary",

@@ -1,26 +1,36 @@
 import { useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { NavItems } from "../../constants/NavItems";
+import { NavItems, type NavItem } from "../../constants/NavItems";
 import image from "../../assets/images/Headshot.png";
 import { getComponentHeight } from "../../utils/getComponentHeight";
 import { DataContextSelector } from "./DataContextSelector";
+import type { ScreenSize } from "../../context/BreakpointContext";
+
+type SideNavProps = {
+  topOffset?: number;
+  bottomOffset?: number;
+  screenSize?: ScreenSize;
+  topBarHeight?: number;
+};
 
 export function SideNav({
   topOffset = 60,
   bottomOffset = 201,
   screenSize = "lg",
-} = {}) {
-  let isSmallScreen = screenSize === "xsm" || screenSize === "sm";
+}: SideNavProps = {}) {
+  const isSmallScreen = screenSize === "xsm" || screenSize === "sm";
+  const navItems: NavItem[] = NavItems;
 
-  const borderRef = useRef(null);
+  const borderRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const updateBorder = () => {
-      if (!borderRef.current) return;
+      const borderEl = borderRef.current;
+      if (!borderEl) return;
       const footerHeight = getComponentHeight("footer");
       const topbarHeight = getComponentHeight("topbar");
-      if (footerHeight !== null) borderRef.current.style.bottom = `${footerHeight - 2}px`;
-      if (topbarHeight !== null) borderRef.current.style.top = `${topbarHeight - 2}px`;
+      if (footerHeight !== null) borderEl.style.bottom = `${footerHeight - 2}px`;
+      if (topbarHeight !== null) borderEl.style.top = `${topbarHeight - 2}px`;
     };
 
     const footer = document.getElementById("footer");
@@ -34,7 +44,7 @@ export function SideNav({
     return () => observer.disconnect();
   }, []);
 
-  let styles = {
+  const styles = {
     SideNav: {
       position: "relative",
       display: "flex",
@@ -114,7 +124,7 @@ export function SideNav({
       </div>
 
       <div style={styles.NavGroup}>
-        {NavItems.filter((x) => x.group === "Top").map((x) => (
+        {navItems.filter((x) => x.group === "Top").map((x) => (
           <NavLink
             key={x.key}
             to={x.to}
@@ -131,7 +141,7 @@ export function SideNav({
       <div className="divider" />
 
       <div style={styles.NavGroup}>
-        {NavItems.filter((x) => x.group === "Projects").map((x) => (
+        {navItems.filter((x) => x.group === "Projects").map((x) => (
           <NavLink
             key={x.key}
             to={x.to}
@@ -159,7 +169,7 @@ export function SideNav({
         </div>
 
         <div style={styles.NavGroup}>
-          {NavItems.filter((x) => x.group === "Top").map((x) => (
+          {navItems.filter((x) => x.group === "Top").map((x) => (
             <NavLink
               key={x.key}
               to={x.to}
@@ -176,7 +186,7 @@ export function SideNav({
         <div className="divider" />
 
         <div style={styles.NavGroup}>
-          {NavItems.filter((x) => x.group === "Projects").map((x) => (
+          {navItems.filter((x) => x.group === "Projects").map((x) => (
             <NavLink
               key={x.key}
               to={x.to}

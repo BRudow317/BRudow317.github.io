@@ -3,11 +3,6 @@ import { ChevronDown, Check } from "lucide-react";
 import { useData } from "../../context/DataContext";
 import { SITE_CONTEXT } from "../../constants/SITE_CONTEXT";
 
-type SiteContextItem = {
-  id: string;
-  type: string;
-};
-
 type DataContextSelectorProps = {
   /** Optional: override the value (defaults to context value) */
   value?: string;
@@ -67,7 +62,7 @@ export const DataContextSelector = ({
           }}
         >
           <Select.Viewport style={{ padding: '4px' }}>
-            {(SITE_CONTEXT as SiteContextItem[])
+            {SITE_CONTEXT
               .filter((ctx) => ctx.id !== "default")
               .map((ctx) => (
               <Select.Item
