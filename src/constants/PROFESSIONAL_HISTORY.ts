@@ -56,7 +56,7 @@ export const PROFESSIONAL_HISTORY: ProfessionalHistoryItem[] = [
       },
       {
         label: "Python Automation",
-        text: "Built a Python documentation pipeline (BeautifulSoup, pandas) consolidating 5+ sources into a self-updating SharePoint wiki with ServiceNow links (25+ pages), cutting onboarding time 50%+, standardizing processes, and boosting development velocity.",
+        text: "Built a Python documentation pipeline consolidating 5+ sources into a self-updating SharePoint wiki with ServiceNow links (25+ pages), cutting onboarding time 50%+, standardizing processes, and boosting development velocity.",
       },
       {
         label: "Architecture SME",

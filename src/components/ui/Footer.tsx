@@ -6,14 +6,17 @@
  */
 import { useLocation } from "react-router";
 import { useMemo } from "react";
+import type { CSSProperties, HTMLAttributes, JSX } from "react";
 import { NavItems } from "../../constants/NavItems";
 import { PROJECT_DATA } from "../../constants/PROJECT_DATA";
 import { PERSONAL_DATA, type PersonalSiteLink } from "../../constants/PERSONAL_DATA";
 
-type FooterProps = {};
+type FooterProps = HTMLAttributes<HTMLElement> & {
+  type?: string;
+};
 
-export function Footer({}: FooterProps) {
-  const styles = {
+export function Footer(_props: FooterProps): JSX.Element {
+  const styles: Record<string, CSSProperties> = {
     /* Footer */
     footer: {
       display: "flex",
@@ -95,7 +98,7 @@ export function Footer({}: FooterProps) {
     sites.find((site) => site.id === "linkedin")?.url ?? "#";
 
   return (
-    <footer id="footer" type="footer" style={styles.footer}>
+    <footer id="footer" data-type="footer" style={styles.footer}>
       <div style={styles.footerNav}>
         <h3 style={styles.footerH3}>
           <a href={personalSite}>

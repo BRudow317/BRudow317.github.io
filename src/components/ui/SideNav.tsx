@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import { NavItems, type NavItem } from "../../constants/NavItems";
 import image from "../../assets/images/Headshot.png";
 import { getComponentHeight } from "../../utils/getComponentHeight";
@@ -9,16 +9,17 @@ import type { ScreenSize } from "../../context/BreakpointContext";
 type SideNavProps = {
   topOffset?: number;
   bottomOffset?: number;
-  screenSize?: ScreenSize;
+  screenSize?: String;
   topBarHeight?: number;
 };
+
 
 export function SideNav({
   topOffset = 60,
   bottomOffset = 201,
   screenSize = "lg",
-}: SideNavProps = {}) {
-  const isSmallScreen = screenSize === "xsm" || screenSize === "sm";
+} = {}) {
+  const isSmallScreen: boolean = screenSize === "xsm" || screenSize === "sm";
   const navItems: NavItem[] = NavItems;
 
   const borderRef = useRef<HTMLDivElement | null>(null);
@@ -44,7 +45,7 @@ export function SideNav({
     return () => observer.disconnect();
   }, []);
 
-  const styles = {
+  const styles: { [key: string]:React.CSSProperties } = {
     SideNav: {
       position: "relative",
       display: "flex",

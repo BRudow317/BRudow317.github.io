@@ -12,7 +12,7 @@ import { ResumePage } from "./pages/ResumePage";
 import { ProjectPage } from "./pages/ProjectPages";
 import { ProjectsViewPage } from "./pages/ProjectsViewPage";
 import { YourMoneyLine } from "./pages/YourMoneyLine";
-import { InterestCalc } from "./pages/InterestCalc.jsx";
+import { InterestCalc } from "./pages/InterestCalc";
 import { Layout } from "./layouts/Layout";
 import { PROJECT_DATA } from "./constants/PROJECT_DATA";
 import { ThemeProvider } from "./context/ThemeContext";
