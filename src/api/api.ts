@@ -4,6 +4,39 @@
  * @exports registerUser, loginUser, getProfile, requestPasswordReset, confirmPasswordReset
  * @description This module provides functions to interact with the backend API for user registration, login, profile retrieval, and password reset.
  * @see https://your-api.example.com/docs for API documentation.
+ * 
+ * @example
+ import { useState } from "react";
+ import { loginUser, getProfile } from "./api";
+ 
+ export function Login() {
+   const [email, setEmail] = useState("");
+   const [password, setPassword] = useState("");
+ 
+   async function onLogin() {
+     const { token } = await loginUser(email, password);
+     // Store token in memory or storage; then use it for auth requests
+     const profile = await getProfile(token);
+     console.log(profile);
+   }
+ 
+   return (
+     <form
+       onSubmit={(e) => {
+         e.preventDefault();
+         onLogin().catch(console.error);
+       }}
+     >
+       <input value={email} onChange={(e) => setEmail(e.target.value)} />
+       <input
+         value={password}
+         type="password"
+         onChange={(e) => setPassword(e.target.value)}
+       />
+       <button type="submit">Login</button>
+     </form>
+   );
+ }
  */
 const API_BASE = "https://your-api.example.com";
 const API_KEY = "site_a_key_abc123";

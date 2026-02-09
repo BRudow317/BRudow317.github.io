@@ -23,6 +23,7 @@
     "@react-pdf/renderer": "^4.3.2",
     "@tailwindcss/cli": "^4.1.18",
     "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "^22.19.10",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.35.0",
