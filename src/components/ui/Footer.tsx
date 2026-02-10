@@ -7,7 +7,7 @@
 import { useLocation } from "react-router";
 import { useMemo } from "react";
 import type { CSSProperties, HTMLAttributes, JSX } from "react";
-import { NavItems } from "../../constants/NavItems";
+// import { NavItems } from "../../constants/NavItems";
 import { PROJECT_DATA } from "../../constants/PROJECT_DATA";
 import { PERSONAL_DATA, type PersonalSiteLink } from "../../constants/PERSONAL_DATA";
 
@@ -77,8 +77,8 @@ export function Footer(_props: FooterProps): JSX.Element {
 
   const activeLabel = useMemo(() => {
     const path = location.pathname;
-    const match = NavItems.find((x) => x.to === path);
-    if (match) return match.label;
+    // const match = NavItems.find((x) => x.to === path);
+    // if (match) return match.label;
 
     if (path.startsWith("/projects/")) {
       const id = path.split("/")[2] || "";

@@ -26,44 +26,7 @@ export default [
   },
   js.configs.recommended,
   {
-    files: ['**/*.{js,jsx}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parserOptions: {
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
-    plugins: {
-      react,
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-    },
-    rules: {
-      ...react.configs.recommended.rules,
-      ...react.configs['jsx-runtime'].rules,
-      ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-      'react/prop-types': 'off',
-    },
-  },
-  {
-    files: ['**/*.{ts,tsx}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parser: tsParser,
-      parserOptions: {
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
-    },
+    files: ['**/*.{js,jsx,ts,tsx}'],
     settings: {
       react: {
         version: 'detect',
@@ -79,9 +42,34 @@ export default [
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
-      ...tseslint.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'react/prop-types': 'off',
+    },
+  },
+  {
+    files: ['**/*.{js,jsx}'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+        sourceType: 'module',
+      },
+    },
+  },
+  {
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+      parser: tsParser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+        sourceType: 'module',
+      },
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules,
     },
   },
 ];

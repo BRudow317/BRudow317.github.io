@@ -69,6 +69,9 @@ const styles={
     skillText: {
       color: 'var(--text-2)',
     },
+    skillRow: {
+      margin: '6px 6px',
+    },
   }
 
 
@@ -123,9 +126,8 @@ export function WelcomePage() {
 
         <div style={styles.HeroMeta}>
           <span className="pill">Indianapolis, IN</span>
-          {/* <span className="pill">Open to: Remote/Hybrid</span> */}
           <span className="pill">Infrastructure: AWS | Enterprise | Distributed Systems | Cloud | Linux</span>
-          <span className="pill">Frontend: Web Design | Optimization | SEO</span>
+          <span className="pill">Frontend: Web Design | Optimization | SEO | State Management</span>
           <span className="pill">Backend: Security | Business Domain | Computing Optimization</span>
           <span className="pill">Integrations: REST | GraphQL | Messaging | Queues</span>
           

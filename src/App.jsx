@@ -11,10 +11,15 @@ import { WelcomePage } from "./pages/WelcomePage";
 import { ResumePage } from "./pages/ResumePage";
 import { ProjectPage } from "./pages/ProjectPages";
 import { ProjectsViewPage } from "./pages/ProjectsViewPage";
-import { YourMoneyLine } from "./pages/YourMoneyLine";
-import { InterestCalc } from "./pages/InterestCalc";
+import { DemonstrationsViewPage } from "./pages/demos/DemonstrationsViewPage";
+import { ResearchViewPage } from "./pages/research/ResearchViewPage";
+import { MxIntegration } from "./pages/research/MxIntegration";
+import { YourMoneyLine } from "./pages/research/YourMoneyLine";
+import { InterestCalc } from "./pages/demos/InterestCalc";
 import { Layout } from "./layouts/Layout";
 import { PROJECT_DATA } from "./constants/PROJECT_DATA";
+import { DEMO_DATA } from "./constants/DEMO_DATA";
+import { RESEARCH_DATA } from "./constants/RESEARCH_DATA";
 import { ThemeProvider } from "./context/ThemeContext";
 import { BreakpointProvider } from "./context/BreakpointContext";
 import { DataProvider } from "./context/DataContext";
@@ -56,6 +61,20 @@ function ProjectRoute() {
   return <ProjectPage project={project} />;
 }
 
+const demoComponentMap = {
+  InterestCalc,
+};
+
+const researchComponentMap = {
+  MxIntegration,
+  YourMoneyLine,
+};
+
+function normalizeRoutePath(parent, page) {
+  const normalizedParent = parent.startsWith("/") ? parent : `/${parent}`;
+  return `${normalizedParent}${page}`;
+}
+
 export function App() {
   const basename = normalizeBasename(import.meta.env.BASE_URL);
 
@@ -68,8 +87,32 @@ export function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<WelcomePage />} />
             <Route path="/resume" element={<ResumePage />} />
-            <Route path="/yourmoneyline" element={<YourMoneyLine />} />
-            <Route path="/interestcalc" element={<InterestCalc />} />
+            <Route path="/research" element={<ResearchViewPage />} />
+            {RESEARCH_DATA.map((item) => {
+              const Component = researchComponentMap[item.id];
+              if (!Component) return null;
+              return (
+                <Route
+                  key={item.id}
+                  path={normalizeRoutePath(item.parent, item.page)}
+                  element={<Component />}
+                />
+              );
+            })}
+            
+            <Route path="/demo" element={<DemonstrationsViewPage />} />
+            {DEMO_DATA.map((item) => {
+              const Component = demoComponentMap[item.id];
+              if (!Component) return null;
+              return (
+                <Route
+                  key={item.id}
+                  path={normalizeRoutePath(item.parent, item.page)}
+                  element={<Component />}
+                />
+              );
+            })}
+
             <Route path="/projects" element={<ProjectsViewPage />} />
             <Route path="/projects/:id" element={<ProjectRoute />} />
             <Route path="*" element={<Navigate to="/" replace />} />

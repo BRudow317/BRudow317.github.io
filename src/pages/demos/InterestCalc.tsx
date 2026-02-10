@@ -1,15 +1,40 @@
-import { useState } from 'react';
+import { useState, type ChangeEvent, type CSSProperties, type MouseEvent } from 'react';
+
+type InputsState = {
+  principal: number;
+  rate: number;
+  payment: number;
+};
+
+type ResultRow = {
+  month: number;
+  actualPayment: number;
+  principalPayment: number;
+  interestPayment: number;
+  remainingPrincipal: number;
+};
+
+type ResultSummary = {
+  totalPaid: number;
+  totalInterest: number;
+  totalMonths: number;
+};
+
+type ResultsState = {
+  rows: ResultRow[];
+  summary: ResultSummary;
+};
 
 export const InterestCalc = () => {
   // State for form inputs
-  const [inputs, setInputs] = useState({
+  const [inputs, setInputs] = useState<InputsState>({
     principal: 10000,
     rate: 5.0,
     payment: 200
   });
 
   // State for the calculated results
-  const [results, setResults] = useState({
+  const [results, setResults] = useState<ResultsState>({
     rows: [],
     summary: { totalPaid: 0, totalInterest: 0, totalMonths: 0 }
   });
@@ -17,7 +42,7 @@ export const InterestCalc = () => {
   const [error, setError] = useState('');
 
   // Handle input changes
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputs(prev => ({
       ...prev,
@@ -34,7 +59,7 @@ export const InterestCalc = () => {
     let totalInterest = 0;
     let totalPaid = 0;
     let month = 1;
-    const newRows = [];
+    const newRows: ResultRow[] = [];
     
     // Safety check: Is payment enough to cover interest?
     const firstMonthInterest = currentPrincipal * monthlyRate;
@@ -89,7 +114,7 @@ export const InterestCalc = () => {
   };
 
   // CSS Styles Object
-  const styles = {
+  const styles: { [key: string]: CSSProperties } = {
     container: {
       fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
       maxWidth: '800px',
@@ -225,10 +250,14 @@ export const InterestCalc = () => {
       {error && <div style={styles.error}>{error}</div>}
 
       <button 
-        style={styles.button} 
+        style={styles.button}
         onClick={handleCalculate}
-        onMouseOver={(e) => e.target.style.backgroundColor = '#2980b9'}
-        onMouseOut={(e) => e.target.style.backgroundColor = '#3498db'}
+        onMouseOver={(e: MouseEvent<HTMLButtonElement>) => {
+          e.currentTarget.style.backgroundColor = '#2980b9';
+        }}
+        onMouseOut={(e: MouseEvent<HTMLButtonElement>) => {
+          e.currentTarget.style.backgroundColor = '#3498db';
+        }}
       >
         Calculate Schedule
       </button>

@@ -21,8 +21,6 @@ export const DataContextSelector = ({
   style,
 }: DataContextSelectorProps = {}) => {
   const { dataContext, setDataContext } = useData();
-
-  // Use props if provided, otherwise fall back to context
   const value = valueProp ?? dataContext;
   const onChange = onChangeProp ?? setDataContext;
 

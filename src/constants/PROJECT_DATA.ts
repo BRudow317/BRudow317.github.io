@@ -23,13 +23,14 @@ export type ProjectItem = {
 export const PROJECT_DATA: ProjectItem[] = [
   {
     id: "CentralAuthService",
-    name: "Central Auth Service",
+    name: "Central Lambda Backend Service",
     tagline: "Centralized authentication service for internal applications.",
-    description:
-      "A centralized authentication service for managing user access across multiple internal applications.",
+    description: "A centralized authentication service for managing user access across multiple internal applications.",
     highlights: ["Single sign-on", "OAuth2 support", "User management"],
-    stack: ["AWS", "Lambda", "API Gateway", "Cognito", "Python", "DynamoDB"],
-    links: { repo: "https://github.com/BRudow317/centralauthservice" },
+    stack: ["AWS", "Lambda", "FastAPI", "Python", "DynamoDB", "Auth", "JWT", "Serverless Application Model (SAM)", "AWS CDK", "CloudFormation"],
+    links: { repo: "https://github.com/BRudow317/lambdalith",
+      live: "https://ol263gec4xofofgmrxq6gc3bv40ljmit.lambda-url.us-east-1.on.aws/docs"
+    },
   },
   {
     id: "Documentation",
@@ -49,23 +50,23 @@ export const PROJECT_DATA: ProjectItem[] = [
     id: "CloudVoyages",
     name: "Cloud Voyages",
     tagline: "Marketing website for Cloud Voyages LLC.",
-    description:
-      "The business website for Cloud Voyages LLC, a cloud consulting company.",
+    description: "The business website for Cloud Voyages LLC, a cloud consulting company.",
     highlights: ["Marketing", "Distributed System", "Service Catalog", "AWS", "React"],
     stack: ["AWS", "RadixUI", "TypeScript","React","TailwindCSS", "DynamoDB", "Python", "FastAPI", "Docker"],
-    links: { repo: "https://github.com/BRudow317/cloudvoyages", live: "https://cloudvoyages.com" },
+    links: { 
+      repo: "https://github.com/BRudow317/cloudvoyages", 
+      live: "https://cloudvoyages.com" 
+    },
   },
   {
     id: "Scripts",
-    name: "Scripts",
-    tagline: "A repo for scripts.",
-    description:
-      "Repo for various scripts and automation tools that make my life easier.",
+    name: "Automation",
+    tagline: "My repo for turning manual tasks into automated solutions.",
+    description: "A repo for various scripts and automation tools that start as manual tasks, become automations, and eventually services.",
     highlights: ["Automation", "Solution Design", "Compute Optimization", "Scripting"],
     stack: ["Bash", "Python", "Java", "JavaScript", "Docker", "PowerShell", "Oracle RDBMS"],
     links: {
       repo: "https://github.com/BRudow317/Scripts",
-      live: "https://resume-api.com",
     },
   },
   {
@@ -73,7 +74,7 @@ export const PROJECT_DATA: ProjectItem[] = [
     name: "GitHub Portfolio",
     tagline: "This site, which is a GitHub hosted site for my portfolio of projects.",
     description:
-      "You can see various code .",
+      "You can see various code projects and contributions I've made across different technologies.",
     highlights: [
       "Container Services",
       "CI/CD",

@@ -21,7 +21,7 @@
       "@/*": ["./src/*"]
     },
   },
-  "include": ["src"],
+  "include": ["src", "bin/YourMoneyLine copy.jsx"],
   "exclude": [
     "dist",
     "bin",
