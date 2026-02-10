@@ -1,5 +1,5 @@
 import { type CSSProperties } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import { DEMO_DATA } from "../../constants/DEMO_DATA";
 
 const DemoItems = [

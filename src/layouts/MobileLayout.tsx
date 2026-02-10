@@ -1,5 +1,5 @@
 import { SideNav } from "../components/ui/SideNav";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router";
 import { TopBar } from "../components/ui/TopBar";
 import { Footer } from "../components/ui/Footer";
 import type { ScreenSize } from "../context/BreakpointContext";
