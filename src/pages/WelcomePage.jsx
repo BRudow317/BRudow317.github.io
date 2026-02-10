@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { PERSONAL_DATA } from '../constants/PERSONAL_DATA';
 import { SKILLS_DATA } from '../constants/SKILLS_DATA';
 import { PROFESSIONAL_SUMMARY } from '../constants/PROFESSIONAL_SUMMARY';
