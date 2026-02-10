@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { TopBar } from "../components/ui/TopBar";
 import { Footer } from "../components/ui/Footer";
 import type { ScreenSize } from "../context/BreakpointContext";
+import React from "react";
 
 type MobileLayoutProps = {
   topBarHeight?: number;
@@ -12,10 +13,10 @@ type MobileLayoutProps = {
 export function MobileLayout({
   topBarHeight = 60,
   screenSize = "sm",
-}: MobileLayoutProps = {}): JSX.Element {
+}: MobileLayoutProps = {}): React.JSX.Element {
   const location = useLocation();
   console.log("Screen Size in MobileLayout:", screenSize);
-  const styles = {
+  const styles: { [key: string]:React.CSSProperties } = {
     App: {
       display: "flex",
       flexDirection: "column",

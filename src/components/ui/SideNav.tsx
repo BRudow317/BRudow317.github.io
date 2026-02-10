@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { NavLink, useMatch } from "react-router";
 // import { NavItems, type NavItem } from "../../constants/NavItems";
 import image from "../../assets/images/Headshot.png";

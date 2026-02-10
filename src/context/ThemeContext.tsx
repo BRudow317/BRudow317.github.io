@@ -32,7 +32,7 @@ function ThemeProvider({ children }: ThemeProviderProps) {
 
   const toggleTheme = () => {
     setTheme((curr) => {
-      const index = THEMES.indexOf(curr);
+      const index = THEMES.indexOf(curr as (typeof THEMES)[number]);
       const nextIndex = index === -1 ? 0 : (index + 1) % THEMES.length;
       return THEMES[nextIndex];
     });

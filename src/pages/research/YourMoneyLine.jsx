@@ -120,7 +120,7 @@ export const YourMoneyLine = () => {
       <section>
         <h2 style={styles.h2}>The Organizational Architecture and Leadership</h2>
         <p style={styles.p}>
-          Headquartered in Indianapolis (9450 N. Meridian St.), YML serves as a hub for a national operation supporting hundreds of thousands of households. The company's trajectory began in 2012 when Dunn divested from traditional investment practices to focus on the "money decisions" that dictate stability for the average worker.
+          Headquartered in Indianapolis (9450 N. Meridian St.), YML serves as a hub for a national operation supporting hundreds of thousands of households. The company&apos;s trajectory began in 2012 when Dunn divested from traditional investment practices to focus on the &ldquo;money decisions&rdquo; that dictate stability for the average worker.
         </p>
         <div style={styles.highlightBox}>
           <strong>Core Philosophy:</strong> The leadership team, including COO Molly Fohrer and Head of Sales Brad Kime, has cultivated a culture centered on <strong>empathy and the elimination of financial shame</strong>.
@@ -130,7 +130,7 @@ export const YourMoneyLine = () => {
       <section>
         <h2 style={styles.h2}>The Dual Ecosystem: YML vs. Hey Money</h2>
         <p style={styles.p}>
-          Your Money Line operates alongside a direct-to-consumer entity known as "Hey Money." Together, they democratize financial expertise, though YML remains the primary vehicle for corporate intervention.
+          Your Money Line operates alongside a direct-to-consumer entity known as &ldquo;Hey Money.&rdquo; Together, they democratize financial expertise, though YML remains the primary vehicle for corporate intervention.
         </p>
         
         <table style={styles.table}>
@@ -162,7 +162,7 @@ export const YourMoneyLine = () => {
       <section>
         <h2 style={styles.h2}>The Technical Infrastructure of Financial Stability</h2>
         <p style={styles.p}>
-          The platform is built upon an "all-in-one" digital architecture using AI and automated data integration to provide real-time insights.
+          The platform is built upon an &ldquo;all-in-one&rdquo; digital architecture using AI and automated data integration to provide real-time insights.
         </p>
 
         <div style={styles.imagePlaceholder}>
@@ -201,7 +201,7 @@ export const YourMoneyLine = () => {
             </tr>
           </tbody>
         </table>
-        <p style={styles.p}><em>Note: These tools are strictly "sales-free," ensuring users are never prompted to purchase financial products.</em></p>
+        <p style={styles.p}><em>Note: These tools are strictly &ldquo;sales-free,&rdquo; ensuring users are never prompted to purchase financial products.</em></p>
       </section>
 
       <section>
@@ -218,7 +218,7 @@ export const YourMoneyLine = () => {
         <div style={styles.quote}>
           <h3 style={styles.h3}>Case Study: Triad Financial Services</h3>
           <p style={styles.p}>
-            Upon launching Your Money Line to their 600+ employees, Triad observed a shift in organizational culture. Employees reported feeling comfortable discussing sensitive topics due to the "not one-size-fits-all" approach, leading to higher engagement and productivity.
+            Upon launching Your Money Line to their 600+ employees, Triad observed a shift in organizational culture. Employees reported feeling comfortable discussing sensitive topics due to the &ldquo;not one-size-fits-all&rdquo; approach, leading to higher engagement and productivity.
           </p>
         </div>
       </section>
@@ -234,8 +234,8 @@ export const YourMoneyLine = () => {
         </div>
 
         <ul style={styles.ul}>
-          <li style={styles.li}><strong>Mechanics (The "How"):</strong> Solvable via education. E.g., Asset allocation, debt "order of operations," tax documents.</li>
-          <li style={styles.li}><strong>Behavior (The "Why"):</strong> Rooted in emotion, fatigue, and habit. E.g., The "eerie charms" of convenience or retail therapy.</li>
+          <li style={styles.li}><strong>Mechanics (The &ldquo;How&rdquo;):</strong> Solvable via education. E.g., Asset allocation, debt &ldquo;order of operations,&rdquo; tax documents.</li>
+          <li style={styles.li}><strong>Behavior (The &ldquo;Why&rdquo;):</strong> Rooted in emotion, fatigue, and habit. E.g., The &ldquo;eerie charms&rdquo; of convenience or retail therapy.</li>
         </ul>
         <p style={styles.p}>
           Most high-income professionals misdiagnose behavioral issues as mechanical ones. YML focuses on bridging the gap between knowing what to do and actually doing it.
@@ -243,9 +243,9 @@ export const YourMoneyLine = () => {
       </section>
 
       <section>
-        <h2 style={styles.h2}>The "Quest for Less" and Income Dependence</h2>
+        <h2 style={styles.h2}>The &ldquo;Quest for Less&rdquo; and Income Dependence</h2>
         <p style={styles.p}>
-          For the 2025/2026 fiscal years, YML introduced the "Quest for Less," arguing that stability comes from reducing lifestyle chaos rather than just increasing income. This combats <strong>"Income-Dependence Creep."</strong>
+          For the 2025/2026 fiscal years, YML introduced the &ldquo;Quest for Less,&rdquo; arguing that stability comes from reducing lifestyle chaos rather than just increasing income. This combats <strong>&ldquo;Income-Dependence Creep.&rdquo;</strong>
         </p>
 
         <h3 style={styles.h3}>5-Year Projection: The Trap of Linear Growth</h3>
@@ -284,32 +284,32 @@ export const YourMoneyLine = () => {
       <section>
         <h2 style={styles.h2}>Specialized Sector Support: Education & PSLF</h2>
         <p style={styles.p}>
-          A major vertical for YML is K-12 education, focusing on Public Service Loan Forgiveness (PSLF). YML "PSLF pros" have helped secure over <strong>$100 million</strong> in forgiveness.
+          A major vertical for YML is K-12 education, focusing on Public Service Loan Forgiveness (PSLF). YML &ldquo;PSLF pros&rdquo; have helped secure over <strong>$100 million</strong> in forgiveness.
         </p>
         <ul style={styles.ul}>
           <li style={styles.li}><strong>Carmel Clay Schools:</strong> Secured over $1 million in total forgiveness.</li>
           <li style={styles.li}><strong>MSD Wayne Township:</strong> Average of $94,900 forgiven per teacher.</li>
-          <li style={styles.li}><strong>Franklin Community Schools:</strong> Used as a "secret retention tool."</li>
+          <li style={styles.li}><strong>Franklin Community Schools:</strong> Used as a &ldquo;secret retention tool.&rdquo;</li>
         </ul>
       </section>
 
       <section>
         <h2 style={styles.h2}>The 2026 Roadmap</h2>
         <p style={styles.p}>
-          Informed by the "2025 Employee Financial Behavior Report," YML is launching initiatives to address the post-inflationary economy.
+          Informed by the &ldquo;2025 Employee Financial Behavior Report,&rdquo; YML is launching initiatives to address the post-inflationary economy.
         </p>
         
         <h3 style={styles.h3}>Strategic Initiatives</h3>
         <ul style={styles.ul}>
-          <li style={styles.li}><strong>Integrated Tax Filing:</strong> Partnering with "April" to offer flat-fee ($29.99) federal and state filing, countering the expiration of the IRS Direct File pilot.</li>
-          <li style={styles.li}><strong>2026 Financial Wellness Calendar:</strong> A month-by-month roadmap for HR leaders, focusing on themes like "Workforce Resilience" (Jan), "Identity Protection" (Feb), and "Mental Health" (May).</li>
+          <li style={styles.li}><strong>Integrated Tax Filing:</strong> Partnering with &ldquo;April&rdquo; to offer flat-fee ($29.99) federal and state filing, countering the expiration of the IRS Direct File pilot.</li>
+          <li style={styles.li}><strong>2026 Financial Wellness Calendar:</strong> A month-by-month roadmap for HR leaders, focusing on themes like &ldquo;Workforce Resilience&rdquo; (Jan), &ldquo;Identity Protection&rdquo; (Feb), and &ldquo;Mental Health&rdquo; (May).</li>
         </ul>
       </section>
 
       <section>
         <h2 style={styles.h2}>Comparative Analysis (2026)</h2>
         <p style={styles.p}>
-          YML is often compared to SmartDollar, FinFit, and Origin. YML differentiates itself via a "Coaching-First" model (vs. SmartDollar's curriculum-first) and a "Sales-Free" model (vs. FinFit's lending products).
+          YML is often compared to SmartDollar, FinFit, and Origin. YML differentiates itself via a &ldquo;Coaching-First&rdquo; model (vs. SmartDollar&apos;s curriculum-first) and a &ldquo;Sales-Free&rdquo; model (vs. FinFit&apos;s lending products).
         </p>
 
         <h3 style={styles.h3}>User Sentiment (G2 Reviews)</h3>
@@ -333,7 +333,7 @@ export const YourMoneyLine = () => {
               <td style={styles.td}><strong>Ease of Use</strong></td>
               <td style={styles.td}>4.8 / 5.0</td>
               <td style={styles.td}>Intuitive Interface</td>
-              <td style={styles.td}>Occasional "Clunkiness"</td>
+              <td style={styles.td}>Occasional &ldquo;Clunkiness&rdquo;</td>
             </tr>
             <tr>
               <td style={styles.td}><strong>Quality of Coaching</strong></td>

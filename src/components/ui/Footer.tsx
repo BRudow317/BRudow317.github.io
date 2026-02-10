@@ -15,7 +15,7 @@ type FooterProps = HTMLAttributes<HTMLElement> & {
   type?: string;
 };
 
-export function Footer(_props: FooterProps): JSX.Element {
+export function Footer({}: FooterProps): JSX.Element {
   const styles: Record<string, CSSProperties> = {
     /* Footer */
     footer: {

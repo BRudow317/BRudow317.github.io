@@ -2,6 +2,7 @@ import * as Select from "@radix-ui/react-select";
 import { ChevronDown, Check } from "lucide-react";
 import { useData } from "../../context/DataContext";
 import { SITE_CONTEXT } from "../../constants/SITE_CONTEXT";
+import React from "react";
 
 type DataContextSelectorProps = {
   /** Optional: override the value (defaults to context value) */
