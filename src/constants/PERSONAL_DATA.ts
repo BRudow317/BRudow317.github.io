@@ -68,6 +68,7 @@ export const PERSONAL_DATA: PersonalData = {
       {type: "default", id: "softwareengineer", website: "What is a Software Engineer?", url: "https://www.computerscience.org/careers/software-engineer/"}
     ],
     certifications: [
+      {id: "aws", name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", date: "Feb 2026"},
       {id: "csd", name: "Certified Scrum Developer", issuer: "Scrum Alliance", date: "June 2024"},
       {id: "hci", name: "Certificate in HCI/UX", issuer: "Indiana University Indianapolis", date: "May 2022"},
     ],

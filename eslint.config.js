@@ -21,7 +21,8 @@ export default [
       '**/node_modules/*', 
       '**/coverage/*', 
       '**/public/*', 
-      '**/Library/*'
+      '**/Library/*',
+      '.trash/*'
     ]
   },
   js.configs.recommended,
