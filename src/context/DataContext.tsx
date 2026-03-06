@@ -27,7 +27,7 @@ type DataProviderProps = {
 };
 
 function DataProvider({ children }: DataProviderProps) {
-  const [dataContext, setDataContext] = useState<string>("software_engineer");
+  const [dataContext, setDataContext] = useState<string>("default");
 
   // Memoize the context value to optimize performance
   const value = useMemo(

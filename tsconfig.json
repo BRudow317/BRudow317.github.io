@@ -25,6 +25,7 @@
   "exclude": [
     "dist",
     "bin",
+    ".bin",
     "lib",
     "logs",
     ".bin",

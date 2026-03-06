@@ -14,7 +14,7 @@ export const SITE_CONTEXT: SiteContextItem[] = [
     },
     {
         id: "data_engineer",
-        type: "Data Engineer",
+        type: "Data & Analytics Engineer",
     },
     {
         id: "frontend_engineer",
@@ -26,6 +26,6 @@ export const SITE_CONTEXT: SiteContextItem[] = [
     },
     {
         id: "default",
-        type: "Software Engineer",
+        type: "Data & Analytics Engineer",
     }
 ];

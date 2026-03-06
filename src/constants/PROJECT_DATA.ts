@@ -20,16 +20,18 @@ export type ProjectItem = {
   links: ProjectLinks;
 };
 
+const LAMBDA_FUNCTION_URL = import.meta.env.LAMBDA_FUNCTION_URL || "";
+
 export const PROJECT_DATA: ProjectItem[] = [
   {
     id: "CentralAuthService",
-    name: "Central Lambda Backend Service",
+    name: "Central Lambda Backend",
     tagline: "Centralized authentication service for internal applications.",
     description: "A centralized authentication service for managing user access across multiple internal applications.",
     highlights: ["Single sign-on", "OAuth2 support", "User management"],
     stack: ["AWS", "Lambda", "FastAPI", "Python", "DynamoDB", "Auth", "JWT", "Serverless Application Model (SAM)", "AWS CDK", "CloudFormation"],
     links: { repo: "https://github.com/BRudow317/lambdalith",
-      live: "https://ol263gec4xofofgmrxq6gc3bv40ljmit.lambda-url.us-east-1.on.aws/docs"
+      live: `${LAMBDA_FUNCTION_URL}/docs`
     },
   },
   {

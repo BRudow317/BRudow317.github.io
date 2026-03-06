@@ -1,9 +1,6 @@
 
-import { PERSONAL_DATA, type PersonalSiteLink } from '../../constants/PERSONAL_DATA';
+import { RESUME_DATA, type PersonalSiteLink } from '../../constants/RESUME';
 import type { ScreenSize } from "../../context/BreakpointContext";
-// import { PROFESSIONAL_SUMMARY } from '../../constants/PROFESSIONAL_SUMMARY';
-// import { SITE_CONTEXT } from '../../constants/SITE_CONTEXT';
-// import { useData } from '../../context/DataContext';
 
 type TopBarProps = {
   name?: string;
@@ -15,11 +12,10 @@ type TopBarProps = {
 
 export const TopBar = (
   {
-    name = PERSONAL_DATA.name,
-    // title = PERSONAL_DATA.title,
-    email = PERSONAL_DATA.email,
-    sites = PERSONAL_DATA.sites,
-    // infoSites = PERSONAL_DATA.infoSites,
+    name = RESUME_DATA.name,
+    // title = RESUME_DATA.title,
+    email = RESUME_DATA.email,
+    sites = RESUME_DATA.sites,
     screenSize = 'lg',
     topBarHeight = 60,
   }: TopBarProps = {}

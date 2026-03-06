@@ -4,41 +4,27 @@
  * @install npm install @react-pdf/renderer --save
  * Uses @react-pdf/renderer to create a PDF version of the resume
  * @dependency @react-pdf/renderer@4.3.2
- * 
+ *
  * @fonts
  * Open Sans - clean, modern
-Roboto - Google's standard, professional
-ansi my favorite
-
-@Document Props:
-------------------
-@title	Sets title info on the document's metadata	String	undefined
-@author	Sets author info on the document's metadata	String	undefined
-@subject	Sets subject info on the document's metadata	String	undefined
-@keywords	Sets keywords associated info on the document's metadata	String	undefined
-@creator	Sets creator info on the document's metadata	String	"react-pdf"
-@producer	Sets producer info on the document's metadata	String	"react-pdf"
-@pdfVersion	Sets PDF version for generated document	String	"1.3"
-@language	Sets PDF default language	String	undefined
-@pageMode	Specifying how the document should be displayed when opened	PageMode	useNone
-@pageLayout	This controls how (some) PDF viewers choose to show pages	PageLayout	singlePage
-@onRender	Callback after document renders. Receives document blob argument in web	Function	undefined
- * 
+ * Roboto - Google's standard, professional
+ *
+ * @Document Props:
+ * ------------------
+ * @title	Sets title info on the document's metadata	String	undefined
+ * @author	Sets author info on the document's metadata	String	undefined
+ * @subject	Sets subject info on the document's metadata	String	undefined
+ * @keywords	Sets keywords associated info on the document's metadata	String	undefined
+ * @creator	Sets creator info on the document's metadata	String	"react-pdf"
+ * @producer	Sets producer info on the document's metadata	String	"react-pdf"
+ * @pdfVersion	Sets PDF version for generated document	String	"1.3"
+ * @language	Sets PDF default language	String	undefined
+ * @pageMode	Specifying how the document should be displayed when opened	PageMode	useNone
+ * @pageLayout	This controls how (some) PDF viewers choose to show pages	PageLayout	singlePage
+ * @onRender	Callback after document renders. Receives document blob argument in web	Function	undefined
  */
 import { Document, Page, Text, View, StyleSheet, Link, Font } from '@react-pdf/renderer';
-import { PERSONAL_DATA } from '../../constants/PERSONAL_DATA';
-import { SKILLS_DATA } from '../../constants/SKILLS_DATA';
-import { PROFESSIONAL_SUMMARY } from '../../constants/PROFESSIONAL_SUMMARY';
-import { PROFESSIONAL_HISTORY } from '../../constants/PROFESSIONAL_HISTORY';
-// import { SITE_CONTEXT } from '../../constants/SITE_CONTEXT';
-
-// Helper to filter data arrays by context type with fallback to "default"
-const filterByContext = (dataArray, contextId) => {
-  const contextItems = dataArray.filter((item) => item.type === contextId);
-  return contextItems.length > 0
-    ? contextItems
-    : dataArray.filter((item) => item.type === "default");
-}; 
+import { RESUME_DATA } from '../../constants/RESUME';
 
 // Register local Roboto font files from public/Roboto/static
 Font.register({
@@ -56,17 +42,11 @@ Font.registerHyphenationCallback(word => [word]);
 
 
 export const ResumePDF = ({
-    dataContext = "software_engineer",
-    personalData = PERSONAL_DATA,
-    // professionalSummary = PROFESSIONAL_SUMMARY.find(obj => obj.id === 'primary'),
-    // skills = SKILLS_DATA,
-    // experience = PROFESSIONAL_HISTORY,
-    education = PERSONAL_DATA.education,
-    certifications = PERSONAL_DATA.certifications,
+    resumeData = RESUME_DATA,
     textSize = 11,
     defaultFont = 'Roboto',
     defaultBold = 'Roboto',
-    defaultLineHeight = textSize / 10, // ratio to font size.
+    defaultLineHeight = textSize / 10,
     defaultMargin = textSize / 3,
     styles = {
       page: {
@@ -146,12 +126,6 @@ export const ResumePDF = ({
         lineHeight: defaultLineHeight,
         marginBottom: defaultMargin,
       },
-      bulletText: {
-        fontFamily: defaultFont,
-        fontSize: textSize,
-        lineHeight: defaultLineHeight,
-        marginBottom: defaultMargin,
-      },
       bulletItem: {
         fontFamily: defaultFont,
         fontSize: textSize,
@@ -163,32 +137,22 @@ export const ResumePDF = ({
     }
 }={}) => {
 
-// Filter data based on context (falls back to "default" if no match)
-const skills = filterByContext(SKILLS_DATA, dataContext);
-const experience = filterByContext(PROFESSIONAL_HISTORY, dataContext);
-const professionalSummary = PROFESSIONAL_SUMMARY.find((s) => s.id === dataContext)
-  || PROFESSIONAL_SUMMARY.find((s) => s.id === "default")
-  || PROFESSIONAL_SUMMARY[0];
-
-// Get title from professional summary, fallback to personalData.title
-const title = professionalSummary.title || personalData.title;
-
 const PdfStyle = StyleSheet.create(styles);
 
 return (
   <Document>
     <Page style={PdfStyle.page}>
       {/* Header */}
-      <Text style={PdfStyle.name}>{personalData.name}</Text>
-      <Text style={PdfStyle.title}>{title}</Text>
-      
+      <Text style={PdfStyle.name}>{resumeData.name}</Text>
+      <Text style={PdfStyle.title}>{resumeData.professional_summary.title}</Text>
+
       {/* Contact */}
       <Text style={{...PdfStyle.defaultText, ...PdfStyle.contactLine}}>
-        {personalData.location} • {personalData.phone} • {personalData.email}
+        {resumeData.location} • {resumeData.phone} • {resumeData.email}
       </Text>
 
       <Text>
-        {personalData.sites.map((site, i) => (
+        {resumeData.sites.map((site, i) => (
           <Text key={site.id} style={PdfStyle.defaultText}>
             {i > 0 && ' • '}
             <Link src={site.url} style={{...PdfStyle.defaultText, ...PdfStyle.contactSites}}
@@ -199,32 +163,28 @@ return (
 
       {/* Professional Summary */}
       <Text style={PdfStyle.sectionHeader}>Professional Summary</Text>
-      {/* <Text style={PdfStyle.paragraph} */}
-      <Text style={PdfStyle.defaultText}>{professionalSummary.text}</Text>
+      <Text style={PdfStyle.defaultText}>{resumeData.professional_summary.text}</Text>
 
       {/* Skills */}
       <Text style={PdfStyle.sectionHeader}>Core Technical Skills</Text>
-      {skills.map((skill, i) => (
-        <View key={i} >
-          {/* <Text> */}
-            <View style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
-              <Text style={PdfStyle.labelText}>{skill.label}: </Text>
-              <Text style={PdfStyle.defaultText}>{skill.text}</Text>
-            </View>{/* </Text> */}
+      {resumeData.skills_data.map((skill) => (
+        <View key={skill.id}>
+          <View style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+            <Text style={PdfStyle.labelText}>{skill.label}: </Text>
+            <Text style={PdfStyle.defaultText}>{skill.text}</Text>
+          </View>
         </View>
       ))}
 
       {/* Experience */}
       <Text style={PdfStyle.sectionHeader}>Professional Experience</Text>
-      {experience.map((job, i) => (
-        <View key={i}>
+      {resumeData.professional_history.map((job) => (
+        <View key={job.id}>
           <Text style={PdfStyle.jobTitle}>{job.title}</Text>
-          <Text style={PdfStyle.jobDetails}>{job.company} | {job.dates}
-          </Text>
-          {/*  style={PdfStyle.bulletList} */}
+          <Text style={PdfStyle.jobDetails}>{job.company} | {job.dates}</Text>
           <View>
-            {job.bullets.map((bullet, j) => (
-              <Text key={j} style={PdfStyle.bulletItem}>
+            {job.bullets.map((bullet) => (
+              <Text key={bullet.label} style={PdfStyle.bulletItem}>
                 • {bullet.text}
               </Text>
             ))}
@@ -234,16 +194,16 @@ return (
 
       {/* Education */}
       <Text style={PdfStyle.sectionHeader}>Education</Text>
-      {education.map((edu, i) => (
-        <Text key={i} style={PdfStyle.defaultText}>
+      {resumeData.education.map((edu) => (
+        <Text key={edu.id} style={PdfStyle.defaultText}>
           {edu.degree}{edu.detail}
         </Text>
       ))}
 
       {/* Certifications */}
       <Text style={PdfStyle.sectionHeader}>Certifications</Text>
-      {certifications.map((cert, i) => (
-        <Text key={i} style={PdfStyle.defaultText}>
+      {resumeData.certifications.map((cert) => (
+        <Text key={cert.id} style={PdfStyle.defaultText}>
           {cert.name} | {cert.issuer} | {cert.date}
         </Text>
       ))}

@@ -14,7 +14,6 @@ import { ProjectsViewPage } from "./pages/ProjectsViewPage";
 import { DemonstrationsViewPage } from "./pages/demos/DemonstrationsViewPage";
 import { ResearchViewPage } from "./pages/research/ResearchViewPage";
 import { MxIntegration } from "./pages/research/MxIntegration";
-import { YourMoneyLine } from "./pages/research/YourMoneyLine";
 import { InterestCalc } from "./pages/demos/InterestCalc";
 import { Layout } from "./layouts/Layout";
 import { PROJECT_DATA } from "./constants/PROJECT_DATA";
@@ -67,7 +66,6 @@ const demoComponentMap = {
 
 const researchComponentMap = {
   MxIntegration,
-  YourMoneyLine,
 };
 
 function normalizeRoutePath(parent, page) {

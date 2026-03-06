@@ -7,9 +7,8 @@
 import { useLocation } from "react-router";
 import { useMemo } from "react";
 import type { CSSProperties, HTMLAttributes, JSX } from "react";
-// import { NavItems } from "../../constants/NavItems";
 import { PROJECT_DATA } from "../../constants/PROJECT_DATA";
-import { PERSONAL_DATA, type PersonalSiteLink } from "../../constants/PERSONAL_DATA";
+import { RESUME_DATA, type PersonalSiteLink } from "../../constants/RESUME";
 
 type FooterProps = HTMLAttributes<HTMLElement> & {
   type?: string;
@@ -89,11 +88,11 @@ export function Footer({}: FooterProps): JSX.Element {
     return "Intro";
   }, [location.pathname]);
 
-  const sites = PERSONAL_DATA.sites as PersonalSiteLink[];
+  const sites = RESUME_DATA.sites as PersonalSiteLink[];
   const personalSite =
-    sites.find((site) => site.type === "personal")?.url ?? "#";
+    sites.find((site) => site.id === "personal")?.url ?? "#";
   const profileSite =
-    sites.find((site) => site.type === "profile")?.url ?? "#";
+    sites.find((site) => site.id === "profile")?.url ?? "#";
   const linkedInSite =
     sites.find((site) => site.id === "linkedin")?.url ?? "#";
 
@@ -122,16 +121,16 @@ export function Footer({}: FooterProps): JSX.Element {
         <h3 style={styles.footerH3}>Contact Info</h3>
         
         <h4 style={styles.footerNavA}>
-          <a href={`mailto:${PERSONAL_DATA.email}`}>Owner: {PERSONAL_DATA.name}</a>
+          <a href={`mailto:${RESUME_DATA.email}`}>Owner: {RESUME_DATA.name}</a>
         </h4>
         <h4 style={styles.footerNavA}>
-          <a href={`tel:${PERSONAL_DATA.phone}`}>Phone Number: {PERSONAL_DATA.phone}</a>
+          <a href={`tel:${RESUME_DATA.phone}`}>Phone Number: {RESUME_DATA.phone}</a>
         </h4>
         <h4 style={styles.footerNavA}>
-          <a href={`mailto:${PERSONAL_DATA.email}`}>Email: {PERSONAL_DATA.email}</a>
+          <a href={`mailto:${RESUME_DATA.email}`}>Email: {RESUME_DATA.email}</a>
         </h4>
         <h4 style={styles.footerNavA}>
-          <a href={linkedInSite}>LinkedIn: {PERSONAL_DATA.name}</a>
+          <a href={linkedInSite}>LinkedIn: {RESUME_DATA.name}</a>
         </h4>
         <h4 style={styles.footerNavA}>
           <a href={profileSite}>Domain: {profileSite}</a>

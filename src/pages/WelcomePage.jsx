@@ -1,19 +1,6 @@
 import { Link } from "react-router";
-import { PERSONAL_DATA } from '../constants/PERSONAL_DATA';
-import { SKILLS_DATA } from '../constants/SKILLS_DATA';
-import { PROFESSIONAL_SUMMARY } from '../constants/PROFESSIONAL_SUMMARY';
-// import { SITE_CONTEXT } from '../constants/SITE_CONTEXT';
+import { RESUME_LIST } from '../constants/RESUME';
 import { useData } from '../context/DataContext';
-
-// Helper to filter data arrays by context type with fallback to "default"
-const filterByContext = (dataArray, contextId) => {
-  const contextItems = dataArray.filter((item) => item.type === contextId);
-  return contextItems.length > 0
-    ? contextItems
-    : dataArray.filter((item) => item.type === "default");
-};
-
-// const skills = SKILLS_DATA;
 
 const styles={
     Screen: {
@@ -88,35 +75,25 @@ const styles={
     <section id="SkillsSection" className="card">
       <h3 className="card_title">Core Technical Skills</h3>
       <ul className="list">
-      {skills.map((skill, idx) => (
-        <SkillRow key={idx} label={skill.label} value={skill.text} />
+      {skills.map((skill) => (
+        <SkillRow key={skill.id} label={skill.label} value={skill.text} />
       ))}
       </ul>
     </section>
   );
 
 export function WelcomePage() {
-  // Get the current data context
   const { dataContext } = useData();
-
-  // Filter data based on context (falls back to "default" if no match)
-  const skills = filterByContext(SKILLS_DATA, dataContext);
-  const profSumObj = PROFESSIONAL_SUMMARY.find((s) => s.id === dataContext)
-    || PROFESSIONAL_SUMMARY.find((s) => s.id === "default")
-    || PROFESSIONAL_SUMMARY[0];
-
-  // Get title from professional summary, fallback to PERSONAL_DATA.title
-  const title = profSumObj.title || PERSONAL_DATA.title;
+  const resumeData = RESUME_LIST.find(r => r.id === dataContext) ?? RESUME_LIST[0];
 
   return (
     <main style={styles.Screen} aria-label="Welcome">
       <section style={styles.Hero}>
-        <h1 style={styles.HeroTitle}>{PERSONAL_DATA.name}</h1>
-        <p style={styles.HeroSubtitle}>{title}</p>
+        <h1 style={styles.HeroTitle}>{resumeData.name}</h1>
+        <p style={styles.HeroSubtitle}>{resumeData.professional_summary.title}</p>
 
         <p style={styles.HeroSummary}>
-          {/* {PROFESSIONAL_SUMMARY.find(obj => obj.id === 'primary').text} */}
-          {profSumObj.text}
+          {resumeData.professional_summary.text}
         </p>
 
         <div style={styles.HeroActions}>
@@ -130,11 +107,11 @@ export function WelcomePage() {
           <span className="pill">Frontend: Web Design | Optimization | SEO | State Management</span>
           <span className="pill">Backend: Security | Business Domain | Computing Optimization</span>
           <span className="pill">Integrations: REST | GraphQL | Messaging | Queues</span>
-          
+
         </div>
       </section>
 
-      <SkillsSection skills={skills} />
-    </main> 
+      <SkillsSection skills={resumeData.skills_data} />
+    </main>
   );
 }

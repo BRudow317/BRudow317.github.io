@@ -22,15 +22,7 @@ export type ResearchItem = {
 };
  
 export const RESEARCH_DATA: ResearchItem[] = [
-  {
-    id: "YourMoneyLine",
-    name: "Your Money Line LLC",
-    description: "Conducted Research on Your Money Line LLC.",
-    links: { repo: "https://github.com/BRudow317/" },
-    group: "Research",
-    parent: "/research",
-    page: "/yourmoneyline",
-  },
+  
   {
     id: "MxIntegration",
     name: "Mx Integration",

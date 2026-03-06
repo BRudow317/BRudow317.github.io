@@ -1,0 +1,215 @@
+/**
+ * @description List of personal data for the portfolio site.
+ *
+ * @exports RESUME_DATA as an object containing personal information.
+ *
+ */
+
+export type PersonalSiteLink = {
+  id: string;
+  website: string;
+  url: string;
+};
+
+export type EducationItem = {
+    id: string;
+  degree: string;
+  detail: string;
+};
+
+export type CertificationItem = {
+  id: string;
+  name: string;
+  issuer: string;
+  date: string;
+};
+
+export type ProfessionalSummaryItem = {
+  id: string;
+  title: string;
+  text: string;
+};
+
+export type HistoryBullet = {
+  label: string;
+  text: string;
+};
+
+export type ProfessionalHistoryItem = {
+  id: string;
+  title: string;
+  company: string;
+  dates: string;
+  summary?: string;
+  bullets: HistoryBullet[];
+};
+
+export type SkillItem = {
+  id: string;
+  label: string;
+  text: string;
+};
+
+export type ResumeData = {
+  resume: string;
+  type: string;
+  id: string;
+  name: string;
+  location: string;
+  phone: string;
+  email: string;
+  title: string;
+  sites: PersonalSiteLink[];
+  education: EducationItem[];
+  certifications: CertificationItem[];
+  professional_summary: ProfessionalSummaryItem;
+  professional_history: ProfessionalHistoryItem[];
+  skills_data: SkillItem[];
+
+};
+
+export const RESUME_DATA: ResumeData = {
+    resume: "resume",
+    type: "default",
+    id: "data_engineer",
+    name: "Blaine Rudow",
+    location: "Indianapolis, IN",
+    phone: "217-521-5468",
+    email: "blainerudow@gmail.com",
+    title: "Data & Analytics Engineer",
+    sites: [
+        {id: "linkedin", website: "Linkedin", url: "https://www.linkedin.com/in/blaine-rudow/"},
+        {id: "github", website: "GitHub", url: "https://github.com/brudow317"},
+        {id: "gitpages", website: "Portfolio", url: "https://brudow317.github.io/"}
+        // {id: "lambda", website: "AWS Lambda", url: "https://ol263gec4xofofgmrxq6gc3bv40ljmit.lambda-url.us-east-1.on.aws/docs"},
+
+    ],
+    
+    professional_summary: {
+        id: "data_engineer",
+        title: "Data & Analytics Engineer",
+        text: "Data & Analytics Engineer with 4+ years of experience architecting, building, and deploying data processing systems and analytics that manage complex logic and visualize critical enterprise data. Saved $250k+ in vendor contracts by architecting and implementing an enterprise cloud migration and integration that eliminated our legacy CRM dependency. Expert at delivering integrations and analytics autonomously with primary experience in: SQL, PL/SQL, Python, Java, Bash, and LookML.",
+    },
+    skills_data: [
+        {   id: "data_engineer_languages",
+            label: "Languages",
+            text: "SQL, PL/SQL, Python, Java, Bash, TypeScript, JavaScript, SOQL, Apex"
+        },
+        {   id: "data_analytics",
+            label: "Analytics",
+            text: "Looker, Tableau, React, Statistical Analysis, Dashboard Embedding, Business Intelligence"
+        },
+        {   id: "pipeline_etl",
+            label: "Data",
+            text: "OracleDB, Linux, AWS Lambda, AWS DynamoDB, PostgreSQL, AWS S3, REST, OracleODI"
+        },
+        {   id: "compute",
+            label: "Compute Optimization",
+            text: "Parallelism, Data Modeling, Normalization, Async Design, Compiler & Query Optimization"
+        },
+        {   id: "infrastructure",
+            label: "Infrastructure & DevOps",
+            text: "Linux, Docker, Jenkins, GitHub, GitLab, Dynatrace, Rundeck Automation, Oracle ODI"
+        }
+    ],
+    professional_history: [
+      {
+        id: "SSA",
+        title: "Senior Systems Analyst",
+        company: "Indiana Public Retirement Systems (INPRS)",
+        dates: "Feb 2024 - Present",
+        summary: "",
+        bullets: [
+          {
+            label: "Migration Impact",
+            text: "Key leader in a CRM Cloud modernization, consolidating 3 department CRMs with dependencies across 6+ systems by architecting the enterprise data model, migrating 30M+ records during a fixed production cutover with zero downtime.",
+          },
+          {
+            label: "Data Engineering",
+            text: "Enabled retirement of the legacy CRM, avoiding $250k+ in vendor/contract costs by achieving 99.9% day-one data integrity (validated by 3 departments) building custom parsing and normalization pipelines for multiple non-standard data structures.",
+          },
+          {
+            label: "Cross-Team Ownership",
+            text: "Served as sole migration engineer while partnering with the integrations/API team and a 15-person implementation team; drove requirements, de-risked edge cases, and managed vendor deliverables to hit launch timelines.",
+          },
+          {
+            label: "Orchestration Platform",
+            text: "Built a dependency-aware migration orchestration engine with retries, batching, and concurrency controls. Dynamically managing real time data ingestion and anomalies from vendor systems.",
+          },
+          {
+            label: "High Speed Processing",
+            text: "Designed event driven architecture for high speed, low latency of thousands of records/hour. This turns batched over night processes into real-time pipelines, bringing data to consumers in finance and investments. Enabling faster operations, audits, insights, and interventions.",
+          },
+          {
+            label: "Python Automation",
+            text: "Built a Python documentation pipeline consolidating 5+ sources into a self-updating SharePoint wiki with ServiceNow links, cutting onboarding time 50%+, standardizing processes, and boosting development velocity.",
+          },
+          {
+            label: "Architecture SME",
+            text: "Acted as enterprise SME for mission-critical financial systems and strict regulatory compliance, guiding architecture decisions and untangling cross-system dependencies to reduce technical debt and enable a loosely coupled modernization path. This boosts agility, cuts maintenance costs, and passes audits.",
+          },
+        ],
+      },
+      {
+        id: "AppDev",
+        title: "Application Developer",
+        company: "Indiana Public Retirement Systems (INPRS)",
+        dates: "Apr 2022 - Feb 2024",
+        summary: "",
+        bullets: [
+          {
+            label: "Self-Service Analytics",
+            text: "Built self-service member data dashboards (Looker/LookML), reducing ticket volume and enabling cross-functional teams to access data without engineering support. This empowered teams to make data-driven decisions, improved operational efficiency, and enhanced member services.",
+          },
+          {
+            label: "Modeling",
+            text: "Owned, managed, and maintained the upgrades, enhancements, defects, devops and development life cycle of modeling web applications contributing to the adoption of agile methodology. This improved collaboration, accelerated delivery, and enhanced the overall quality of the applications.",
+          },
+          {
+            label: "ETL + Business Logic",
+            text: "Built production ETL pipelines ingesting 3rd-party vendor sources into the enterprise warehouse as a core repository for enterprise data. Implementing complex eligibility and projection logic in PL/SQL and SQL.",
+          },
+          {
+            label: "Data Quality Monitoring",
+            text: "Partnered with enterprise engineering to implement proactive data validation and monitoring using advanced SQL (CTEs, window functions, cross-database joins), preventing downstream production issues.",
+          },
+        ],
+      },
+      {
+        id: "personal_projects",
+        title: "Personal Projects Portfolio",
+        company: "Home Lab",
+        dates: "2018 - Present",
+        bullets: [
+          {
+            label: "Cloud Architect",
+            text: "Architect of serverless high speed, low cost, web applications on AWS for small business clients, architecting cloud-native solutions with S3 (static hosting), CloudFront (CDN), MariaDB, Lambda, SQS, SNS, and DynamoDB.",
+          },
+          {
+            label: "Frontend Design",
+            text: "Design and build responsive React frontends with modern UI/UX principles, focusing on performance optimization, accessibility, and seamless user experiences across devices to enhance customer engagement, market visibility, and generate leads for small business clients.",
+          },
+          {
+            label: "Full Development Lifecycle",
+            text: "Implement full development lifecycle: requirements gathering, architecture, design, AWS infrastructure provisioning via SAM and Cloud Formation, CI/CD pipeline setup and integration with GitHub, and ongoing optimization. Focus on serverless-first architecture to minimize operational overhead and maximize cost efficiency for small business budgets.",
+          },
+        ],
+      },
+    ],
+
+    education: [
+       { id: "ms", degree: "M.S., Computer Science, AI, & Machine Learning", detail: " Western Governors University | 2026-2028 (Anticipated)" }, 
+      { id: "bs", degree: "B.S., Informatics & Computing", detail: " Indiana University Indianapolis | 2020-2022" },
+      { id: "as", degree: "A.S., Software Development", detail: " Ivy Tech Community College | 2018-2020" }
+    ],
+
+    certifications: [
+      {id: "network_automation", name: "Network Automation Professional Certificate by Arista Networks", issuer: "Arista Networks", date: "March 2026"},
+      {id: "aws", name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", date: "Feb 2026"},
+      {id: "csd", name: "Certified Scrum Developer", issuer: "Scrum Alliance", date: "June 2024"},
+      {id: "tableau", name: "Tableau Desktop Specialist", issuer: "Tableau", date: "Dec 2023"},
+      {id: "hci", name: "Minor & Certificate in HCI/UX", issuer: "Indiana University Indianapolis", date: "May 2022"},
+    ],
+};
+
+export const RESUME_LIST: ResumeData[] = [RESUME_DATA];

@@ -30,4 +30,13 @@ export const DEMO_DATA: DemoItem[] = [
     parent: "demo",
     page: "/interestcalc",
   },
+  {
+    id: "AWS Lambda Reverse Proxy",
+    name: "AWS Lambda Reverse Proxy",
+    description: "Demonstration of an AWS Lambda function acting as core central server and a reverse proxy.",
+    links: { repo: "https://github.com/BRudow317/lambdalith" },
+    group: "Demo",
+    parent: "demo",
+    page: "/lambdalith",
+  },
 ];
