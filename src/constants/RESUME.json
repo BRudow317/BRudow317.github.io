@@ -164,6 +164,12 @@
   ],
   "certifications": [
     {
+      "id": "machine_learning",
+      "name": "Machine Learning with Python Professional Certificate by Anaconda",
+      "issuer": "Anaconda inc.",
+      "date": "March 2026"
+    },
+    {
       "id": "network_automation",
       "name": "Network Automation Professional Certificate by Arista Networks",
       "issuer": "Arista Networks",

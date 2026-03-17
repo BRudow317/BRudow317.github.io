@@ -1,10 +1,9 @@
-
 import {
   BrowserRouter,
   Routes,
   Route,
   Navigate,
-  useParams,
+  useParams
 } from "react-router";
 
 import { WelcomePage } from "./pages/WelcomePage";
