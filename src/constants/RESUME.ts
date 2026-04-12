@@ -76,7 +76,7 @@ export const RESUME_DATA: ResumeData = {
     location: "Indianapolis, IN",
     phone: "217-521-5468",
     email: "blainerudow@gmail.com",
-    title: "Data & Analytics Engineer",
+    title: "Data Engineer",
     sites: [
         {id: "linkedin", website: "Linkedin", url: "https://www.linkedin.com/in/blaine-rudow/"},
         {id: "github", website: "GitHub", url: "https://github.com/brudow317"},
@@ -87,8 +87,8 @@ export const RESUME_DATA: ResumeData = {
     
     professional_summary: {
         id: "data_engineer",
-        title: "Data & Analytics Engineer",
-        text: "Data & Analytics Engineer with 4+ years of experience architecting, building, and deploying data processing systems and analytics that manage complex logic and visualize critical enterprise data. Saved $250k+ in vendor contracts by architecting and implementing an enterprise cloud migration and integration that eliminated our legacy CRM dependency. Expert at delivering integrations and analytics autonomously with primary experience in: SQL, PL/SQL, Python, Java, Bash, and LookML.",
+        title: "Data Engineer",
+        text: "Data Engineer with 4+ years of experience architecting, building, and deploying data processing systems and analytics that manage complex logic and visualize critical enterprise data. Saved $250k+ in vendor contracts by architecting and implementing an enterprise cloud migration and integration that eliminated our legacy CRM dependency. Expert at delivering integrations and analytics autonomously with primary experience in: Python, SQL, PL/SQL, Java, Bash, on AWS and Linux infrastructure.",
     },
     skills_data: [
         {   id: "data_engineer_languages",
@@ -198,13 +198,14 @@ export const RESUME_DATA: ResumeData = {
     ],
 
     education: [
-       { id: "ms", degree: "M.S., Computer Science, AI, & Machine Learning", detail: " Western Governors University | 2026-2028 (Anticipated)" }, 
+      { id: "ms", degree: "M.S., Computer Science & Machine Learning", detail: " Western Governors University | 2026-2028 (Anticipated)" }, 
       { id: "bs", degree: "B.S., Informatics & Computing", detail: " Indiana University Indianapolis | 2020-2022" },
       { id: "as", degree: "A.S., Software Development", detail: " Ivy Tech Community College | 2018-2020" }
     ],
 
     certifications: [
-      {id: "network_automation", name: "Network Automation Professional Certificate by Arista Networks", issuer: "Arista Networks", date: "March 2026"},
+      {id: "machine_learning", name: "Machine Learning with Python Professional Certificate", issuer: "Anaconda", date: "March 2026"},
+      {id: "network_automation", name: "Network Automation Professional Certificate", issuer: "Arista Networks", date: "March 2026"},
       {id: "aws", name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", date: "Feb 2026"},
       {id: "csd", name: "Certified Scrum Developer", issuer: "Scrum Alliance", date: "June 2024"},
       {id: "tableau", name: "Tableau Desktop Specialist", issuer: "Tableau", date: "Dec 2023"},
