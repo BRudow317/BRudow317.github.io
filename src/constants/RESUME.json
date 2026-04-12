@@ -6,7 +6,7 @@
   "location": "Indianapolis, IN",
   "phone": "217-521-5468",
   "email": "blainerudow@gmail.com",
-  "title": "Data & Analytics Engineer",
+  "title": "Data Engineer",
   "sites": [
     {
       "id": "linkedin",
@@ -31,8 +31,8 @@
   ],
   "professional_summary": {
     "id": "data_engineer",
-    "title": "Data & Analytics Engineer",
-    "text": "Data & Analytics Engineer with 4+ years of experience architecting, building, and deploying data processing systems and analytics that manage complex logic and visualize critical enterprise data. Saved $250k+ in vendor contracts by architecting and implementing an enterprise cloud migration and integration that eliminated our legacy CRM dependency. Expert at delivering integrations and analytics autonomously with primary experience in: SQL, PL/SQL, Python, Java, Bash, and LookML."
+    "title": "Data Engineer",
+    "text": "Data Engineer with 4+ years of experience architecting, building, and deploying data processing systems and analytics that manage complex logic and visualize critical enterprise data. Saved $250k+ in vendor contracts by architecting and implementing an enterprise cloud migration and integration that eliminated our legacy CRM dependency. Expert at delivering integrations and analytics autonomously with primary experience in: SQL, PL/SQL, Python, Java, Bash, and LookML."
   },
   "skills_data": [
     {
