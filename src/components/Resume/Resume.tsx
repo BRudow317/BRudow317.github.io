@@ -1,7 +1,9 @@
 /**
  * My Resume
  */
+import React from 'react';
 import { RESUME_DATA } from '../../constants/RESUME';
+import { type ResumeData } from '../../constants/RESUME';
 
 export const Resume = (
   {
@@ -115,14 +117,11 @@ export const Resume = (
     }
   } = {}) =>
 {
-  const SectionHeader = (
-    { children = {},
-      style = styles.sectionHeader
-    } = {}) => (
-    <h3 style={style}>{children}</h3>
+  const SectionHeader = ({ children }: { children: React.ReactNode }) => (
+    <h3 style={styles.sectionHeader}>{children}</h3>
   );
 
-  const ContactInfo = ({ contact }) => (
+  const ContactInfo = ({ contact }: { contact: ResumeData }) => (
     <>
       <p style={styles.contactLine}>
         {contact.location} • {contact.phone} • {contact.email}
@@ -130,13 +129,11 @@ export const Resume = (
       <p style={styles.contactLine}>
         {contact.sites.map(
           site => (
-            <a href={site.url}
-              style={styles.link}
-              key={site.id}>{site.website}
-            </a>)
-          ).reduce(
-            (prev, curr) => [prev, " • ", curr]
-          )
+              <a href={site.url}
+                style={styles.link}
+                key={site.id}>{site.website}
+              </a>
+          )).reduce( (prev, curr) => [prev, " • ", curr] )
         }
       </p>
     </>

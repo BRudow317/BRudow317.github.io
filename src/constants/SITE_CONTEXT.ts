@@ -8,24 +8,24 @@ export const SITE_CONTEXT: SiteContextItem[] = [
         id: "software_engineer",
         type: "Software Engineer",
     },
-    {
-        id: "backend_engineer",
-        type: "Backend Engineer",
-    },
-    {
-        id: "data_engineer",
-        type: "Data & Analytics Engineer",
-    },
-    {
-        id: "frontend_engineer",
-        type: "Frontend Engineer",
-    },
-    {
-        id: "cloud_engineer",
-        type: "Cloud Engineer",
-    },
-    {
-        id: "default",
-        type: "Data & Analytics Engineer",
-    }
+    // {
+    //     id: "backend_engineer",
+    //     type: "Backend Engineer",
+    // },
+    // {
+    //     id: "data_engineer",
+    //     type: "Data & Analytics Engineer",
+    // },
+    // {
+    //     id: "frontend_engineer",
+    //     type: "Frontend Engineer",
+    // },
+    // {
+    //     id: "cloud_engineer",
+    //     type: "Cloud Engineer",
+    // },
+    // {
+    //     id: "default",
+    //     type: "Data & Analytics Engineer",
+    // }
 ];

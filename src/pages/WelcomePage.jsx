@@ -37,7 +37,7 @@ const styles={
       margin: '12px 0 0 0',
       lineHeight: 1.6,
       maxWidth: '70ch',
-      color: 'var(--text-2)',
+      color: 'var(--text-1)',
     },
 
     HeroActions: {
