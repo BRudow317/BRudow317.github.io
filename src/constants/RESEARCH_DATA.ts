@@ -22,7 +22,15 @@ export type ResearchItem = {
 };
  
 export const RESEARCH_DATA: ResearchItem[] = [
-  
+  {
+    id: "CompensationAnalysis",
+    name: "Compensation Analysis",
+    description: "Compensation analysis tool to evaluate and optimize employee compensation.",
+    links: { repo: "https://github.com/BRudow317/" },
+    group: "Research",
+    parent: "/research",
+    page: "/compensation",
+  },
   {
     id: "MxIntegration",
     name: "Mx Integration",
