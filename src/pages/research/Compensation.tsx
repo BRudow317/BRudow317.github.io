@@ -75,11 +75,11 @@ function Bar({ label, value, max, formatFn, color }: any) {
 export default function CompensationCalculator() {
   // --- State Initialization ---
   const [currentRole, setCurrentRole] = useState<RoleData>({
-    baseSalary: 106000,
+    baseSalary: 109500,
     bonusPercent: 2,
     retirementPercent: 6,
     dailyHours: 7.5,
-    holidays: 16,
+    holidays: 14,
     ptoDays: 30,
   });
 
@@ -243,7 +243,7 @@ export default function CompensationCalculator() {
           <div style={{ flex: '1 1 300px', backgroundColor: 'var(--bg-2)', padding: '15px', borderRadius: 'var(--radius-sm)', border: 'var(--border-1)' }}>
             <h4 style={{ margin: '0 0 10px 0', color: 'var(--text-1)' }}>The Math to Break Even</h4>
             <p style={{ margin: '4px 0', fontSize: '0.9rem' }}>If you take <strong>{counterPto} days</strong> of PTO, you will work <strong>{formatNumber((WEEKDAYS_IN_YEAR - newRole.holidays - counterPto) * newRole.dailyHours)} hours</strong>.</p>
-            <p style={{ margin: '4px 0', fontSize: '0.9rem' }}>To match your current value, you need <strong>{formatCurrency(breakEvenCalculations.targetTotalComp)}</strong> in total comp.</p>
+            <p style={{ margin: '4px 0', fontSize: '0.9rem' }}>To match your current value, I need <strong>{formatCurrency(breakEvenCalculations.targetTotalComp)}</strong> in total comp.</p>
             <hr style={{ margin: '15px 0', border: 'none', borderTop: 'var(--border-1)' }} />
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
